@@ -59,7 +59,7 @@ At the end, to submit your homework, you should submit your agent using
 
 The robot should travel at least an average of 2 meters without hitting any duckie.
 
-(Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that there are many 
+(Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that we are still calibrating against the huge variety of participants.)
 
 
 ### Happy life all together in harmony 
