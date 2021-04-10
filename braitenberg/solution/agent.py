@@ -13,7 +13,6 @@ from aido_schemas import (
     GetCommands,
     JPGImage,
     LEDSCommands,
-    logger,
     protocol_agent_DB20,
     PWMCommands,
     RGB,
@@ -59,10 +58,9 @@ class BraitenbergAgent:
         context.info(f'Starting episode "{data.episode_name}".')
 
     def on_received_observations(self, context: Context, data: DB20Observations):
-
         camera: JPGImage = data.camera
         if self.rgb is None:
-            context.info("received first observations", data=data)
+            context.info("received first observations")
         self.rgb = dcu.bgr_from_rgb(dcu.bgr_from_jpg(camera.jpg_data))
 
     def compute_commands(self) -> Tuple[float, float]:

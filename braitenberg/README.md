@@ -2,32 +2,93 @@
 
 # Instructions
 
+## Phase 1: walkthrough of notebooks
+
 Run
 
-    dts exercises notebooks
+    dts exercises lab
 
-Go inside and read and work through the following notebooks (in sequence):
+Go inside and open the notebook `solution/braitenberg01`.
 
-- `braitenberg01`
-- `braitenberg02`
-- `braitenberg03`
+Work through the notebooks in sequence.
 
-In those notebooks you need to fill out some functions that will create your agent.
+The notebooks guide you to fill out some functions in `solution/preprocessing.py` and `solution/connections.py`.
 
-You can test your agent using these modalities:
+They will also indicate the use of other tools.
 
-1. 💻 `dts exercises test --sim` -- tries the agent in simulation.
-2. 🚙 `dts exercises test --duckiebot_name DUCKIEBOT` -- tries the agent on your robot.
-3. 🚙 `dts exercises test --local --duckiebot_name DUCKIEBOT` -- tries the agent on your robot but running on the laptop.
+## Phase 2: experiment in finding connections, modifying the agent
 
-For additional information on how to navigate the `dt-exercises` infrastructure you can watch [this tutorial](https://docs.duckietown.org/daffy/opmanual_duckiebot/out/running_exercies.html).
+In this phase you have to experiment with the rest of the agent.
 
-You can the evaluate your work using
+The skeleton is in `solution/agent.py`. Read through and see how it uses the things you defined in the other Python files.
 
-    dts challenges evaluate
+Feel free to change anything.
+
+### 💻 Testing in simulation
+
+To test in simulation, use the command
+
+    $ dts exercises test --sim
+
+There will be two URLs popping up to open in your browser: one is the direct view of the experiment.
+The other is VNC and not useful for this exercise. 
+
+
+### 🚙 Testing on the robot
+
+You can test your agent on the robot using:
+ 
+    dts exercises test --duckiebot_name YOUR_DUCKIEBOT
+
+If you remember the video lecture, this is the modality "everything runs on the robot".
+
+You can also test using 
+
+    dts exercises test --duckiebot_name YOUR_DUCKIEBOT  --local 
+
+This is the modality "drivers running on the robot, agent runs on the laptop."
+
+
+
+[comment]: <> (For additional information on how to navigate the `dt-exercises` infrastructure you can watch [this tutorial]&#40;https://docs.duckietown.org/daffy/opmanual_duckiebot/out/running_exercies.html&#41;.)
+
+## Phase 3: make a submission
 
 At the end, to submit your homework, you should submit your agent using
 
     dts challenges submit
 
 The robot should travel at least an average of 2 meters without hitting any duckie.
+
+(Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that there are many 
+
+
+### Happy life all together in harmony 
+
+We run the cloud evaluation service based on limited resources from our universities and sponsorships. To avoid a denial-of-service-by-many-exercises-submissions attack, we implemented a priority queue: the more submissions you send, the lower priority you have and it will take more time to do them. This is fair in the sense that, if you have never submitted, you are on top of the queue. However, we try to evaluate all submissions. 
+
+We hope this works and we don't need more stringent policies.
+
+You can help us in the following ways.
+
+### Retire obsolete submissions
+
+Note that you can "retire" submissions.
+
+If you do this: 
+
+    dts challenges submit --retire-same-label
+
+then the old submission to the challenge will be related.
+
+There is also a command `dts challenges retire`.
+
+Finally, you can do this on the website.
+
+### Do local evaluations
+
+We suggest you evaluate your work using the command
+
+    dts challenges evaluate
+
+This should take a few minutes. This is not supposed to be an interactive process: just let it run, and when you return, you will find the output in a folder, including videos, and trajectories, and all the statistics you find on the website.
