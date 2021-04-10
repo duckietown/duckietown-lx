@@ -5,8 +5,6 @@ from typing import Optional, Tuple
 
 import math
 import numpy as np
-
-import duckietown_code_utils as dcu
 from aido_schemas import (
     Context,
     DB20Commands,
@@ -21,6 +19,8 @@ from aido_schemas import (
     RGB,
     wrap_direct,
 )
+
+import duckietown_code_utils as dcu
 from connections import get_motor_left_matrix, get_motor_right_matrix
 from preprocessing import preprocess
 
@@ -59,8 +59,10 @@ class BraitenbergAgent:
         context.info(f'Starting episode "{data.episode_name}".')
 
     def on_received_observations(self, context: Context, data: DB20Observations):
-        logger.info("received", data=data)
+
         camera: JPGImage = data.camera
+        if self.rgb is None:
+            context.info("received first observations", data=data)
         self.rgb = dcu.bgr_from_rgb(dcu.bgr_from_jpg(camera.jpg_data))
 
     def compute_commands(self) -> Tuple[float, float]:
@@ -71,7 +73,7 @@ class BraitenbergAgent:
 
         if self.left is None:
             # if it is the first time, we initialize the structures
-            shape = self.rgb.shape[0:2]
+            shape = self.rgb.shape[0], self.rgb.shape[1]
             self.left = get_motor_left_matrix(shape)
             self.right = get_motor_right_matrix(shape)
 
@@ -102,7 +104,6 @@ class BraitenbergAgent:
         return pwm_left, pwm_right
 
     def on_received_get_commands(self, context: Context, data: GetCommands):
-
         pwm_left, pwm_right = self.compute_commands()
 
         col = RGB(0.0, 0.0, 1.0)

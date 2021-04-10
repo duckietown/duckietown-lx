@@ -1,2 +1,2 @@
 aido-protocols-daffy
-duckietown-utils
+duckietown-utils-daffy
