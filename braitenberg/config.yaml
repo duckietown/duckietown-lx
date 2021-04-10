@@ -6,10 +6,3 @@ agent_run_cmd: "run_agent.sh" # the script in "launchers" to run the agent with
 ros: false
 challenge: mooc-BV1
 lab_dir: .
-files:
-  - notebook:
-      target_dir: "solution"
-      input_file: "notebooks/braitenberg01.ipynb"
-  - notebook:
-      target_dir: "solution"
-      input_file: "notebooks/braitenberg02.ipynb"
