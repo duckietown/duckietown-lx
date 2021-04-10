@@ -95,7 +95,7 @@ then the old submission to the challenge will be related.
 
 There is also a command `dts challenges retire`.
 
-Finally, you can do this on the website.
+Finally, you can do this [on the Challenges website](https://challenges.duckietown.org/v4/).
 
 ### Do local evaluations
 
