@@ -20,11 +20,14 @@ Run
 
     dts exercises lab
 
-Go inside and open the notebook `solution/braitenberg01`.
+Open the web link that will appear. You are in [Jupyter Lab][lab] in the 
+folder `solution`. Open the notebook `braitenberg01`.
+
+[lab]: https://jupyterlab.readthedocs.io/en/stable/
 
 Work through the notebooks in sequence.
 
-The notebooks guide you to fill out some functions in `solution/preprocessing.py` and `solution/connections.py`.
+The notebooks guide you to fill out some functions in `preprocessing.py` and `connections.py`.
 
 They will also indicate the use of other tools.
 
