@@ -20,8 +20,8 @@ lastL = np.array([171, 140, 0])
 lastU = np.array([179, 200, 255])
 
 # create trackbars for color change
-cv2.createTrackbar("lowH", "image", lastL[0], 255, nothing)
-cv2.createTrackbar("highH", "image", lastU[0], 255, nothing)
+cv2.createTrackbar("lowH", "image", lastL[0], 179, nothing)
+cv2.createTrackbar("highH", "image", lastU[0], 179, nothing)
 
 cv2.createTrackbar("lowS", "image", lastL[1], 255, nothing)
 cv2.createTrackbar("highS", "image", lastU[1], 255, nothing)
