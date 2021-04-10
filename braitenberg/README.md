@@ -1,6 +1,19 @@
 
 # Instructions
 
+## Phase 0: system update
+
+Make sure you have an updated system using
+
+    dts desktop update
+
+
+### Update Duckiebot
+
+If you have a Duckiebot, also do
+
+    dts duckiebot update
+
 ## Phase 1: walkthrough of notebooks
 
 Run
