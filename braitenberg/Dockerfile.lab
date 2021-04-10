@@ -1,0 +1,9 @@
+FROM duckietown/dt-gui-tools:daffy-amd64
+
+RUN pip3 install -U \
+    duckietown-utils-daffy \
+    matplotlib \
+    ipympl \
+    ipython
+
+CMD ["dt-launcher-jupyter"]

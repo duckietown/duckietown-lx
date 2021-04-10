@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+catkin_ws/logs/
+catkin_ws/build/
+catkin_ws/devel/
+catkin_ws/.catkin_tools/
+*/exercise_ws/.catkin_tools/
+*/exercise_ws/build/
+*/exercise_ws/devel/
+*/exercise_ws/logs/
+*/assets/setup/challenges/challenge-evaluation-output
+*/assets/setup/challenges/challenge-results
+*/assets/setup/challenges/tmp
+*resolved
+.ipynb_checkpoints
+*-filtered*
