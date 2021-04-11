@@ -96,8 +96,8 @@ class BraitenbergAgent:
 
         gain = self.config.gain
         const = self.config.const
-        pwm_left = const + rs * gain
-        pwm_right = const + ls * gain
+        pwm_left = const + ls * gain
+        pwm_right = const + rs * gain
 
         return pwm_left, pwm_right
 
