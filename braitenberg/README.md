@@ -73,7 +73,9 @@ At the end, to submit your homework, you should submit your agent using
 
     dts challenges submit
 
-The robot should travel at least an average of 2 meters without hitting any duckie. (Note: for now the score visualizes only the length of travel, not the distance. Will be updated soon.)
+The robot should travel at least an average of 2 meters from the starting point. 
+
+(**Note:** somebody already found a way to cheat the previous metric that was here; we need to implement this new metric)
 
 (Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that we are still calibrating against the huge variety of participants.)
 
