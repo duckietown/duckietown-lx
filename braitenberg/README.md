@@ -109,3 +109,12 @@ We suggest you evaluate your work using the command
     dts challenges evaluate
 
 This should take a few minutes. This is not supposed to be an interactive process: just let it run, and when you return, you will find the output in a folder, including videos, and trajectories, and all the statistics you find on the website.
+
+
+
+# Updates
+ 
+
+## April 16th, 2021
+
+- Removed parameters in agent_env.yaml - it was unclear how to modify them.
