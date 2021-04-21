@@ -137,12 +137,15 @@ class EncoderPoseNode(DTROS):
 
     def cbEpisodeStart(self, msg: EpisodeStart):
         loaded = yaml.load(msg.other_payload_yaml, Loader=yaml.FullLoader)
-        if "initial_pose" not in loaded:
-            msg = f"Invalid payload received: {loaded}"
-            raise Exception(msg)
-        ip = loaded["initial_pose"]
-        self.y_prev = float(ip["y"])
-        self.theta_prev = float(np.deg2rad(ip["theta_deg"]))
+        if "initial_pose" in loaded:
+            ip = loaded["initial_pose"]
+            self.y_prev = float(ip["y"])
+            self.theta_prev = float(np.deg2rad(ip["theta_deg"]))
+        else:
+            self.logwarn("No initial pose received. If you are running this on a real robot "
+                         "you can ignore this message.")
+            self.y_prev = 0.0
+            self.theta_prev = 0.0
 
     # Emergency stop / interactive pane for PID activity and exercise
     def cbPIDparam(self, msg):
