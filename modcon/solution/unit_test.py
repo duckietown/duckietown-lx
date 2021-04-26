@@ -394,15 +394,14 @@ class UnitTestPositionPID:
         delta_phi_right = time * omega_r
 
         # variance of the additive measurement noise
+        # 0.5 cm variance
         measurement_noise_variance_m = 0.005
         measurement_noise = np.random.normal(0, measurement_noise_variance_m)
 
-        self.y_prev = (
-            self.y_prev
-            + self.R * (delta_phi_right + delta_phi_left) *
-            np.sin(self.theta_prev) / 2
-            + measurement_noise
-        )  # 0.5 cm variance
+        self.y_prev = self.y_prev + self.R * \
+            (delta_phi_right + delta_phi_left) * \
+            np.sin(self.theta_prev) / 2 + measurement_noise
+
 
         self.theta_prev = self.theta_prev + self.R * \
             (delta_phi_right - delta_phi_left) / self.L
