@@ -402,7 +402,6 @@ class UnitTestPositionPID:
             (delta_phi_right + delta_phi_left) * \
             np.sin(self.theta_prev) / 2 + measurement_noise
 
-
         self.theta_prev = self.theta_prev + self.R * \
             (delta_phi_right - delta_phi_left) / self.L
 
