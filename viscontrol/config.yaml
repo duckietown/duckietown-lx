@@ -1,0 +1,42 @@
+# Exercise configuration file
+
+
+# Structure:
+#
+# An exercise contains a list of notebooks under the node notebooks.
+# Each notebooks is required to specify the package_name, namely the package where it has to be copied in the ros ws,
+# and a name that is the name of the notebook in the notebooks folder.
+#
+#  notebooks:
+#    - notebook1:
+#        package_name: ""
+#        name: ""
+#    - notebook2:
+#        package_name: ""
+#        name: ""
+#    - notebook2:
+#        package_name: ""
+#        name: ""
+#
+# agent_base: "duckietown_baseline" # currently not implemented, the agent base image to use
+# ws_dir: "exercise_ws" # directory that contains the code
+# agent_run_cmd: "run_all.sh" # the script in "launchers" to run the agent with
+
+
+agent_base: "duckietown_baseline"
+ws_dir: "solution" # directory that contains the code the user needs to see
+lab_dir: .         # directory to be mounted into the jupyter container
+agent_run_cmd: "default.sh" # the script in "launchers" to run the agent with
+ros: true
+challenge: mooc-viscontrol
+
+#files:
+#  - notebook:
+#      target_dir: "solution/src/encoder_pose/src"
+#      input_file: "solution/04-Odometry/odometry_activity.ipynb"
+#  - notebook:
+#      target_dir: "solution/src/encoder_pose/src"
+#      input_file: "solution/05-PID-Control/PID_controller.ipynb"
+#  - notebook:
+#      target_dir: "solution/src/encoder_pose/src"
+#      input_file: "solution/06-PID-Control-Homework/PID_controller_homework.ipynb"
