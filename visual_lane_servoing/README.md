@@ -26,8 +26,8 @@ The final exercise counts towards grading and must be submitted for evaluation i
 
 - Go to the first folder (`01-Pinhole-Camera`), open the notebook file, and follow through.
 
-- You will have to execute the activities in order, from `/01-Pinhole-Camera` to `/NN-XYZ`. Skipping activities might result in errors.
+- You will have to execute the activities in order, from `/01-Pinhole-Camera` to `/04-Image-Filtering`. Skipping activities might result in errors.
 
 ## Submit the homework
 
-- After completing the activities, you can proceed to `/NN-XYZ-Homework` and follow the instructions to submit your assignment.
+- After completing the activities, you can proceed to `/05-Visual-Servoing` and follow the instructions to submit your assignment.
