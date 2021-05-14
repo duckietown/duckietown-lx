@@ -44,32 +44,8 @@ class EncoderPoseNode(DTROS):
         # get the name of the robot
         self.veh = rospy.get_namespace().strip("/")
 
-        # Add the node parameters to the parameters dictionary
-
-        self.delta_phi_left = 0.0
-        self.left_tick_prev = None
-
-        self.delta_phi_right = 0.0
-        self.right_tick_prev = None
-
-        # Initializing the odometry
-        self.x_prev = 0.0
-        self.y_prev = 0.0
-        self.theta_prev = 0.0
-
-        self.x_curr = 0.0
-        self.y_curr = 0.0
-        self.theta_curr = 0.0
-
-        # Initializing the PID controller parameters
-        self.prev_e = 0.0  # previous tracking error, starts at 0
-        self.prev_int = 0.0  # previous tracking error integral, starts at 0
-        self.time = 0.0
-
-        self.v_0 = 0.0  # fixed robot linear velocity - starts at zero so the activities start on command
-        # inside VNC
-        # reference y for PID lateral control activity - zero so can be set interactively at runtime
-        self.y_ref = 0.0
+        # Init the parameters
+        self.resetParameters()
 
         self.theta_ref = np.deg2rad(0.0)  # initial reference signal for heading control activity
         self.omega = 0.0  # initializing omega command to the robot
@@ -135,12 +111,44 @@ class EncoderPoseNode(DTROS):
 
         self.log("Initialized.")
 
+    def resetParameters(self):
+        # Add the node parameters to the parameters dictionary
+        self.delta_phi_left = 0.0
+        self.left_tick_prev = None
+
+        self.delta_phi_right = 0.0
+        self.right_tick_prev = None
+
+        # Initializing the odometry
+        self.x_prev = 0.0
+        self.y_prev = 0.0
+        self.theta_prev = 0.0
+
+        self.x_curr = 0.0
+        self.y_curr = 0.0
+        self.theta_curr = 0.0
+
+        # Initializing the PID controller parameters
+        self.prev_e = 0.0  # previous tracking error, starts at 0
+        self.prev_int = 0.0  # previous tracking error integral, starts at 0
+        self.time = 0.0
+
+        self.v_0 = 0.0  # fixed robot linear velocity - starts at zero so the activities start on command
+        # inside VNC
+        # reference y for PID lateral control activity - zero so can be set interactively at runtime
+        self.y_ref = 0.0
+
+
     def cbEpisodeStart(self, msg: EpisodeStart):
         loaded = yaml.load(msg.other_payload_yaml, Loader=yaml.FullLoader)
         if "initial_pose" in loaded:
             ip = loaded["initial_pose"]
+            self.resetParameters()
             self.y_prev = float(ip["y"])
             self.theta_prev = float(np.deg2rad(ip["theta_deg"]))
+            if self.AIDO_eval:
+                self.PID_EXERCISE = True
+                self.v_0 = 0.2
         else:
             self.logwarn("No initial pose received. If you are running this on a real robot "
                          "you can ignore this message.")
