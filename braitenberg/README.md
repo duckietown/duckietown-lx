@@ -118,3 +118,8 @@ This should take a few minutes. This is not supposed to be an interactive proces
 ## April 16th, 2021
 
 - Removed parameters in agent_env.yaml - it was unclear how to modify them.
+
+## June 4th, 2021
+
+- This [student-contributed tool](https://github.com/martin0004/color_signature_tool) could help in the HSV part of the exercise.
+
