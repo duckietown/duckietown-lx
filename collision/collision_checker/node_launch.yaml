@@ -1,0 +1,3 @@
+node: collision_checker.CollisionChecker
+protocol: dt_protocols.protocol_collision_checking
+config: {}
