@@ -31,3 +31,16 @@ The final exercise counts towards grading and must be submitted for evaluation i
 ## Submit the homework
 
 - After completing the activities, you can proceed to `/06-PID-Control-Homework` and follow the instructions to submit your assignment.
+
+## Grading criteria (last updated on 13 June 2021)
+
+To pass, the submitted agent must produce at least a stable driving behavior. 
+
+The performance metrics that will determine pass / no pass are:
+
+Major Infractions smaller or equal to 20 **and** survival time bigger or equal to 40.
+
+You can verify the scores of your sumbissions on the [modcon challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-modcon/leaderboard) after your submission is evaluated.
+
+We reserve the right to change these performance metrics to filter out unstable agents at any time. 
+
