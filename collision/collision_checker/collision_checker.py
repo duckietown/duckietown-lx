@@ -43,7 +43,8 @@ def check_collision(
 
     collided = check_collision_list(rototranslated_robot, Wcoll)
 
-    return collided
+    # return a random choice
+    return random.uniform(0, 1) > 0.5
 
 
 def check_collision_list(A: List[PlacedPrimitive], B: List[PlacedPrimitive]) -> bool:
@@ -64,4 +65,5 @@ def check_collision_shape(a: PlacedPrimitive, b: PlacedPrimitive) -> bool:
     if isinstance(a, Circle) and isinstance(b, Rectangle):
         ...
     # for now let's return a random guess
-    return random.uniform(0, 1) > 0.5
+
+    return ...

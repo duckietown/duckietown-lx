@@ -110,6 +110,30 @@ The collision checker receives first a message `MapDefinition`, and then a seque
 
 In `collision_checker/collision_checker.py` you will find the template for the collision checker.
 
+## Visualization
+
+The challenges output will be a series of images.
+
+In the `queries` folder you will see the queries with the ground truth,
+as the image shows.
+
+![query](sample/queries/env18.png)
+
+Colors:
+
+- Blue is a pose in which the robot does not collide.
+- Red is a pose in which the robot collides.
+
+In the `results` folder you will see your results and the errors you made:
+
+![result](sample/results/env18-result.png)
+
+The colors mean the following:
+
+- Blue is a pose in which the robot does not collide and you guessed RIGHT.
+- Orange is a pose in which the robot does not collide and you guessed WRONG.
+- Red is a pose in which the robot collides and you guessed RIGHT.
+- Pink is a pose in which the robot collides and you guessed WRONG.
 
 ## Tips for implementing the collision checker
 
