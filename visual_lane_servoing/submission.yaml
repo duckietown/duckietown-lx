@@ -4,7 +4,7 @@
 challenge: [mooc-visservoing]
 
 protocol: aido2_db18_agent-z2
-user-label: "template-ros"
+user-label: "base-image-ml"
 user-payload: {}
 description: |
     This is the MOOC Robot Vision exercise

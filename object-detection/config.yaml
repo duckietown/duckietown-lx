@@ -1,0 +1,18 @@
+# Exercise configuration file
+
+agent_base: "duckietown_ml"
+ws_dir: "solution" # directory that contains the code the user needs to see
+lab_dir: .         # directory to be mounted into the jupyter container
+agent_run_cmd: "run_pedestrian.sh" # the script in "launchers" to run the agent with
+ros: true
+challenge: mooc-objdet
+rsync_exclude:
+  - "solution/duckietown_dataset"
+
+files:
+  - notebook:
+      target_dir: "solution/src/object_detection/src"
+      input_file: "solution/04-Integration/integration.ipynb"
+  - notebook:
+      target_dir: "solution/utils/"
+      input_file: "solution/02-Setup-Data-Collection/setup.ipynb"

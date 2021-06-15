@@ -1,4 +1,4 @@
-FROM duckietown/challenge-aido_lf-baseline-duckietown:daffy-amd64
+FROM duckietown/challenge-aido_lf-baseline-duckietown-ml:daffy-amd64
 
 RUN pip3 install -U "pip>=20.2"
 COPY requirements.* ./
