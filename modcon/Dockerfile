@@ -1,4 +1,5 @@
-FROM duckietown/challenge-aido_lf-baseline-duckietown:daffy-amd64
+ARG DOCKER_REGISTRY=docker.io
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:daffy-amd64
 
 RUN pip3 install -U "pip>=20.2"
 COPY requirements.* ./
