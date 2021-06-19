@@ -105,6 +105,7 @@ while True:
         break
 
 
+all_image_names = [str(idx) for idx in range(npz_index)]
 train_test_split(all_image_names, SPLIT_PERCENTAGE, DATASET_DIR)
 
 #run(f"rm -rf {DATASET_DIR}/images {DATASET_DIR}/labels")
