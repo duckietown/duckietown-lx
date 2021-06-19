@@ -56,29 +56,8 @@ class Wrapper():
             print("\n\n\n\n...DONE CONVERTING! NEXT TIME YOU RUN USING THE SAME MODEL, WE WON'T NEED TO DO THIS!\n\n\n")
 
         if get_device_hardware_brand() == DeviceHardwareBrand.JETSON_NANO:
-
             self.model = TRTModel(weight_file_path)
-
-            #debugging...
-            import cv2
-            x = cv2.imread("/code/solution/src/object_detection/sample_duckie.jpg")
-            #x = cv2.cvtColor(x, cv2.COLOR_BGR2RGB)
-            print(self.model.infer(x))
-
-            import cv2
-            x = cv2.imread("/code/solution/src/object_detection/real_20.jpg")
-            #x = cv2.cvtColor(x, cv2.COLOR_BGR2RGB)
-            print(self.model.infer(x))
-
-            import cv2
-            x = cv2.imread("/code/solution/src/object_detection/562.jpg")
-            #x = cv2.cvtColor(x, cv2.COLOR_BGR2RGB)
-            print(self.model.infer(x))
-
-            
-
-
-
+        
         else:
             self.model = AMD64Model(weight_file_path)
 
