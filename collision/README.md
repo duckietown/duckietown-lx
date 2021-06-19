@@ -19,6 +19,9 @@ Note: This is a code-only exercise: you don't need the Duckiebot.
 
 ## Instructions
 
+The template contained in this folder is a fully functional (wrong) solution. 
+You can try to evaluate/submit right away.
+
 Make sure you have an updated system using
 
     dts desktop update
@@ -46,6 +49,10 @@ because the test challenge must remain a secret.
 
 [test]: https://challenges.duckietown.org/v4/humans/challenges/mooc-collision-check-test
 [vali]: https://challenges.duckietown.org/v4/humans/challenges/mooc-collision-check-vali
+
+Now, go read `collision_checker.py`, which contains the template. There are some hints to get started there. 
+
+Modify the file and test if the program runs or check its performance with local evaluations over the validation dataset. And once satisfied with the program, submit to the challenges.
 
 ## Data structures and protocol
 
