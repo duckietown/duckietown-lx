@@ -259,8 +259,8 @@ class UnitTestPositionPID:
         self.L = baseline
         self.PIDController = PIDController
         self.delta_t = 0.2
-        self.test_horizont = 50.0
-        self.t1 = np.arange(0.0, self.test_horizont, self.delta_t)
+        self.test_horizon = 50.0
+        self.t1 = np.arange(0.0, self.test_horizon, self.delta_t)
         self.theta_prev = 0
         self.y_prev = 0
         self.y_ref = y_ref
@@ -338,7 +338,7 @@ class UnitTestPositionPID:
 
         # plot the control inputs
         plt.axis(
-            [0, self.test_horizont, np.min([np.min(u_r), np.min(u_l)]), np.max([
+            [0, self.test_horizon, np.min([np.min(u_r), np.min(u_l)]), np.max([
                 np.max(u_r), np.max(u_l)])]
         )
 
@@ -359,7 +359,7 @@ class UnitTestPositionPID:
         plt.axis(
             [
                 0,
-                self.test_horizont,
+                self.test_horizon,
                 np.min([np.min(y_hat_), np.min(err_)]),
                 np.max([np.max(y_hat_), np.max(err_)]),
             ]
