@@ -28,7 +28,7 @@ Make sure you have an updated system using
 
 To evaluate the submission,  go in `collision_checker` and use:
 
-    dts challenges evaluate --challenge mooc-collission-check-vali 
+    dts challenges evaluate --challenge mooc-collision-check-vali 
 
 To submit, use
 
@@ -43,7 +43,7 @@ To pass, you have to get at least 95% of the queries correct on the `mooc-collis
 
 Note that you cannot do
 
-    dts challenges evaluate --challenge mooc-collission-check-test  !! does not work !!
+    dts challenges evaluate --challenge mooc-collision-check-test  !! does not work !!
 
 because the test challenge must remain a secret.
 
