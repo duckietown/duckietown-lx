@@ -1,0 +1,19 @@
+protocol: protocol_planning-1
+challenge:
+- mooc-planning-dd-empty-vali
+- mooc-planning-cc-empty-vali
+- mooc-planning-dd-static-vali
+- mooc-planning-cc-static-vali
+- mooc-planning-dd-dynamic-vali
+- mooc-planning-cc-dynamic-vali
+- mooc-planning-dd-empty-test
+- mooc-planning-cc-empty-test
+- mooc-planning-dd-static-test
+- mooc-planning-cc-static-test
+- mooc-planning-dd-dynamic-test
+- mooc-planning-cc-dynamic-test
+user-label: "planning-exercise"
+user-payload: {}
+description: |
+  Empty planner
+
