@@ -1,15 +1,30 @@
+- [Exercise: Write a path planner](#exercise--write-a-path-planner)
+  * [Path planning problems](#path-planning-problems)
+    + [No obstacles](#no-obstacles)
+    + [Static obstacles](#static-obstacles)
+    + [Dynamic obstacles](#dynamic-obstacles)
+  * [Instructions](#instructions)
+    + [Passing criteria](#passing-criteria)
+  * [Data structures and protocol](#data-structures-and-protocol)
+    + [Extension: moving obstacles](#extension--moving-obstacles)
+  * [Visualization](#visualization)
+  * [Challenge scoring criteria](#challenge-scoring-criteria)
+  * [Tips for implementing the planners](#tips-for-implementing-the-planners)
+    + [Start with the empty obstacles challenge](#start-with-the-empty-obstacles-challenge)
+    + [Continue with the static obstacles case](#continue-with-the-static-obstacles-case)
+    + [Try the dynamic case](#try-the-dynamic-case)
+    + [Finally, the bounded curvature case](#finally--the-bounded-curvature-case)
+- [Activity: Go through the duckietown-world notebook sequence](#activity--go-through-the-duckietown-world-notebook-sequence)
 
-# Write a path planner
+# Exercise: Write a path planner
 
 In this series of exercises, you will write path planners of increasing complexity. 
 
 You need to have solved the `collision` exercise, because you will need a collision checker. 
 
 Note: This is a code-only exercise: you don't need the Duckiebot.
-
  
-
-## Path planning problems 
+## Path planning problems
 
 We will consider several variations of path planning problems.
 
@@ -27,21 +42,21 @@ For **environment complexity** we have 3 cases:
 2. The intermediate case is that of an environment with **static** obstacles.
 3. The advanced case is that of an environment with **dynamic** obstacles (with known motion).
 
-After the "Planning 1" and "Planning 2" modules, you should be able to do the challenges *without the curvature constraints*.
+After the "Planning 1" and "Planning 2" modules in the first edition for the MOOC, you should be able to do the challenges *without the curvature constraints*.
 
-For the challenges with the curvature constraints, you need an understanding of the materials in "Planning 3" (not released yet).
+For the most efficient solution of the challenges with the curvature constraints, you would need to know more about sampling=based motion planning, a topic that will be featured in the next edition of the MOOC.
 
 The combinations give rise to 6 challenges, summarized in the following table.
 
 
-| challenge                                                      | dynamic constraints     | environment        | MOOC modules   |
-|----------------------------------------------------------------|-------------------------|--------------------|----------------|
-| [mooc-planning-dd-empty-vali][mooc-planning-dd-empty-vali]     | differential drive      | empty              | Planning 1,2   |
-| [mooc-planning-cc-empty-vali][mooc-planning-cc-empty-vali]     | + curvature constraints | empty              | Planning 1,2,3 |
-| [mooc-planning-dd-static-vali][mooc-planning-dd-static-vali]   | differential drive      | static obstacles   | Planning 1,2   |
-| [mooc-planning-cc-static-vali][mooc-planning-cc-static-vali]   | + curvature constraints | static obstacles   | Planning 1,2,3 |
-| [mooc-planning-dd-dynamic-vali][mooc-planning-dd-dynamic-vali] | differential drive      | dynamic obstacles  | Planning 1,2   |
-| [mooc-planning-cc-dynamic-vali][mooc-planning-cc-dynamic-vali] | + curvature constraints | dynamic obstacles  | Planning 1,2,3 |
+| challenge                                                      | dynamic constraints     | environment        |
+|----------------------------------------------------------------|-------------------------|--------------------|
+| [mooc-planning-dd-empty-vali][mooc-planning-dd-empty-vali]     | differential drive      | empty              |
+| [mooc-planning-cc-empty-vali][mooc-planning-cc-empty-vali]     | + curvature constraints | empty              |
+| [mooc-planning-dd-static-vali][mooc-planning-dd-static-vali]   | differential drive      | static obstacles   |
+| [mooc-planning-cc-static-vali][mooc-planning-cc-static-vali]   | + curvature constraints | static obstacles   |
+| [mooc-planning-dd-dynamic-vali][mooc-planning-dd-dynamic-vali] | differential drive      | dynamic obstacles  |
+| [mooc-planning-cc-dynamic-vali][mooc-planning-cc-dynamic-vali] | + curvature constraints | dynamic obstacles  |
 
 [mooc-planning-dd-empty-vali]: https://challenges.duckietown.org/v4/humans/challenges/mooc-planning-dd-empty-vali
 [mooc-planning-cc-empty-vali]: https://challenges.duckietown.org/v4/humans/challenges/mooc-planning-cc-empty-vali
@@ -72,13 +87,13 @@ You can try to evaluate/submit it right away.
 
 Make sure you have an updated system using
 
-```shell 
+```shell
 dts desktop update
 ```
 
 To evaluate the submission, go in `planner/` and use:
 
-```shell 
+```shell
 dts challenges evaluate --challenge mooc-planning-dd-static-vali
 ```
 
@@ -100,7 +115,7 @@ Note that for the Spring 2021 MOOC this is not a graded exercise.
 To pass, you have to get at least 95% of the queries correct on the `*-test` challenges.
 (This allows some slack, so that you can experiment with probabilistic algorithms).
 
- 
+
 ## Data structures and protocol
 
 The data structures are defined in the `dt-protocols-daffy` package, which you can install via `pip`, or directly clone from the [repo][repo].
@@ -109,7 +124,6 @@ Note that from time to time we make changes to the code, so if there are weird e
 
 [repo]: https://github.com/duckietown/dt-protocols
 
- 
 You can see in [`collision_protocol.py`][file] the data structures used.
 
 [file]: https://github.com/duckietown/dt-protocols/blob/daffy/src/dt_protocols/collision_protocol.py
@@ -127,8 +141,7 @@ This is the protocol:
 
 More in detail:
 
-The `PlanningSetup` object is an extension of the `MapDefinition` type used in the previous exercise. `MapDefinition` contains 
-a description of the environment and robot body. `PlanningSetup` extends it with the planning constraints.
+The `PlanningSetup` object is an extension of the `MapDefinition` type used in the previous exercise. `MapDefinition` contains a description of the environment and robot body. `PlanningSetup` extends it with the planning constraints.
 
 ```python
 @dataclass
@@ -262,7 +275,7 @@ On the right, you will see plots for:
 * linear velocity
 * angular velocity
 * path curvature (+inf when you turn in place)
-* distance from obstacles 
+* distance from obstacles
 
 The red bars identify points in which a constraint was violated. In this case, the robot violates the constraint of not colliding with obstacles. 
 
@@ -276,7 +289,7 @@ There are 5 scoring criteria, from most to least important:
 3. `duration`: the average length of the trajectory. Lower is better.
 4. `complexity`: the average number of steps in your plan. The fewer steps, the better.
 5. `avg_min_distance`: The average distance from the obstacles. Higher is better: we prefer plans with more clearance.
- 
+
 ## Tips for implementing the planners
 
 
@@ -318,7 +331,7 @@ You should connect two nodes with an edge if `connect_poses` can find a plan to 
 
 ### Try the dynamic case
 
-The dynamic case is conceptually the same. 
+The dynamic case is conceptually the same.
 
 You should use spatio-temporal nodes. Each node has coordinates `(x,y,theta,t)`.
 
@@ -337,4 +350,25 @@ because you don't want the fastest plan, but rather the plan that takes exactly 
 
 You can try to hack this case using the grid search approach.
 
-However, a better approach is to wait for the "Planning 3" module, where we discuss about *steering functions* and *sampling-based methods*. 
+However, a better approach is to wait for the next edition of the MOOC, in which we discuss about *steering functions* and *sampling-based methods*. 
+
+# Activity: Go through the duckietown-world notebook sequence
+
+
+First clone `duckietown-world` in this directory:
+
+```shell
+git clone https://github.com/duckietown/duckietown-world.git
+```
+
+Then run the lab container:
+
+```shell
+dts exercises build
+dts exercises lab --vnc 
+```
+
+When inside the Jupyter notebook, navigate to the `duckietown-world/notebooks` directory.
+There are a few notebooks. The most relevant for you is `20-graphs-with-networkx.pynb`.
+
+<img src="_media/notebook.png" style="width: 30%">

@@ -124,7 +124,7 @@ The challenges output will be a series of images.
 In the `queries` folder you will see the queries with the ground truth,
 as the image shows.
 
-![query](sample/queries/env18.png)
+![query](env18.png)
 
 Colors:
 
@@ -133,7 +133,7 @@ Colors:
 
 In the `results` folder you will see your results and the errors you made:
 
-![result](sample/results/env18-result.png)
+![result](env18-result.png)
 
 The colors mean the following:
 
