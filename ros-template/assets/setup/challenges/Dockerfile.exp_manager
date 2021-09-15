@@ -1,0 +1,8 @@
+ARG AIDO_REGISTRY
+FROM ${AIDO_REGISTRY}/duckietown/challenge-aido_lf-experiment_manager:daffy-amd64
+
+ARG SCENARIOS
+
+RUN echo scenarios ${SCENARIOS}
+COPY ${SCENARIOS} /scenarios
+RUN find /scenarios
