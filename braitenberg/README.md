@@ -18,7 +18,10 @@ If you have a Duckiebot, also do
 
 Run
 
-    dts exercises lab
+```
+dts exercises build
+dts exercises lab
+```
 
 Open the web link that will appear. You are in [Jupyter Lab][lab] in the 
 folder `solution`. Open the notebook `braitenberg01`.
@@ -46,7 +49,13 @@ To test in simulation, use the command
     $ dts exercises test --sim
 
 There will be two URLs popping up to open in your browser: one is the direct view of the experiment.
-The other is VNC and not useful for this exercise. 
+The other is VNC and not useful for this exercise. Ignore it.
+
+This simulation test will be very slow! We suggest opening the simulation viewer and enjoying a cup of tea/coffee while
+your agent does its job. Monitor how it acts! You might get some ideas on how to fix your matrices or the agent.py.
+
+This simulation test is just that, a test. Don't trust it fully. If you want a more accurate metric of performance, continue
+reading to the `Do local evaluations` section bellow.
 
 
 ### 🚙 Testing on the robot
@@ -73,12 +82,31 @@ At the end, to submit your homework, you should submit your agent using
 
     dts challenges submit
 
-The robot should travel at least an average of 2 meters from the starting point. 
-
-(**Note:** somebody already found a way to cheat the previous metric that was here; we need to implement this new metric.)
+The robot should travel at least an average of 2 meters from the starting point.
 
 (Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that we are still calibrating against the huge variety of participants.)
 
+If an error of this form occurs
+
+```bash
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
+    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
+    f(rest, environment)
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
+    br = submission_build(
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
+    raise ZException(msg, available=list(credentials))
+zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
+available:
+```
+
+you need to log into docker using `dts`. Use this command: 
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
 
 ### Happy life all together in harmony 
 
@@ -101,6 +129,8 @@ then the old submission to the challenge will be related.
 There is also a command `dts challenges retire`.
 
 Finally, you can do this [on the Challenges website](https://challenges.duckietown.org/v4/).
+
+
 
 ### Do local evaluations
 
