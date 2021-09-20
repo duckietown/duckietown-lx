@@ -1,7 +1,7 @@
-challenge: [mooc-objdet]
+challenge: [mooc-ros-template]
 
 protocol: aido2_db18_agent-z2
-user-label: "objdet exercise"
+user-label: "ROS template"
 user-payload: {}
 description: |
-  This is the MOOC Object Detection exercise
+  This is a template exercise build on ROS
