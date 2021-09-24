@@ -9,5 +9,5 @@ source /code/solution/devel/setup.bash --extend
 
 roslaunch --wait agent agent_node.launch &
 roslaunch --wait car_interface all.launch veh:=$VEHICLE_NAME &
-roslaunch --wait duckietown_demos lane_following.launch veh:=$VEHICLE_NAME
+roslaunch --wait duckietown_demos lane_following.launch
 
