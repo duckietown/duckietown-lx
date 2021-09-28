@@ -42,6 +42,8 @@ The skeleton is in `solution/agent.py`. Read through and see how it uses the thi
 
 Feel free to change anything.
 
+**Do note that you will most probably need to edit the BraitenbergAgentConfig class! Its current gain and const values are off.** They are much larger than they should be, as a way to help you finetune them.
+
 ### 💻 Testing in simulation
 
 To test in simulation, use the command
