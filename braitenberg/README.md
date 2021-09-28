@@ -42,7 +42,9 @@ The skeleton is in `solution/agent.py`. Read through and see how it uses the thi
 
 Feel free to change anything.
 
-**Do note that you will most probably need to edit the BraitenbergAgentConfig class! Its current gain and const values are off.** They are much larger than they should be, as a way to help you finetune them.
+**Do note that you will most probably need to edit the BraitenbergAgentConfig class! Its current gain and const values are off.** They are much larger than they should be, as a way to help you finetune them. 
+
+At the begining of an evaluation episode, the `max` and `min` values for both motors will be off, but as the agent lives, it'll adjust itself. This slight change in motor values is normal.
 
 ### 💻 Testing in simulation
 
