@@ -63,14 +63,14 @@ To test in simulation, use the command
 
     $ dts exercises test --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the experiment.
+There will be two URLs popping up to open in your browser: one is the direct view of the experiment (probably `http://localhost:8090`).
 The other is VNC and not useful for this exercise. Ignore it.
 
 This simulation test will be very slow! We suggest opening the simulation viewer and enjoying a cup of tea/coffee while
 your agent does its job. Monitor how it acts! You might get some ideas on how to fix your matrices or the agent.py.
 
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate metric of performance, continue
-reading to the `Do local evaluations` section bellow.
+reading to the `Do local evaluations` section below.
 
 
 ### 🚙 Testing on the robot
