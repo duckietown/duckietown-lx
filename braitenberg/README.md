@@ -1,7 +1,16 @@
 
 # Instructions
 
+
+
 ## Phase 0: system update
+
+
+### Pull from the upstream remote
+
+    git pull upstream
+    git merge upstream/montreal21
+    
 
 Make sure you have an updated system using
 
@@ -14,7 +23,9 @@ If you have a Duckiebot, also do
 
     dts duckiebot update
 
-## Phase 1: walkthrough of notebooks
+
+
+## Phase 1: Walkthrough of notebooks
 
 Run
 
@@ -34,7 +45,7 @@ The notebooks guide you to fill out some functions in `preprocessing.py` and `co
 
 They will also indicate the use of other tools.
 
-## Phase 2: experiment in finding connections, modifying the agent
+## Phase 2: Experiment in finding connections, modifying the agent
 
 In this phase you have to experiment with the rest of the agent.
 
@@ -80,7 +91,7 @@ This is the modality "drivers running on the robot, agent runs on the laptop."
 
 [comment]: <> (For additional information on how to navigate the `dt-exercises` infrastructure you can watch [this tutorial]&#40;https://docs.duckietown.org/daffy/opmanual_duckiebot/out/running_exercies.html&#41;.)
 
-## Phase 3: make a submission
+## Phase 3: Make a submission
 
 At the end, to submit your homework, you should submit your agent using
 
@@ -145,15 +156,4 @@ We suggest you evaluate your work using the command
 This should take a few minutes. This is not supposed to be an interactive process: just let it run, and when you return, you will find the output in a folder, including videos, and trajectories, and all the statistics you find on the website.
 
 
-
-# Updates
- 
-
-## April 16th, 2021
-
-- Removed parameters in agent_env.yaml - it was unclear how to modify them.
-
-## June 4th, 2021
-
-- This [student-contributed tool](https://github.com/martin0004/color_signature_tool) could help in the HSV part of the exercise.
 
