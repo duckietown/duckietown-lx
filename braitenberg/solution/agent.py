@@ -99,6 +99,7 @@ class BraitenbergAgent:
         pwm_left = const + ls * gain
         pwm_right = const + rs * gain
 
+        return 1.0, 0.7
         return pwm_left, pwm_right
 
     def on_received_get_commands(self, context: Context, data: GetCommands):

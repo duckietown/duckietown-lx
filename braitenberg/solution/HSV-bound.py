@@ -16,8 +16,8 @@ def nothing(x):
 cv2.namedWindow("image")
 
 frame0 = dcu.image_cv_from_jpg_fn(sys.argv[1])
-lastL = np.array([171, 140, 0])
-lastU = np.array([179, 200, 255])
+lastL = np.array([0, 0, 0])
+lastU = np.array([179, 255, 255])
 
 # create trackbars for color change
 cv2.createTrackbar("lowH", "image", lastL[0], 179, nothing)
