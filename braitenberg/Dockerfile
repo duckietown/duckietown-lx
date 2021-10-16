@@ -1,8 +1,12 @@
 
-ARG AIDO_REGISTRY
-FROM ${AIDO_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:daffy-amd64
+ARG DOCKER_REGISTRY
+ARG ARCH=amd64
+ARG MAJOR=daffy
+ARG BASE_TAG=${MAJOR}-${ARCH}
 
-ARG PIP_INDEX_URL
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:${BASE_TAG}
+
+ARG PIP_INDEX_URL="https://pypi.org/simple"
 ENV PIP_INDEX_URL=${PIP_INDEX_URL}
 WORKDIR /agent
 
