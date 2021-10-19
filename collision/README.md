@@ -28,7 +28,7 @@ Make sure you have an updated system using
 
 To evaluate the submission,  go in `collision_checker` and use:
 
-    dts challenges evaluate --challenge mooc-collission-check-vali 
+    dts challenges evaluate --challenge mooc-collision-check-vali 
 
 To submit, use
 
@@ -43,7 +43,7 @@ To pass, you have to get at least 95% of the queries correct on the `mooc-collis
 
 Note that you cannot do
 
-    dts challenges evaluate --challenge mooc-collission-check-test  !! does not work !!
+    dts challenges evaluate --challenge mooc-collision-check-test  !! does not work !!
 
 because the test challenge must remain a secret.
 
@@ -124,7 +124,7 @@ The challenges output will be a series of images.
 In the `queries` folder you will see the queries with the ground truth,
 as the image shows.
 
-![query](sample/queries/env18.png)
+![query](env18.png)
 
 Colors:
 
@@ -133,7 +133,7 @@ Colors:
 
 In the `results` folder you will see your results and the errors you made:
 
-![result](sample/results/env18-result.png)
+![result](env18-result.png)
 
 The colors mean the following:
 
