@@ -8,3 +8,4 @@ user-label: "mooc-modcon"
 user-payload: {}
 description: |
     This is the MOOC PID controller exercise
+validation_challenge: aido-hello-sim-validation
