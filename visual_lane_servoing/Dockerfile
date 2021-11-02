@@ -12,8 +12,6 @@ RUN python3 -m pip install  -r .requirements.txt
 
 RUN python3 -m pip list
 
-RUN mkdir /code/solution
-
 COPY solution /code/solution
 COPY launchers /code
 
