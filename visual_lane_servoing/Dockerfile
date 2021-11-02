@@ -4,7 +4,7 @@ ARG MAJOR=daffy
 ARG BASE_TAG=${MAJOR}-${ARCH}
 
 
-FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown-ml:${BASE_TAG}
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:${BASE_TAG}
 
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
