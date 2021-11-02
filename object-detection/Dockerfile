@@ -1,13 +1,18 @@
-FROM duckietown/challenge-aido_lf-baseline-duckietown-ml:daffy-amd64
+ARG DOCKER_REGISTRY=docker.io
+ARG ARCH=amd64
+ARG MAJOR=daffy
+ARG BASE_TAG=${MAJOR}-${ARCH}
 
-RUN pip3 install -U "pip>=20.2"
+
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown-ml:${BASE_TAG}
+
 COPY requirements.* ./
 RUN cat requirements.* > .requirements.txt
-RUN  pip3 install --use-feature=2020-resolver -r .requirements.txt
+ARG PIP_INDEX_URL="https://pypi.org/simple"
+ENV PIP_INDEX_URL=${PIP_INDEX_URL}
+RUN python3 -m pip install  -r .requirements.txt
 
-RUN pip list
-
-RUN mkdir /code/solution
+RUN python3 -m pip list
 
 COPY solution /code/solution
 COPY launchers /code
