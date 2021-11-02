@@ -9,3 +9,4 @@ user-label: exercises_braitenberg
 # any JSON payload
 user-payload:
   exercise: braitenberg
+validation_challenge: aido-hello-sim-validation

@@ -1,6 +1,7 @@
-FROM duckietown/dt-gui-tools:daffy-amd64
+ARG DOCKER_REGISTRY=docker.io
+FROM ${DOCKER_REGISTRY}/duckietown/dt-gui-tools:daffy-amd64
 
-RUN pip3 install -U \
+RUN python3 -m pip install -U \
     aido-protocols-daffy
 
 COPY assets/vnc/image/root/Desktop/. /root/Desktop/
