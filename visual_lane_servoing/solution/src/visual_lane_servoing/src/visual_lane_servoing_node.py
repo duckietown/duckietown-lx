@@ -243,8 +243,8 @@ class LaneServoingNode(DTROS):
         car_control_msg = Twist2DStamped()
         car_control_msg.header.stamp = rospy.Time.now()
 
-        car_control_msg.v = 1#u[0]  # v
-        car_control_msg.omega =0# u[1]  # omega
+        car_control_msg.v = u[0]  # v
+        car_control_msg.omega = u[1]  # omega
 
         self.pub_car_cmd.publish(car_control_msg)
 
