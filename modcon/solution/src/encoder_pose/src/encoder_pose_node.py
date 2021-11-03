@@ -149,6 +149,9 @@ class EncoderPoseNode(DTROS):
             if self.AIDO_eval:
                 self.PID_EXERCISE = True
                 self.v_0 = 0.2
+                # Feed updated initial command towards ROS agent solution in 2nd episode LF-full-loop-001
+                u = [self.v_0, 0.0]
+                self.publishCmd(u)
         else:
             self.logwarn("No initial pose received. If you are running this on a real robot "
                          "you can ignore this message.")
