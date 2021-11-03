@@ -4,7 +4,8 @@
 challenge: [mooc-modcon]
 
 protocol: aido2_db18_agent-z2
-user-label: "template-ros"
+user-label: "mooc-modcon"
 user-payload: {}
 description: |
     This is the MOOC PID controller exercise
+validation_challenge: aido-hello-sim-validation

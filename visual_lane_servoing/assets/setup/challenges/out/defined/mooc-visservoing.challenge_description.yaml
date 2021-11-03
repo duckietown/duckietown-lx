@@ -42,7 +42,7 @@ steps:
       services:
         evaluator:
           build: null
-          image: docker.io/afdaniele/duckietown-challenges@sha256:cdad69e965121eb47dba0a85663e9bf300a1329476780d924eb344ff1f0df4ed
+          image: docker.io/andreacensi/duckietown-challenges@sha256:dafa90a3ca7f1bb59915adfd8cd67264932a9dbb630762783d6be6c28bf58c05
           ports:
           - external: null
             internal: 10123
@@ -82,7 +82,7 @@ steps:
               '
         simulator:
           build: null
-          image: docker.io/afdaniele/duckietown-challenges@sha256:74989d3337d7fc221b8550c34dab1359eb18109113950b27deaa647a983417e0
+          image: docker.io/andreacensi/duckietown-challenges@sha256:f6e97655c6dbe5966e76cbba2afb40fb8b138b1c95181b8e862852ae64b20356
           ports: []
           environment:
             AIDONODE_CONFIG: "env_constructor: Simulator\nenv_parameters:\n  max_steps:\

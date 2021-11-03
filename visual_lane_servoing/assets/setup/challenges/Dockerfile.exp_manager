@@ -1,5 +1,5 @@
-ARG AIDO_REGISTRY
-FROM ${AIDO_REGISTRY}/duckietown/challenge-aido_lf-experiment_manager:daffy-amd64
+ARG DOCKER_REGISTRY
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-experiment_manager:daffy-amd64
 
 ARG SCENARIOS
 

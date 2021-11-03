@@ -1,4 +1,5 @@
-FROM duckietown/dt-gui-tools:daffy-amd64
+ARG DOCKER_REGISTRY=docker.io
+FROM ${DOCKER_REGISTRY}/duckietown/dt-gui-tools:daffy-amd64
 
 RUN pip3 install -U \
     duckietown-utils-daffy \
