@@ -1,0 +1,22 @@
+scores:
+
+  - name: survival_time_median
+    short: Survival time
+    description: |
+      This is the median survival time. The simulation
+      is terminated when the car goes outside of the road
+      or it crashes with an obstacle or pedestrian.
+    order: higher-is-better
+    discretization: 0.1
+
+  - name: driven_lanedir_consec_median
+    short: Traveled distance
+    description: |
+      This is the median distance traveled, *along a lane*.
+      (That is, going in circles will not make this metric increase.)
+
+      This is discretized to tiles.
+    order: higher-is-better
+    discretization: 0.1
+
+

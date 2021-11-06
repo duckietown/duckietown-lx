@@ -1,0 +1,5 @@
+aido-protocols-daffy
+
+
+git+https://github.com/Velythyl/dataclasses-spoof
+git+https://github.com/duckietown/lib-dt-mooc-2021
