@@ -1,7 +1,16 @@
 
 # Instructions
 
+
+
 ## Phase 0: system update
+
+
+### Pull from the upstream remote
+
+    git pull upstream
+    git merge upstream/montreal21
+    
 
 Make sure you have an updated system using
 
@@ -14,11 +23,16 @@ If you have a Duckiebot, also do
 
     dts duckiebot update
 
-## Phase 1: walkthrough of notebooks
+
+
+## Phase 1: Walkthrough of notebooks
 
 Run
 
-    dts exercises lab
+```
+dts exercises build
+dts exercises lab
+```
 
 Open the web link that will appear. You are in [Jupyter Lab][lab] in the 
 folder `solution`. Open the notebook `braitenberg01`.
@@ -31,7 +45,7 @@ The notebooks guide you to fill out some functions in `preprocessing.py` and `co
 
 They will also indicate the use of other tools.
 
-## Phase 2: experiment in finding connections, modifying the agent
+## Phase 2: Experiment in finding connections, modifying the agent
 
 In this phase you have to experiment with the rest of the agent.
 
@@ -39,14 +53,24 @@ The skeleton is in `solution/agent.py`. Read through and see how it uses the thi
 
 Feel free to change anything.
 
+**Do note that you will most probably need to edit the BraitenbergAgentConfig class! Its current gain and const values are off.** They are much larger than they should be, as a way to help you finetune them. 
+
+At the begining of an evaluation episode, the `max` and `min` values for both motors will be off, but as the agent lives, it'll adjust itself. This slight change in motor values is normal.
+
 ### 💻 Testing in simulation
 
 To test in simulation, use the command
 
     $ dts exercises test --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the experiment.
-The other is VNC and not useful for this exercise. 
+There will be two URLs popping up to open in your browser: one is the direct view of the experiment (probably `http://localhost:8090`).
+The other is VNC and not useful for this exercise. Ignore it.
+
+This simulation test will be very slow! We suggest opening the simulation viewer and enjoying a cup of tea/coffee while
+your agent does its job. Monitor how it acts! You might get some ideas on how to fix your matrices or the agent.py.
+
+This simulation test is just that, a test. Don't trust it fully. If you want a more accurate metric of performance, continue
+reading to the `Do local evaluations` section below.
 
 
 ### 🚙 Testing on the robot
@@ -67,18 +91,37 @@ This is the modality "drivers running on the robot, agent runs on the laptop."
 
 [comment]: <> (For additional information on how to navigate the `dt-exercises` infrastructure you can watch [this tutorial]&#40;https://docs.duckietown.org/daffy/opmanual_duckiebot/out/running_exercies.html&#41;.)
 
-## Phase 3: make a submission
+## Phase 3: Make a submission
 
 At the end, to submit your homework, you should submit your agent using
 
     dts challenges submit
 
-The robot should travel at least an average of 2 meters from the starting point. 
-
-(**Note:** somebody already found a way to cheat the previous metric that was here; we need to implement this new metric.)
+The robot should travel at least an average of 2 meters from the starting point.
 
 (Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that we are still calibrating against the huge variety of participants.)
 
+If an error of this form occurs
+
+```bash
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
+    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
+    f(rest, environment)
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
+    br = submission_build(
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
+    raise ZException(msg, available=list(credentials))
+zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
+available:
+```
+
+you need to log into docker using `dts`. Use this command: 
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
 
 ### Happy life all together in harmony 
 
@@ -102,6 +145,8 @@ There is also a command `dts challenges retire`.
 
 Finally, you can do this [on the Challenges website](https://challenges.duckietown.org/v4/).
 
+
+
 ### Do local evaluations
 
 We suggest you evaluate your work using the command
@@ -111,15 +156,4 @@ We suggest you evaluate your work using the command
 This should take a few minutes. This is not supposed to be an interactive process: just let it run, and when you return, you will find the output in a folder, including videos, and trajectories, and all the statistics you find on the website.
 
 
-
-# Updates
- 
-
-## April 16th, 2021
-
-- Removed parameters in agent_env.yaml - it was unclear how to modify them.
-
-## June 4th, 2021
-
-- This [student-contributed tool](https://github.com/martin0004/color_signature_tool) could help in the HSV part of the exercise.
 
