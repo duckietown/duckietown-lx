@@ -42,7 +42,7 @@ steps:
       services:
         evaluator:
           build: null
-          image: docker.io/liampaull/duckietown-challenges@sha256:20dbf7fd6f5c53760e0f6e079228a4a6aee00a8e229b6e08791438638ec4430c
+          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:93c82607075d9f6cb26b4d74a5e314fbe3294613d0ffb9214adeddfc4a5b619f
           ports:
           - external: null
             internal: 10123
@@ -82,7 +82,7 @@ steps:
               '
         simulator:
           build: null
-          image: docker.io/liampaull/duckietown-challenges@sha256:74989d3337d7fc221b8550c34dab1359eb18109113950b27deaa647a983417e0
+          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:a298d6cb44bb2703ad3e4997f9cf033d97cc885d70b06d46ae0de6b723d40183
           ports: []
           environment:
             AIDONODE_CONFIG: "env_constructor: Simulator\nenv_parameters:\n  max_steps:\
