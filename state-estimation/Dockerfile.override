@@ -1,0 +1,7 @@
+ARG DOCKER_REGISTRY=docker.io
+FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:daffy
+COPY requirements.txt .
+RUN pip3 install -r requirements.txt
+RUN pip3 uninstall dataclasses -y
+
+# TODO this file isnt needed once the machine learning env is available to dt-exercises

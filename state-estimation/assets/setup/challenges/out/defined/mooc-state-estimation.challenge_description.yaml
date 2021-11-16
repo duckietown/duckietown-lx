@@ -1,0 +1,170 @@
+ct:
+  steps:
+  - sim
+  transitions:
+  - second: sim
+    condition:
+      step: START
+      status: success
+  - second: SUCCESS
+    condition:
+      step: sim
+      status: success
+  - second: FAILED
+    condition:
+      step: sim
+      status: failed
+  - second: ERROR
+    condition:
+      step: sim
+      status: error
+name: mooc-state-estimation
+tags:
+- visible
+- aido
+- aido-embodied
+- LF
+- v4
+- simulation
+- protocol-normal
+- mooc
+steps:
+  sim:
+    name: sim
+    title: Simulation step
+    timeout: 10000
+    description: ''
+    features_required:
+      compute_sims: 1
+    evaluation_parameters:
+      version: '3'
+      services:
+        evaluator:
+          build: null
+          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:5a450ef8e9043004e678a3b472874bcd254730422029668470b37bacc5aecb91
+          ports:
+          - external: null
+            internal: 10123
+          environment:
+            experiment_manager_parameters: 'episodes_per_scenario: 3
+
+              episode_length_s: 60.0
+
+              min_episode_length_s: 0.0
+
+              seed: 20200922
+
+              physics_dt: 0.05
+
+              max_failures: 2
+
+              fifo_dir: /fifos
+
+              sim_in: /fifos/simulator-in
+
+              sim_out: /fifos/simulator-out
+
+              sm_in: /fifos/scenario_maker-in
+
+              sm_out: /fifos/scenario_maker-out
+
+              timeout_initialization: 120
+
+              timeout_regular: 120
+
+              port: 10123
+
+              scenarios:
+
+              - /scenarios
+
+              '
+        simulator:
+          build: null
+          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:a298d6cb44bb2703ad3e4997f9cf033d97cc885d70b06d46ae0de6b723d40183
+          ports: []
+          environment:
+            AIDONODE_CONFIG: "env_constructor: Simulator\nenv_parameters:\n  max_steps:\
+              \ 500001 # we don't want the gym to reset itself\n  domain_rand: 0\n\
+              \  camera_width: 640\n  camera_height: 480\n  distortion: true\n  num_tris_distractors:\
+              \ 0\n  #color_ground: [0, 0, 0] # black\n  #color_sky: [0, 0, 0.1] #\
+              \ dark blue\n  enable_leds: true\n\nterminate_on_ool: false\nterminate_on_out_of_tile:\
+              \ true\nterminate_on_collision: true\ntopdown_resolution: 900\nmax_pixel_mov:\
+              \ 1000\ndebug_profile: False\ndebug_profile_summary: True\n"
+            AIDONODE_DATA_IN: /fifos/simulator-in
+            AIDONODE_DATA_OUT: fifo:/fifos/simulator-out
+        solution-ego0:
+          build: null
+          image: SUBMISSION_CONTAINER
+          ports: []
+          environment:
+            AIDONODE_NAME: ego0
+            AIDONODE_DATA_IN: /fifos/ego0-in
+            AIDONODE_DATA_OUT: fifo:/fifos/ego0-out
+title: MOOC - State Estimation
+scoring:
+  scores:
+  - name: driven_lanedir_consec_median
+    order: higher-is-better
+    short: Traveled distance
+    description: 'This is the median distance traveled, *along a lane*.
+
+      (That is, going in circles will not make this metric increase.)
+
+      This is discretized to tiles.
+
+      '
+    discretization: 0.62
+  - name: survival_time_median
+    order: higher-is-better
+    short: Survival time
+    description: 'This is the median survival time. The simulation
+
+      is terminated when the car goes outside of the road
+
+      or it crashes with an obstacle or pedestrian.
+
+      '
+    discretization: 2.0
+  - name: deviation-center-line_median
+    order: lower-is-better
+    short: Lateral deviation
+    description: 'This is the median lateral deviation from the center line.
+
+      '
+    discretization: 0.01
+  - name: in-drivable-lane_median
+    order: lower-is-better
+    short: Major infractions
+    description: 'This is the median of the time spent outside of the drivable zones.
+
+      For example this penalizes driving in the wrong lane.
+
+      '
+    discretization: 0.2
+protocol: aido2_db18_agent-z2
+date_open: 2021-01-30 00:00:00+00:00
+date_close: 2021-12-31 00:00:00+00:00
+description: 'This is the challenge is part of the the MOOC''s state estimation exercise.
+
+
+  For more information about the "Self-Driving Cars with Duckietown" MOOC, visit [duckietown.org].
+
+
+  [duckietown.org]: https://www.duckietown.org/mooc
+
+  '
+transitions:
+- - START
+  - success
+  - sim
+- - sim
+  - success
+  - SUCCESS
+- - sim
+  - failed
+  - FAILED
+- - sim
+  - error
+  - ERROR
+dependencies: {}
