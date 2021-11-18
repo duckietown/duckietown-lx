@@ -44,7 +44,7 @@ def save_npz(img, boxes, classes):
 
 # some setup
 seed(123)
-MAX_STEPS = 1000
+MAX_STEPS = 10
 nb_of_steps = 0
 
 # we interate over several maps to get more diverse data
