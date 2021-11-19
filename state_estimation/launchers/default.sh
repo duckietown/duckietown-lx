@@ -1,27 +1,18 @@
 #!/bin/bash
 
+
 source /environment.sh
+
+source /opt/ros/noetic/setup.bash
+source /code/catkin_ws/devel/setup.bash --extend
 source /code/submission_ws/devel/setup.bash --extend
 source /code/solution/devel/setup.bash --extend
 
-# initialize launch file
-dt-launchfile-init
+set -eux
 
-# YOUR CODE BELOW THIS LINE
-# ----------------------------------------------------------------------------
+dt-exec-BG roslaunch --wait agent agent_node.launch
+dt-exec-BG roslaunch --wait car_interface all.launch veh:=$VEHICLE_NAME
 
-# NOTE: Use the variable DT_REPO_PATH to know the absolute path to your code
-# NOTE: Use `dt-exec COMMAND` to run the main process (blocking process)
+dt-exec-FG roslaunch --wait duckietown_demos lane_following.launch || true
 
-# launching app
-
-dt-exec roslaunch --wait agent agent_node.launch
-dt-exec roslaunch --wait car_interface all.launch veh:=$VEHICLE_NAME
-dt-exec roslaunch --wait duckietown_demos lane_following.launch veh:=$VEHICLE_NAME
-
-
-# ----------------------------------------------------------------------------
-# YOUR CODE ABOVE THIS LINE
-
-# wait for app to end
-dt-launchfile-join
+copy-ros-logs
