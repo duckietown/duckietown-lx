@@ -1,0 +1,13 @@
+# Exercise configuration file
+
+agent_base: "duckietown_baseline"
+ws_dir: "solution" # directory that contains the code the user needs to see
+lab_dir: .         # directory to be mounted into the jupyter container
+agent_run_cmd: "default.sh" # the launcher to run on startup
+ros: true
+challenge: mooc-state-estimation
+
+files:
+  - notebook:
+      target_dir: "solution/src/lane_filter/include/lane_filter"
+      input_file: "solution/03-histogram-filter/histogram_filter.ipynb"
