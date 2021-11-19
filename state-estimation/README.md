@@ -74,4 +74,6 @@ Then finally submit with
 
 Your submitted agent should be able to navigate an entire loop in Duckietown. 
 
+N.B. This bar could be subject to change if deemed to difficult due to the downstream controller tuning.
+
 You can verify the scores of your sumbissions on the [mooc-state-estimation challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-state-estimation/leaderboard) after your submission is evaluated.
