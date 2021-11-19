@@ -34,14 +34,12 @@ class LaneFilterNode(DTROS):
 
     Subscribers:
         ~segment_list (:obj:`SegmentList`): The detected line segments from the line detector
-        ~car_cmd (:obj:`Twist2DStamped`): The car commands executed. Used for the predict step of the filter
-        ~change_params (:obj:`String`): A topic to temporarily changes filter parameters for a finite time only
-        ~switch (:obj:``BoolStamped): A topic to turn on and off the node. WARNING : to be replaced with a service call to the provided mother node switch service
-        ~fsm_mode (:obj:`FSMState`): A topic to change the state of the node. WARNING : currently not implemented
-        ~(left/right)_wheel_encoder_node/tick (:obj: `WheelEncoderStamped`): Information from the wheel encoders
+        ~(left/right)_wheel_encoder_node/tick (:obj: `WheelEncoderStamped`): Information from the wheel encoders\
+        ~episode_start (:obj: `EpisodeStart`): The signal that a new episode has started 
 
     Publishers:
         ~lane_pose (:obj:`LanePose`): The computed lane pose estimate
+        ~belief_img (:obj:`Image`): A visualization of the belief histogram as an image
 
     """
 
