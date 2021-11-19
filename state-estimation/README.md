@@ -50,7 +50,7 @@ gauge the performance of your model. In noVNC, click on the `rqt_image_view` ico
 
 To make the robot move, you will have to put it into `LANE_FOLLOWING` mode. You can do this by opening the joystick
 and clicking `a` (for autonomous). Hitting `s` with the joytsick window active will return you to 
-`NORMAL_JOYSTICK` mode.
+`NORMAL_JOYSTICK_CONTROL` mode.
 
 You can similarly run your agent on your Duckiebot using:
 
