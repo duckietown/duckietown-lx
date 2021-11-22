@@ -19,6 +19,7 @@ def run(input, exception_on_failure=False):
 
 
 def runp(input, exception_on_failure=False):
+    print(input)
     print(run(input, exception_on_failure))
 
 #make boxes to xywh format:
@@ -39,10 +40,15 @@ def train_test_split(filenames, split_percentage, dataset_dir):
     sp = int(split_percentage * nb_things)
     train_txt, val_txt = train_txt[:sp], train_txt[sp:]
 
+    print("ALL IMAGE NAMES TO MOVE DURING THIS SPLIT:", filenames)
+    print("DATASET DIRECTORY", dataset_dir)
+
     def mv(img_name, to_train):
+        print("MOVING IMG NAMED", img_name)
+
         dest = "train" if to_train else "val"
-        run(f"mv {dataset_dir}/images/{img_name}.jpg {dataset_dir}/{dest}/images/{img_name}.jpg")
-        run(f"mv {dataset_dir}/labels/{img_name}.txt {dataset_dir}/{dest}/labels/{img_name}.txt")
+        runp(f"mv {dataset_dir}/images/{img_name}.jpg {dataset_dir}/{dest}/images/{img_name}.jpg")
+        runp(f"mv {dataset_dir}/labels/{img_name}.txt {dataset_dir}/{dest}/labels/{img_name}.txt")
 
     for img in train_txt:
         mv(img, True)
