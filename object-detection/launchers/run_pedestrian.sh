@@ -3,7 +3,7 @@
 export ROSCONSOLE_STDOUT_LINE_BUFFERED=1
 
 #pip3 install --trusted-host pypi.python.org pytest-xdist
-pip3 install ---trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --upgrade pip
+pip3 install --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org --upgrade pip
 #pip3 install git+https://github.com/duckietown/lib-dt-authentication
 #pip3 install git+https://github.com/duckietown/lib-dt-data-api
 pip3 install --trusted-host pypi.python.org --trusted-host pypi.org --trusted-host files.pythonhosted.org git+https://github.com/Velythyl/dataclasses-spoof
