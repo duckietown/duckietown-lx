@@ -1,0 +1,8 @@
+challenge: [mooc-state-estimation]
+
+protocol: aido2_db18_agent-z2
+user-label: "state estimation exercise"
+user-payload: {}
+description: |
+  This is the MOOC State Estimation exercise
+validation_challenge: aido-hello-sim-validation
