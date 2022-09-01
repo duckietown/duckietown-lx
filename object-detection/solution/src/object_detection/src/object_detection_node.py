@@ -95,7 +95,16 @@ class ObjectDetectionNode(DTROS):
         except ValueError as e:
             self.logerr('Could not decode image: %s' % e)
             return
-        
+
+        old_img = image
+        from dt_device_utils import DeviceHardwareBrand, get_device_hardware_brand
+        if get_device_hardware_brand() != DeviceHardwareBrand.JETSON_NANO:  # if in sim
+            if self._debug:
+                print("Assumed an image was bgr and flipped it to rgb")
+            old_img = image
+            image = image[...,::-1].copy()  # image is bgr, flip it to rgb
+
+        old_img = cv2.resize(old_img, (416,416))
         image = cv2.resize(image, (416,416))
         bboxes, classes, scores = self.model_wrapper.predict(image)
 
@@ -122,7 +131,10 @@ class ObjectDetectionNode(DTROS):
                 image = cv2.rectangle(image, pt1, pt2, color, 2)
                 text_location = (pt1[0], min(416, pt1[1]+20))
                 image = cv2.putText(image, name, text_location, font, 1, color, thickness=3)
-            obj_det_img = self.bridge.cv2_to_imgmsg(image, encoding="bgr8")
+
+
+
+            obj_det_img = self.bridge.cv2_to_imgmsg(old_img, encoding="bgr8")
             self.pub_detections_image.publish(obj_det_img)
 
 

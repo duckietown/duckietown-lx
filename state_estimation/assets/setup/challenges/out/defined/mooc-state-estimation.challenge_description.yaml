@@ -21,6 +21,7 @@ ct:
 name: mooc-state-estimation
 tags:
 - visible
+- ml-validation
 - aido
 - aido-embodied
 - LF
@@ -41,7 +42,7 @@ steps:
       services:
         evaluator:
           build: null
-          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:5a450ef8e9043004e678a3b472874bcd254730422029668470b37bacc5aecb91
+          image: docker.io/liampaull/duckietown-challenges@sha256:f8580a6416ce4615a1e8751c47e054a1d437ebf43576a291366cd1dc2c900b80
           ports:
           - external: null
             internal: 10123
@@ -81,7 +82,7 @@ steps:
               '
         simulator:
           build: null
-          image: registry-stage2.duckietown.org/liam/duckietown-challenges@sha256:a298d6cb44bb2703ad3e4997f9cf033d97cc885d70b06d46ae0de6b723d40183
+          image: docker.io/liampaull/duckietown-challenges@sha256:4a8daea0baf01e1a0891e35479960370163ae476b61a4da3ec76ae21f0138aeb
           ports: []
           environment:
             AIDONODE_CONFIG: "env_constructor: Simulator\nenv_parameters:\n  max_steps:\
