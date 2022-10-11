@@ -2,8 +2,6 @@
 
 Follow these instructions to run these activities. At the end will be instructions to submit the exercise.
 
-The final exercise counts towards grading and must be submitted for evaluation if you are pursuing the MOOC verified track.
-
 ## Phase 0: System update
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
@@ -31,7 +29,7 @@ This will run a [Jupyter Lab][lab] and open a browser window. Enter the password
 
 [lab]: https://jupyterlab.readthedocs.io/en/stable/
 
-Click through to `01-CNN` and then click on [`cnn.ipynb`](localhost:8888/lab/tree/01-CNN/cnn.ipynb). Once you have completed that notebook, move on to the next. Make sure that you do go through them in order (especially `02`-`04`).
+Click through to `01-CNN` and then click on [`cnn.ipynb`](localhost:8888/lab/tree/01-CNN/cnn.ipynb). Once you have completed that notebook, move on to the next. Make sure that you go through them in order (especially `02`-`04`).
 
 Since we are working with neural networks now, some of these exercises require you to train neural network models. We will use [Google Colaboratory](https://colab.research.google.com/) for this. As a result, having a Google account is a prerequisite. 
 
@@ -68,7 +66,7 @@ Then finally submit with
 
     💻$ `dts challenges submit`
 
-NB: it's a good idea to delete the `duckietown_dataset` that you created before submitted because it will make your submission unnessarily large. 
+NB: it's a good idea to delete the `duckietown_dataset` that you created before submitting because it will make your submission unnessarily large. 
 
 ## Grading Criteria
 
