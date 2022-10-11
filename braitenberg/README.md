@@ -9,7 +9,7 @@
 ### Pull from the upstream remote
 
     git pull upstream
-    git merge upstream/montreal21
+    git merge upstream/daffy
     
 
 Make sure you have an updated system using
@@ -79,7 +79,7 @@ You can test your agent on the robot using:
  
     dts exercises test --duckiebot_name YOUR_DUCKIEBOT
 
-If you remember the video lecture, this is the modality "everything runs on the robot".
+This is the modality "everything runs on the robot".
 
 You can also test using 
 
@@ -99,7 +99,6 @@ At the end, to submit your homework, you should submit your agent using
 
 The robot should travel at least an average of 2 meters from the starting point.
 
-(Note: we might change the target to make it easier if we see it is too hard in the following days. Please understand that we are still calibrating against the huge variety of participants.)
 
 If an error of this form occurs
 
