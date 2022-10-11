@@ -42,9 +42,9 @@ For **environment complexity** we have 3 cases:
 2. The intermediate case is that of an environment with **static** obstacles.
 3. The advanced case is that of an environment with **dynamic** obstacles (with known motion).
 
-After the "Planning 1" and "Planning 2" modules in the first edition for the MOOC, you should be able to do the challenges *without the curvature constraints*.
+You should be able to do the challenges *without the curvature constraints*.
 
-For the most efficient solution of the challenges with the curvature constraints, you would need to know more about sampling=based motion planning, a topic that will be featured in the next edition of the MOOC.
+For the most efficient solution of the challenges with the curvature constraints, you would need to know more about sampling=based motion planning.
 
 The combinations give rise to 6 challenges, summarized in the following table.
 
@@ -245,8 +245,7 @@ class Motion:
     steps: List[PlanStep]
 ```
 
-(Note here that we are doing motion planning in dynamic environments with *known* motion. 
-Studying reactive cases in which agents react to us involves *game theory* and will be part of a second MOOC.)
+(Note here that we are doing motion planning in dynamic environments with *known* motion.)
 
 
 In the `dt_protocols` module you will find a useful function called `simulate` which you can use to predict the trajectories for the obstacles (and for yourself as well):
@@ -349,8 +348,6 @@ because you don't want the fastest plan, but rather the plan that takes exactly 
 ### Finally, the bounded curvature case
 
 You can try to hack this case using the grid search approach.
-
-However, a better approach is to wait for the next edition of the MOOC, in which we discuss about *steering functions* and *sampling-based methods*. 
 
 # Activity: Go through the duckietown-world notebook sequence
 
