@@ -38,13 +38,13 @@ The third notebook contains an implementation of the histogram filter in duckiet
 the code to be completed as part of the exercise. 
 
 
-## Phase 2: Evaluate and refine your  solution
+## Phase 2: Evaluate and refine your solution
 
 You can finetune your solution and see how it behaves in the simulator using:
 
     💻$ `dts exercises test --sim` 
 
-Similar to the last exercises, you can open up the noVNC browser and look at the image stream in `rqt_image_view` to 
+You can open up the noVNC browser and look at the image stream in `rqt_image_view` to 
 gauge the performance of your model. In noVNC, click on the `rqt_image_view` icon and in the dropdown menu select 
 `agent/lane_filter_node/belief_img`. This image is a matrix representation of the belief histogram.
 
@@ -73,7 +73,5 @@ Then finally submit with
 ## Grading criteria
 
 Your submitted agent should be able to navigate an entire loop in Duckietown. 
-
-N.B. This bar could be subject to change if deemed to difficult due to the downstream controller tuning.
 
 You can verify the scores of your sumbissions on the [mooc-state-estimation challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-state-estimation/leaderboard) after your submission is evaluated.
