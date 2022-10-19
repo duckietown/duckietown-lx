@@ -1,2 +1,8 @@
-solution/braitenberg01.py
-solution/braitenberg02.py
+docs/build
+*pyc
+
+# documentation artifacts
+html/*
+
+# otherwise CI thinks index not clean
+*.resolved

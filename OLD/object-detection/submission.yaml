@@ -1,0 +1,8 @@
+challenge: [mooc-objdet]
+
+protocol: aido2_db18_agent-z2
+user-label: "objdet exercise"
+user-payload: {}
+description: |
+  This is the MOOC Object Detection exercise
+validation_challenge: aido-hello-sim-validation

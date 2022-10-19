@@ -1,0 +1,5 @@
+VERSION=0.0.0
+TYPE=template-exercise
+TYPE_VERSION=1
+NAME=braitenberg
+RECIPE=mooc2022/braitenberg

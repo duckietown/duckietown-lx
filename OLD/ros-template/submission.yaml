@@ -1,0 +1,7 @@
+challenge: [mooc-ros-template]
+
+protocol: aido2_db18_agent-z2
+user-label: "ROS template"
+user-payload: {}
+description: |
+  This is a template exercise build on ROS

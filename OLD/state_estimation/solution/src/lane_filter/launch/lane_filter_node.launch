@@ -1,0 +1,20 @@
+<launch>
+    <arg name="veh" doc="Name of vehicle. ex: megaman"/>
+    <arg name="param_file_name" default="default" doc="Specify a param file. ex:megaman." />
+    <!-- <arg name="testing" default="false" doc="using for test purposes." /> -->
+
+    <arg name="pkg_name" value="lane_filter"/>
+    <arg name="node_name" default="lane_filter_node"/>
+
+    <group ns="$(arg veh)">
+        <node name="$(arg node_name)" pkg="$(arg pkg_name)" type="$(arg node_name).py" output="screen">
+            <rosparam command="load" file="$(find lane_filter)/config/$(arg node_name)/$(arg param_file_name).yaml"/>
+        </node>
+    </group>
+
+    <!-- Publications -->
+
+    <!-- Subscriptions -->
+
+
+</launch>

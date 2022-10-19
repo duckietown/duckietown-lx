@@ -1,0 +1,9 @@
+
+
+protocol: protocol_collision_checking-1
+challenge: mooc-collision-check-test
+user-label: "collision-check-exercise"
+user-payload: {}
+description: |
+  Empty checker
+

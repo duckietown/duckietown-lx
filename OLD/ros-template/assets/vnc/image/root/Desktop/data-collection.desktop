@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Data Collection
+Comment=MOOC - Object Detection - Exercise
+Exec=/usr/bin/launch-data-collection.sh
+Icon=/root/.icons/exercise-visual-lane-following.png
+Terminal=true
+X-KeepTerminal=true
+StartupNotify=true

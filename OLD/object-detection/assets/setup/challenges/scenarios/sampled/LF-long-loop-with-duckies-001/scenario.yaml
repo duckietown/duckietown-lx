@@ -1,0 +1,115 @@
+robots:
+  ego0:
+    color: red
+    protocol: PROTOCOL_FULL
+    description: Playable robot ego0
+    controllable: true
+    configuration:
+      pose:
+        x: 2.0
+        y: 1.32
+        theta_deg: 0.0
+      velocity:
+        x: 0.0
+        y: 0.0
+        theta_deg: 0.0
+duckies:
+  duckie00:
+    pose:
+      x: 4.951248645782471
+      y: 2.858071100667818
+      theta_deg: -77.09268605367446
+    color: yellow
+  duckie01:
+    pose:
+      x: 8.813036918640137
+      y: 2.434973873312489
+      theta_deg: 112.8775679112185
+    color: yellow
+  duckie02:
+    pose:
+      x: 14.408342361450195
+      y: 2.819112331279328
+      theta_deg: -32.18120423141615
+    color: yellow
+  duckie03:
+    pose:
+      x: 11.985526084899902
+      y: 2.4265187773873134
+      theta_deg: 130.25573272306832
+    color: yellow
+  duckie04:
+    pose:
+      x: 13.352799415588379
+      y: 2.86055439634986
+      theta_deg: 33.66495094140591
+    color: yellow
+  duckie05:
+    pose:
+      x: 1.6753735542297363
+      y: 2.435845963255584
+      theta_deg: -159.07842364507178
+    color: yellow
+  duckie06:
+    pose:
+      x: 4.934943675994873
+      y: 1.2398881291446822
+      theta_deg: 119.56452920735778
+    color: yellow
+  duckie07:
+    pose:
+      x: 13.558464050292969
+      y: 1.2704236585558886
+      theta_deg: -136.4541461477074
+    color: yellow
+  duckie08:
+    pose:
+      x: 16.14535061663473
+      y: 1.448850031067017
+      theta_deg: -108.93104231912928
+    color: yellow
+  duckie09:
+    pose:
+      x: 15.511137962341309
+      y: 2.4617567065622232
+      theta_deg: 169.6077022879394
+    color: yellow
+environment: "tiles:\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
+  \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
+  \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n- - grass\n  - curve_left/W\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - curve_left/N\n  - grass\n- - grass\n  - straight/N\n\
+  \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
+  \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n  - grass\n  - straight/S\n  - grass\n- - grass\n  - curve_left/S\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n  - straight/E\n\
+  \  - curve_left/E\n  - grass\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
+  \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n- - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  -\
+  \ grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n\
+  \  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n  - grass\n \
+  \ - grass\n  - grass\ntile_size: 0.585\nstart_tile:\n- 2\n- 2\nstart_pose:\n- -\
+  \ 0.48\n  - 0\n  - 0.2925\n- 0\nobjects: {}\n"
+payload_yaml: 'info: fill here the yaml
+
+  '
+player_robots:
+- ego0
+scenario_name: LF-long-loop-with-duckies-000

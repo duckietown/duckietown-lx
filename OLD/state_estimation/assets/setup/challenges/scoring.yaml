@@ -1,0 +1,35 @@
+
+scores:
+
+    - name: driven_lanedir_consec_median
+      short: Traveled distance
+      description: |
+        This is the median distance traveled, *along a lane*.
+        (That is, going in circles will not make this metric increase.)
+        This is discretized to tiles.
+      order: higher-is-better
+      discretization: 0.62
+
+    - name: survival_time_median
+      short: Survival time
+      description: |
+        This is the median survival time. The simulation
+        is terminated when the car goes outside of the road
+        or it crashes with an obstacle or pedestrian.
+      order: higher-is-better
+      discretization: 2.0
+
+    - name: deviation-center-line_median
+      short: Lateral deviation
+      description: |
+        This is the median lateral deviation from the center line.
+      order: lower-is-better
+      discretization: 0.01
+
+    - name: in-drivable-lane_median
+      short: Major infractions
+      description: |
+        This is the median of the time spent outside of the drivable zones.
+        For example this penalizes driving in the wrong lane.
+      order: lower-is-better
+      discretization: 0.2

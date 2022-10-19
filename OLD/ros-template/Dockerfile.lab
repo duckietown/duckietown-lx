@@ -1,0 +1,25 @@
+FROM duckietown/dt-gui-tools:daffy-amd64
+
+RUN /usr/bin/python3 -m pip install --upgrade pip
+
+RUN pip3 install -U \
+    aido-protocols-daffy \
+    duckietown-world-daffy
+
+
+
+RUN pip3 uninstall dataclasses -y
+
+COPY assets/vnc/image/root/Desktop/. /root/Desktop/
+COPY assets/vnc/image/root/Documents/. /root/Documents/
+
+COPY assets/vnc/image/root/icons/. /root/.icons/
+COPY assets/vnc/image/usr/bin/. /usr/bin/
+COPY assets/vnc/image/opt/ros/noetic/share/rviz/. /opt/ros/noetic/share/rviz/
+
+RUN rm /root/Desktop/intrinsic_calibration.desktop
+
+# note that this CMD normally gets overwritten
+CMD ["dt-launcher-jupyter"]
+
+

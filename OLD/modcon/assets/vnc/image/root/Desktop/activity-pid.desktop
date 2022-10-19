@@ -1,0 +1,11 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=PID
+Comment=MOOC - PID
+Exec=/usr/bin/launch-pid.sh
+Icon=/root/.icons/exercise-pid.png
+Terminal=true
+X-KeepTerminal=true
+StartupNotify=true
+

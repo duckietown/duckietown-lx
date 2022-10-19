@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>lane_filter</name>
+  <version>1.0.0</version>
+  <description>TODO: Add a description of package `lane_filter` in `package.xml`.</description>
+
+  <maintainer email="paull@mit.edu">Liam Paull</maintainer>
+  <license>GPLv3</license>
+  
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>duckietown_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>cv_bridge</build_depend>
+  <build_depend>tf</build_depend>
+
+  <run_depend>duckietown_msgs</run_depend>
+  <run_depend>roscpp</run_depend>
+  <run_depend>rospy</run_depend>
+  <run_depend>cv_bridge</run_depend>
+  <run_depend>tf</run_depend>
+  
+  <export>
+
+  </export>
+  
+</package>
