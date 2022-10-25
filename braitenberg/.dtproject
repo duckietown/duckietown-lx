@@ -7,7 +7,7 @@ NAME=braitenberg
 
 # recipe repository and location
 # - name of the repository, e.g.,
-RECIPE_REPOSITORY_NAME=duckietown/mooc-exercises-recipe
+RECIPE_REPOSITORY_NAME=duckietown/mooc-exercises-recipes
 
 # - branch containing the recipe
 RECIPE_REPOSITORY_BRANCH=mooc2022
