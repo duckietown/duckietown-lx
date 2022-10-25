@@ -6,11 +6,11 @@ TYPE_VERSION=3
 NAME=braitenberg
 
 # recipe repository and location
-# - name of the repository, e.g.,
-RECIPE_REPOSITORY_NAME=duckietown/mooc-exercises-recipes
+# - fully qualified name of the recipe repository, e.g., 'duckietown/mooc-exercises-recipes'
+RECIPE_REPOSITORY=duckietown/mooc-exercises-recipes
 
-# - branch containing the recipe
-RECIPE_REPOSITORY_BRANCH=mooc2022
+# - branch of RECIPE_REPOSITORY containing the recipe
+RECIPE_BRANCH=mooc2022
 
-# - location of the recipe inside the repository/branch above
-RECIPE_DIR=braitenberg
+# - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
+RECIPE_LOCATION=braitenberg
