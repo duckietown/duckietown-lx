@@ -1,5 +1,16 @@
 VERSION=0.0.0
 TYPE=template-exercise
-TYPE_VERSION=1
+TYPE_VERSION=3
+
+# name of the exercise
 NAME=braitenberg
-RECIPE=mooc2022/braitenberg
+
+# recipe repository and location
+# - name of the repository, e.g.,
+RECIPE_REPOSITORY_NAME=duckietown/mooc-exercises-recipe
+
+# - branch containing the recipe
+RECIPE_REPOSITORY_BRANCH=mooc2022
+
+# - location of the recipe inside the repository/branch above
+RECIPE_DIR=braitenberg
