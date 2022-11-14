@@ -1,5 +1,5 @@
 ARG DOCKER_REGISTRY=docker.io
-FROM ${DOCKER_REGISTRY}/duckietown/dt-gui-tools:daffy-amd64
+FROM ${DOCKER_REGISTRY}/duckietown/dt-gui-tools:daffy
 
 RUN /usr/bin/python3 -m pip install --upgrade pip
 
@@ -31,5 +31,3 @@ ENV PYTHONPATH="${PYTHONPATH}:/jupyter_ws/solution/utils"
 
 # note that this CMD normally gets overwritten
 CMD ["dt-launcher-jupyter"]
-
-
