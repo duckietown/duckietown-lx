@@ -2,7 +2,7 @@
 ARG DOCKER_REGISTRY
 ARG ARCH=amd64
 ARG MAJOR=daffy
-ARG BASE_TAG=${MAJOR}
+ARG BASE_TAG=${MAJOR}-${ARCH}
 
 FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:${BASE_TAG}
 
