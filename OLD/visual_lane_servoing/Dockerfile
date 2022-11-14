@@ -1,7 +1,7 @@
 ARG DOCKER_REGISTRY=docker.io
 ARG ARCH=amd64
 ARG MAJOR=daffy
-ARG BASE_TAG=${MAJOR}-${ARCH}
+ARG BASE_TAG=${MAJOR}
 
 
 FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-baseline-duckietown:${BASE_TAG}

@@ -1,4 +1,4 @@
-FROM duckietown/dt-gui-tools:daffy-amd64
+FROM duckietown/dt-gui-tools:daffy
 
 RUN /usr/bin/python3 -m pip install --upgrade pip
 
@@ -21,5 +21,3 @@ RUN rm /root/Desktop/intrinsic_calibration.desktop
 
 # note that this CMD normally gets overwritten
 CMD ["dt-launcher-jupyter"]
-
-
