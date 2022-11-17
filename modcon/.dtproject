@@ -10,7 +10,7 @@ NAME=modcon
 RECIPE_REPOSITORY=duckietown/mooc-exercises-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH=mooc2022
+RECIPE_BRANCH=DTSW-1647-migrate-mod-con-exercise-to-new-workflow
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
 RECIPE_LOCATION=modcon
