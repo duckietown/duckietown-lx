@@ -3,14 +3,14 @@ TYPE=template-exercise
 TYPE_VERSION=3
 
 # name of the exercise
-NAME=modcon
+NAME=collision
 
 # recipe repository and location
-# - fully qualified name of the recipe repository, e.g.,cd .. 'duckietown/duckietown-lx-recipes'
+# - fully qualified name of the recipe repository, e.g., 'duckietown/duckietown-lx-recipes'
 RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH=DTSW-1647-migrate-mod-con-exercise-to-new-workflow
+RECIPE_BRANCH=mooc2022
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
-RECIPE_LOCATION=modcon
+RECIPE_LOCATION=collision
