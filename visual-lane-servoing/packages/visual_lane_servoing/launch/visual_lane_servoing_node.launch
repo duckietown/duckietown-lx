@@ -1,0 +1,24 @@
+<launch>
+	<arg name="pkg_name" default="visual_lane_servoing" doc="name of the package"/>
+	<arg name="node_name" default="visual_lane_servoing_node" doc="name of the node"/>
+	<arg name="veh" doc="Name of vehicle. ex: megaman"/>
+	<arg name="AIDO_eval" default="false"/>
+
+    <group ns="$(arg veh)">
+		<param name="AIDO_eval" value="$(arg AIDO_eval)"/>
+
+		<node pkg="$(arg pkg_name)" type="$(arg node_name).py" name="$(arg node_name)" output="screen" required="true"/>
+
+
+	</group>
+
+
+    <group ns="$(arg veh)">
+		<remap from="rectifier_node/image_in" to="camera_node/image/compressed"/>
+		<remap from="rectifier_node/camera_info_in" to="camera_node/camera_info"/>
+		<node pkg="image_processing" type="rectifier_node.py" name="rectifier_node" output="screen" required="true">
+            <rosparam command="load" file="$(find image_processing)/config/rectifier_node/$(env ROBOT_TYPE).yaml"/>
+        </node>
+	</group>
+
+</launch>
