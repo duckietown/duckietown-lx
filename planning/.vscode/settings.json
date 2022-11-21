@@ -1,5 +1,6 @@
 {
     "workbench.colorTheme": "Default Light+",
+    "workbench.startupEditor": "none",
     "python.testing.unittestArgs": [
         "-v",
         "-s",
