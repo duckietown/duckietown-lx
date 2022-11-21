@@ -18,5 +18,11 @@
         ".pytest_cache": true,
         ".dtproject": true
     },
-    "workbench.tree.indent": 24
+    "workbench.tree.indent": 24,
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    "workbench.editorAssociations": {   
+        "*.md": "vscode.markdown.preview.editor"
+    }
 }
