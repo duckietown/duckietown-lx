@@ -1,0 +1,4 @@
+[submodule "DAFFY"]
+	path = DAFFY
+	url = https://github.com/duckietown/mooc-exercises
+	branch = daffy
