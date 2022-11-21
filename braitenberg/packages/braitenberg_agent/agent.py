@@ -19,8 +19,7 @@ from aido_schemas import (
 )
 
 from solution.connections import get_motor_left_matrix, get_motor_right_matrix
-
-from .preprocessing import preprocess
+from solution.preprocessing import preprocess
 
 
 # TODO edit this Config class ! Play with different gain and const values
