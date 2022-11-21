@@ -11,9 +11,9 @@ from duckietown_msgs.msg import Twist2DStamped, WheelEncoderStamped, EpisodeStar
 from nav_msgs.msg import Odometry
 from std_msgs.msg import String
 
-import odometry_activity
-import PID_controller
-import PID_controller_homework
+from solution import odometry_activity
+from solution import pid_controller
+from solution import pid_controller_homework
 
 
 class EncoderPoseNode(DTROS):
@@ -44,11 +44,34 @@ class EncoderPoseNode(DTROS):
         # get the name of the robot
         self.veh = rospy.get_namespace().strip("/")
 
+        # internal state
+        # - odometry
+        self.x_prev = 0.0
+        self.y_prev = 0.0
+        self.theta_prev = 0.0
+        self.x_curr = 0.0
+        self.y_curr = 0.0
+        self.theta_curr = 0.0
+
+        # - PID controller
+        #   - previous tracking error, starts at 0
+        self.prev_e = 0.0
+        #   - previous tracking error integral, starts at 0
+        self.prev_int = 0.0
+        self.time = 0.0
+
+        # fixed robot linear velocity - starts at zero so the activities start on command
+        self.v_0 = 0.0
+        # reference y for PID lateral control activity - zero so can set interactively at runtime
+        self.y_ref = 0.0
+
+        # initial reference signal for heading control activity
+        self.theta_ref = np.deg2rad(0.0)
+        # initializing omega command to the robot
+        self.omega = 0.0
+
         # Init the parameters
         self.resetParameters()
-
-        self.theta_ref = np.deg2rad(0.0)  # initial reference signal for heading control activity
-        self.omega = 0.0  # initializing omega command to the robot
 
         # nominal R and L:
         self.log("Loading kinematics calibration...")
@@ -60,7 +83,7 @@ class EncoderPoseNode(DTROS):
         self.AIDO_eval = rospy.get_param(f"/{self.veh}/AIDO_eval", False)
         self.log(f"AIDO EVAL VAR: {self.AIDO_eval}")
 
-        # Flags for a joyful learning experience (spins only parts of this code depending on the icons pressed on the VNC desktop)
+        # spins only parts of this code depending on the icons pressed on the VNC desktop
         self.ODOMETRY_ACTIVITY = False
         self.PID_ACTIVITY = False
         self.PID_EXERCISE = False
@@ -84,7 +107,8 @@ class EncoderPoseNode(DTROS):
 
         # Wheel encoder subscriber:
         right_encoder_topic = f"/{self.veh}/right_wheel_encoder_node/tick"
-        rospy.Subscriber(right_encoder_topic, WheelEncoderStamped, self.cbRightEncoder, queue_size=1)
+        rospy.Subscriber(right_encoder_topic, WheelEncoderStamped, self.cbRightEncoder,
+                         queue_size=1)
 
         # # AIDO challenge payload subscriber
         episode_start_topic = f"/{self.veh}/episode_start"
@@ -92,7 +116,8 @@ class EncoderPoseNode(DTROS):
 
         # Odometry publisher
         self.db_estimated_pose = rospy.Publisher(
-            f"/{self.veh}/encoder_localization", Odometry, queue_size=1, dt_topic_type=TopicType.LOCALIZATION
+            f"/{self.veh}/encoder_localization", Odometry, queue_size=1,
+            dt_topic_type=TopicType.LOCALIZATION
         )
 
         # Command publisher
@@ -133,11 +158,10 @@ class EncoderPoseNode(DTROS):
         self.prev_int = 0.0  # previous tracking error integral, starts at 0
         self.time = 0.0
 
-        self.v_0 = 0.0  # fixed robot linear velocity - starts at zero so the activities start on command
-        # inside VNC
-        # reference y for PID lateral control activity - zero so can be set interactively at runtime
+        # fixed robot linear velocity - starts at zero so the activities start on command
+        self.v_0 = 0.0
+        # reference y for PID lateral control activity - zero so can set interactively at runtime
         self.y_ref = 0.0
-
 
     def cbEpisodeStart(self, msg: EpisodeStart):
         loaded = yaml.load(msg.other_payload_yaml, Loader=yaml.FullLoader)
@@ -149,9 +173,8 @@ class EncoderPoseNode(DTROS):
             if self.AIDO_eval:
                 self.PID_EXERCISE = True
                 self.v_0 = 0.2
-                # Feed updated initial command towards ROS agent solution in 2nd episode LF-full-loop-001
-                u = [self.v_0, 0.0]
-                self.publishCmd(u)
+                # Feed updated initial command towards ROS agent solution in 2nd episode
+                self.publishCmd(self.v_0, 0.0)
         else:
             self.logwarn("No initial pose received. If you are running this on a real robot "
                          "you can ignore this message.")
@@ -163,7 +186,7 @@ class EncoderPoseNode(DTROS):
         PID_parameters = msg.data
 
         if PID_parameters == "STOP":
-            self.publishCmd([0, 0])
+            self.publishCmd(0, 0)
             self.STOP = True
             self.log("STOP")
             return
@@ -182,7 +205,7 @@ class EncoderPoseNode(DTROS):
         self.v_0 = float(PID_parameters[1])
 
         if self.STOP:
-            self.publishCmd([self.v_0, self.omega])
+            self.publishCmd(self.v_0, self.omega)
             self.STOP = False
 
     def cbActivity(self, msg):
@@ -190,7 +213,7 @@ class EncoderPoseNode(DTROS):
         Call the right functions according to desktop icon the parameter.
         """
 
-        self.publishCmd([0, 0])
+        self.publishCmd(0, 0)
         self.PID_ACTIVITY = False
         self.ODOMETRY_ACTIVITY = False
         self.PID_EXERCISE = False
@@ -220,7 +243,9 @@ class EncoderPoseNode(DTROS):
             return
 
         # running the DeltaPhi() function copied from the notebooks to calculate rotations
-        delta_phi_left, self.left_tick_prev = odometry_activity.DeltaPhi(encoder_msg, self.left_tick_prev)
+        delta_phi_left, self.left_tick_prev = odometry_activity.delta_phi(
+            encoder_msg.data, self.left_tick_prev, encoder_msg.resolution
+        )
         self.delta_phi_left += delta_phi_left
 
         # compute the new pose
@@ -243,7 +268,9 @@ class EncoderPoseNode(DTROS):
             return
 
         # calculate rotation of right wheel
-        delta_phi_right, self.right_tick_prev = odometry_activity.DeltaPhi(encoder_msg, self.right_tick_prev)
+        delta_phi_right, self.right_tick_prev = odometry_activity.delta_phi(
+            encoder_msg.data, self.right_tick_prev, encoder_msg.resolution
+        )
         self.delta_phi_right += delta_phi_right
 
         # compute the new pose
@@ -263,7 +290,7 @@ class EncoderPoseNode(DTROS):
         # synch incoming messages from encoders
         self.LEFT_RECEIVED = self.RIGHT_RECEIVED = False
 
-        self.x_curr, self.y_curr, theta_curr = odometry_activity.poseEstimation(
+        self.x_curr, self.y_curr, theta_curr = odometry_activity.pose_estimation(
             self.R,
             self.baseline,
             self.x_prev,
@@ -278,12 +305,14 @@ class EncoderPoseNode(DTROS):
         # self.loging to screen for debugging purposes
         self.log("              ODOMETRY             ")
         # self.log(f"Baseline : {self.baseline}   R: {self.R}")
-        self.log(f"Theta : {np.rad2deg(self.theta_curr)} deg,  x: {self.x_curr} m,  y: {self.y_curr} m")
         self.log(
-            f"Rotation left wheel : {np.rad2deg(self.delta_phi_left)} deg,   Rotation right wheel : "
-            f"{np.rad2deg(self.delta_phi_right)} deg"
+            f"Theta : {np.rad2deg(self.theta_curr)} deg,  x: {self.x_curr} m,  y: {self.y_curr} m")
+        self.log(
+            f"Rotation left wheel : {np.rad2deg(self.delta_phi_left)} deg,   "
+            f"Rotation right wheel : {np.rad2deg(self.delta_phi_right)} deg"
         )
-        self.log(f"Prev Ticks left : {self.left_tick_prev}   Prev Ticks right : {self.right_tick_prev}")
+        self.log(
+            f"Prev Ticks left : {self.left_tick_prev}   Prev Ticks right : {self.right_tick_prev}")
         # self.log(
         #     f"Prev integral error : {self.prev_int}")
 
@@ -314,7 +343,8 @@ class EncoderPoseNode(DTROS):
 
         self.db_estimated_pose.publish(odom)
 
-        if self.PID_ACTIVITY or self.PID_EXERCISE:  # run the contoller only in appropriate activities
+        # run the contoller only in appropriate activities
+        if self.PID_ACTIVITY or self.PID_EXERCISE:
             self.Controller()
 
     def Controller(self):
@@ -324,39 +354,42 @@ class EncoderPoseNode(DTROS):
 
         time_now = time.time()
         delta_time = time_now - self.time
-
         self.time = time_now
+        v, omega = 0, 0
 
         if self.duckiebot_is_moving:
 
             if self.PID_ACTIVITY:
-                u, self.prev_e, self.prev_int = PID_controller.PIDController(
-                    self.v_0, self.theta_ref, self.theta_curr, self.prev_e, self.prev_int, delta_time
+                v, omega, self.prev_e, self.prev_int = pid_controller.PIDController(
+                    self.v_0, self.theta_ref, self.theta_curr, self.prev_e, self.prev_int,
+                    delta_time
                 )
 
             elif self.PID_EXERCISE:
-                u, self.prev_e, self.prev_int = PID_controller_homework.PIDController(
+                v, omega, self.prev_e, self.prev_int = pid_controller_homework.PIDController(
                     self.v_0, self.y_ref, self.y_curr, self.prev_e, self.prev_int, delta_time
                 )
         else:
-            u = [self.v_0, 0.0]
+            v, omega = self.v_0, 0.0
 
-        self.publishCmd(u)
+        self.publishCmd(v, omega)
 
-    def publishCmd(self, u):
-        """Publishes a car command message.
+    def publishCmd(self, v, omega):
+        """
+        Publishes a car command message.
 
         Args:
-            omega (:obj:`double`): omega for the control action.
+            v       (:obj:`double`): linear velocity
+            omega   (:obj:`double`): angular velocity
         """
 
         car_control_msg = Twist2DStamped()
         car_control_msg.header.stamp = rospy.Time.now()
 
-        car_control_msg.v = u[0]  # v
-        car_control_msg.omega = u[1]  # omega
+        car_control_msg.v = v
+        car_control_msg.omega = omega
         # save omega in case of STOP
-        self.omega = u[1]
+        self.omega = omega
 
         self.pub_car_cmd.publish(car_control_msg)
 
@@ -392,7 +425,8 @@ class EncoderPoseNode(DTROS):
                 rospy.signal_shutdown("")
                 return
 
-    def angle_clamp(self, theta):
+    @staticmethod
+    def angle_clamp(theta):
         if theta > 2 * np.pi:
             return theta - 2 * np.pi
         elif theta < -2 * np.pi:
