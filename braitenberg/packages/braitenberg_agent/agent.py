@@ -18,7 +18,8 @@ from aido_schemas import (
     RGB,
 )
 
-from .connections import get_motor_left_matrix, get_motor_right_matrix
+from solution.connections import get_motor_left_matrix, get_motor_right_matrix
+
 from .preprocessing import preprocess
 
 
