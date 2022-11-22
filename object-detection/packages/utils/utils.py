@@ -8,19 +8,18 @@ import subprocess
 
 def run(input, exception_on_failure=False):
     try:
-        program_output = subprocess.check_output(f"{input}", shell=True, universal_newlines=True,
-                                                 stderr=subprocess.STDOUT)
+        return subprocess.check_output(f"{input}", shell=True, universal_newlines=True, stderr=subprocess.STDOUT)
     except Exception as e:
         if exception_on_failure:
             raise e
-        program_output = e.output
-
-    return program_output
+        return e.output
 
 
 def runp(input, exception_on_failure=False):
     print(input)
-    print(run(input, exception_on_failure))
+    output = run(input, exception_on_failure)
+    if len(output) > 0:
+        print(output)
 
 #make boxes to xywh format:
 def xminyminxmaxymax2xywfnormalized(box, image_size):
