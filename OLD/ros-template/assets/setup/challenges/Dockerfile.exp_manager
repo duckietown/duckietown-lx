@@ -1,8 +1,0 @@
-ARG DOCKER_REGISTRY
-FROM ${DOCKER_REGISTRY}/duckietown/challenge-aido_lf-experiment_manager:daffy
-
-ARG SCENARIOS
-
-RUN echo scenarios ${SCENARIOS}
-COPY ${SCENARIOS} /scenarios
-RUN find /scenarios
