@@ -3,7 +3,7 @@ TYPE=template-exercise
 TYPE_VERSION=3
 
 # name of the exercise
-NAME=collision
+NAME=collision-checker
 
 # recipe repository and location
 # - fully qualified name of the recipe repository, e.g., 'duckietown/duckietown-lx-recipes'
@@ -13,4 +13,4 @@ RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 RECIPE_BRANCH=mooc2022
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
-RECIPE_LOCATION=collision
+RECIPE_LOCATION=collision-checker
