@@ -40,4 +40,4 @@ The performance metrics that will determine pass / no pass are:
 - Major Infractions smaller or equal to 20; **and**
 - Survival Time bigger or equal to 40 seconds;
 
-You can verify the scores of your submissions on the [Challenge Leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-modcon/leaderboard) after your submission is evaluated.
+You can verify the scores of your submissions on the [Challenge Leaderboard](https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon/leaderboard) after your submission is evaluated.
