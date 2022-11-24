@@ -21,6 +21,7 @@
     "workbench.editorAssociations": {
         "*.md": "vscode.markdown.preview.editor"
     },
+    "editor.scrollBeyondLastLine": false,
     "workbench.editorAssociations": {   
         "*.md": "vscode.markdown.preview.editor"
     }
