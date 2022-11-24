@@ -40,3 +40,6 @@ Note that the submission will be sent to two different challenges:
 
 In order to pass, your agent has to get at least 95% of the queries correct on the `lx22-collision-check-test` challenge. 
 (This allows some slack, so that you can experiment with probabilistic algorithms).
+
+[vali]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-vali
+[test]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-test
