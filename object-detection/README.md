@@ -44,6 +44,6 @@ In order to pass, the submitted agent must:
  - Have a _survival time_ > 59 (it should basically never crash)
  - Have a _Traveled distance_ > 1
 
-You can verify the score of submission on the [objdet challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-objdet/leaderboard) after your submission has finished evaluating. 
+You can verify the score of submission on the [objdet challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet/leaderboard) after your submission has finished evaluating. 
 
 Note that we reserve the right to change these thresholds in order to filter out unstable agents.

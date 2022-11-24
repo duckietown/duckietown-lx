@@ -32,11 +32,11 @@ After completing the activities, you can submit your assignment with `dts code s
 
 Note that the submission will be sent to two different challenges:
 
-- [`mooc-collision-check-vali`][vali] is the **validation** challenge. You will be able to see the score and other output.
-- [`mooc-collision-check-test`][test] is the **testing** challenge. You will not be able to see the scores.
+- [`lx22-collision-check-vali`][vali] is the **validation** challenge. You will be able to see the score and other output.
+- [`lx22-collision-check-test`][test] is the **testing** challenge. You will not be able to see the scores.
 
 
 ## Grading criteria
 
-In order to pass, your agent has to get at least 95% of the queries correct on the `mooc-collision-check-test` challenge. 
+In order to pass, your agent has to get at least 95% of the queries correct on the `lx22-collision-check-test` challenge. 
 (This allows some slack, so that you can experiment with probabilistic algorithms).
