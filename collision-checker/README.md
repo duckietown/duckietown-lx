@@ -1,4 +1,5 @@
 # **Exercise: Collision Checker**
+<img src="./assets/images/dtlogo.png" alt="Duckietown" width="20%" style="margin-top:-75px; display: block; float: right">
 
 # Instructions
 
@@ -31,11 +32,14 @@ After completing the activities, you can submit your assignment with `dts code s
 
 Note that the submission will be sent to two different challenges:
 
-- [`mooc-collision-check-vali`][vali] is the **validation** challenge. You will be able to see the score and other output.
-- [`mooc-collision-check-test`][test] is the **testing** challenge. You will not be able to see the scores.
+- [`lx22-collision-check-vali`][vali] is the **validation** challenge. You will be able to see the score and other output.
+- [`lx22-collision-check-test`][test] is the **testing** challenge. You will not be able to see the scores.
 
 
 ## Grading criteria
 
-In order to pass, your agent has to get at least 95% of the queries correct on the `mooc-collision-check-test` challenge. 
+In order to pass, your agent has to get at least 95% of the queries correct on the `lx22-collision-check-test` challenge. 
 (This allows some slack, so that you can experiment with probabilistic algorithms).
+
+[vali]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-vali
+[test]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-test

@@ -1,4 +1,5 @@
 # **Exercise: Visual Lane Servoing**
+<img src="./assets/images/dtlogo.png" alt="Duckietown" width="20%" style="margin-top:-75px; display: block; float: right">
 
 # Instructions
 
@@ -40,6 +41,6 @@ In particular, the following are both required in order to pass:
 - Traveled distance > 4.8
 - Lateral deviation < 4.0
 
-You can monitor your performance using the [Challenge Leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-visservoing/leaderboard).
+You can monitor your performance using the [Challenge Leaderboard](https://challenges.duckietown.org/v4/humans/challenges/lx22-visservoing/leaderboard).
 
 Note that we reserve the right to change these thresholds in order to filter out unstable agents.
