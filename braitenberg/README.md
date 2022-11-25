@@ -6,6 +6,7 @@
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
+
 ## 1. Make sure your exercise is up to date
 
 Update your exercise definition and instructions,
@@ -13,7 +14,7 @@ Update your exercise definition and instructions,
     git pull upstream mooc2022
 
 
-## 2. Make sure your system is up to date
+## 2. Make sure your system is up-to-date
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
 
@@ -28,7 +29,7 @@ Update your exercise definition and instructions,
 
 ### Launch the code editor
 
-Open the code editor by running the following command from the root of the `braitenberg` exercise.
+Open the code editor by running the following command,
 
 ```
 dts code editor
@@ -40,6 +41,8 @@ this same document, you can continue there.
 
 
 ### Walkthrough of notebooks
+
+**NOTE**: You should be reading this from inside the code editor in your browser.
 
 Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the 
 `notebooks` directory and open the first notebook.
@@ -53,21 +56,17 @@ To test in simulation, use the command
 
     $ dts code workbench --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the experiment
-(probably `http://localhost:8090`).
-The other is VNC and not useful for this exercise. Ignore it.
-
-This simulation test will be very slow! We suggest opening the simulation viewer and enjoying a 
-cup of tea/coffee while your agent does its job. Monitor how it acts! 
-You might get some ideas on how to fix your matrices or the agent.py.
+There will be two URLs popping up to open in your browser: one is the direct view of the 
+simulated environment. The other is VNC and only useful for some exercises, follow the instructions
+in the notebooks to see if you need to access VNC.
 
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate 
-metric of performance, continue reading to the `Do local evaluations` section below.
+metric of performance, continue reading to the `Perform local evaluation` section below.
 
 
-### 🚙 Testing on the robot
+### 🚙 Testing on a physical robot
 
-You can test your agent on the robot using:
+You can test your agent on the robot using the command,
 
     dts code workbench --duckiebot YOUR_DUCKIEBOT
 
@@ -79,6 +78,10 @@ You can also test using
 
 This is the modality "drivers running on the robot, agent runs on the laptop."
 
+
+### Perform local evaluation
+
+TODO:
 
 ## Phase 3: Make a submission
 
