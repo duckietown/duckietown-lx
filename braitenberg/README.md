@@ -2,31 +2,31 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 
-# Instructions
+# Preliminaries
+
+**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
+
+## 1. Make sure your exercise is up to date
+
+Update your exercise definition and instructions,
+
+    git pull upstream mooc2022
 
 
-## Phase 0: System Update
+## 2. Make sure your system is up to date
+
+- 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
+
+- 💻 Update the shell commands: `dts update`
+
+- 💻 Update your laptop/desktop: `dts desktop update`
+
+- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
-### Pull from the upstream remote
+# Work on the exercise
 
-    git pull upstream
-    git merge upstream/mooc2022
-
-
-Make sure you have an updated system using
-
-    dts desktop update
-
-
-### Update Duckiebot
-
-If you have a Duckiebot, also do
-
-    dts duckiebot update
-
-
-## Launch the code editor
+### Launch the code editor
 
 Open the code editor by running the following command from the root of the `braitenberg` exercise.
 
@@ -39,34 +39,12 @@ of your browser to access the code editor. The first thing you will see in the c
 this same document, you can continue there.
 
 
-## Phase 1: Walkthrough of notebooks
+### Walkthrough of notebooks
 
-Use the navigator sidebar on the left-hand side to navigate to the `notebooks` directory and 
-open the notebook [braitenberg01](./notebooks/braitenberg01.ipynb).
+Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the 
+`notebooks` directory and open the first notebook.
 
-Work through the notebooks in sequence.
-
-The notebooks guide you to fill out some functions in the files `preprocessing.py` and 
-`connections.py`.
-
-They will also indicate the use of other tools.
-
-
-## Phase 2: Experiment in finding connections, modifying the agent
-
-In this phase you will experiment with the rest of the agent.
-
-The skeleton is in `packages/braitenberg_agent/agent.py`. 
-Read through and see how it uses the things you defined in the Python files above.
-
-Feel free to change anything.
-
-**Do note that you will most probably need to edit the BraitenbergAgentConfig class! Its current 
-gain and const values are off.** 
-They are much larger than they should be, as a way to help you finetune them.
-
-At the begining of an evaluation episode, the `max` and `min` values for both motors will be off, 
-but as the agent lives, it'll adjust itself. This slight change in motor values is normal.
+Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
 ### 💻 Testing in simulation
@@ -100,7 +78,6 @@ You can also test using
     dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
 
 This is the modality "drivers running on the robot, agent runs on the laptop."
-
 
 
 ## Phase 3: Make a submission
