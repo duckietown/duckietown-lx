@@ -1,1 +1,2 @@
-from .collision_checker import CollisionChecker
+from .collision_checker import *
+_ = CollisionChecker
