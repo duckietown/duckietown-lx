@@ -5,10 +5,10 @@ import numpy as np
 
 def PIDController(
         v_0: float,
-        theta_ref: float,
-        theta_hat: float,
-        prev_e: float,
-        prev_int: float,
+        y_ref: float,
+        y_hat: float,
+        prev_e_y: float,
+        prev_int_y: float,
         delta_t: float
 ) -> Tuple[float, float, float, float]:
     """
@@ -16,10 +16,10 @@ def PIDController(
 
     Args:
         v_0:        linear Duckiebot speed (given).
-        theta_ref:  reference heading pose.
-        theta_hat:  the current estiamted theta.
-        prev_e:     tracking error at previous iteration.
-        prev_int:   previous integral error term.
+        y_ref:  reference heading pose.
+        y_hat:  the current estiamted y.
+        prev_e_y:     tracking error at previous iteration.
+        prev_int_y:   previous integral error term.
         delta_t:    time interval since last call.
 
     Returns:
