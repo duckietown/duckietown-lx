@@ -5,8 +5,8 @@
 # TODO [A.Censi] ===> Fill in this section
 
 # About this exercise
-TODO
 
+In this exercise, you will learn how to manipulate and filter images to highlight specific objects before using these techniques to create your own Braitenberg agent for the task of avoiding duckies on the road. We'll guide you through the process step by step as you progress through the notebooks, and when you're satisfied with your results, you can submit your work to evaluate how your agent compares to solutions from other developers.
 
 ## Grading challenge
 
