@@ -1,36 +1,48 @@
-# **Exercise: ModCon - Modeling and Control**
+# **Exercise: Modeling and Control (ModCon)**
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
+# 💻 🚙 About this learning experience
 
-# TODO [J.Tani] ===> Fill in this section
+In this repository we collect learning materials for the topic of modeling and control (`ModCon`) of a differential drive robot. 
 
-# About this exercise
-TODO
+We include `activities` and one `exercise`.
 
-# TODO [J.Tani] <=== Fill in this section
+- Activies are designed as guided tutorials and solutions are publicly available. 
 
-## Grading challenge
+- Exercises are designed as "do it yourself", and solutions are not publicly available. 
 
-Your submissions will be sent to the [`lx22-modcon`][challenge] challenge.
+  - Exercises have associated "challenges", to which solutions (agents) are submitted for evaluation. Duckietown challenges are available on our [challenges server][challenges-server].
 
+[challenges-server]: https://challenges.duckietown.org/v4/humans/challenges/
 
-## Grading criteria
+## Evaluation
 
-To pass, your submitted agent must produce a stable driving behavior.
+Submissions to the exercise of this learning experience will be sent to the [`lx22-modcon`][challenge] challenge.
 
-The performance metrics that will determine pass / no pass are:
-- Major Infractions smaller or equal to 20; **and**
-- Survival Time bigger or equal to 40 seconds;
+You can verify the performance metrics of your submitted agents on the [Challenge Leaderboard][leaderboard]. 
 
-You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
+Evaluations are computationally intensive and performed on a best-effort basis. We deprioritize evaluating submissions from users that have already submitted in favor of those who have not. 
+
+To ensure priority evaluation services, please reach out to Duckietown at info@duckietown.com. 
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon/leaderboard
 
+## Supported hardware
+
+The activities of this module have been tested on the following hardware configurations:
+
+- Duckiebot: `DB21-M`, `DB21-J2`, `DB21-J4`, `DB-J` 
+
+Additional information on Duckietown robot configurations can be found on the [Duckietown Online Library][duckiedocs-robots]. Duckietown hardware is available on the Duckietown project [online store][get-hardware].
+
+[duckiedocs-robots]: https://docs.duckietown.org/daffy/opmanual_duckiebot/out/duckiebot_configurations.html
+[get-hardware]:https://get.duckietown.com/
+
 
 # Instructions
 
-**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
+**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this `README`).
 
 
 ## 1. Make sure your exercise is up-to-date
@@ -96,13 +108,13 @@ You can test your agent on the robot using the command,
 
     dts code workbench --duckiebot YOUR_DUCKIEBOT
 
-This is the modality "everything runs on the robot".
+In this mode "everything runs on the robot".
 
 You can also test using
 
     dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
 
-This is the modality "drivers running on the robot, agent runs on the laptop."
+In this mode instead "drivers run on the robot, agent runs on the laptop.". When testing like this you should expect reduced latency from computation (your computer is likely more powerful than the Duckiebot's onboard computer) but increased latency from network (as data and commands need to be shipped back and forth). Generally speaking the performance of this mode should be better than runnning the agent on the robot for computationally intensive agents, but this mode suffers from environmental factors (network quality and use).
 
 
 ### 📽 Perform local evaluation
@@ -112,19 +124,16 @@ You can do so by running the following command,
 
     dts code evaluate
 
-This should take a few minutes.
-This is not supposed to be an interactive process: just let it run, and when you return,
-you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the website.
+This will take a few minutes and it is not supposed to be an interactive process: just let it run, and when you return you will find the output in a folder, including videos, and trajectories, and all the statistics you would usually find on the website.
 
 
 ### 📬 Submit your solution
 
-When you are ready to submit your homework, use the following command,
+When you are ready to submit your agent solution, use the following command:
 
     dts code submit
 
-This will package all your code and send it to the Duckietown servers for evaluation.
+This will package all your code and send it to the Duckietown [challenges server][challenges-server] for evaluation.
 
 
 ## Troubleshooting
@@ -156,7 +165,5 @@ dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
 ## Retire obsolete submissions
 
 Note that you can "retire" submissions that you know are wrong.
-You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
 
-To do so, login using your token, then find the submission you want to retire from the list of submission
-in your user profile page. Use the button "retire" to the right of the submission record line.
+You can do so by logging in on the [challenges server][challenges-server] using your token, finding the submission you want to retire from the list of submission in your user profile page, and using the "retire" button to the right of the submission record line.
