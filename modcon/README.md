@@ -1,9 +1,9 @@
-# **Exercise: Modeling and Control (ModCon)**
+# **Activities: Modeling and Control (ModCon)**
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
-# 💻 🚙 About this learning experience
-
 In this repository we collect learning materials for the topic of modeling and control (`ModCon`) of a differential drive robot. 
+
+# 💻 🚙 About this learning experience
 
 We include `activities` and one `exercise`.
 
