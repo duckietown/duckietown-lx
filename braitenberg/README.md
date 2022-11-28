@@ -2,19 +2,38 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 
-# Preliminaries
+# TODO [A.Censi] ===> Fill in this section
+
+## About this exercise
+TODO
+
+
+### Grading challenge
+
+Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
+
+[challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
+
+### Grading criteria
+TODO
+
+# TODO [A.Censi] <=== Fill in this section
+
+
+
+## Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
 
-## 1. Make sure your exercise is up to date
+### 1. Make sure your exercise is up-to-date
 
 Update your exercise definition and instructions,
 
     git pull upstream mooc2022
 
 
-## 2. Make sure your system is up-to-date
+### 2. Make sure your system is up-to-date
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
 
@@ -25,9 +44,9 @@ Update your exercise definition and instructions,
 - 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
-# Work on the exercise
+## Work on the exercise
 
-### Launch the code editor
+#### Launch the code editor
 
 Open the code editor by running the following command,
 
@@ -35,36 +54,36 @@ Open the code editor by running the following command,
 dts code editor
 ```
 
-Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar 
-of your browser to access the code editor. The first thing you will see in the code editor is 
+Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar
+of your browser to access the code editor. The first thing you will see in the code editor is
 this same document, you can continue there.
 
 
-### Walkthrough of notebooks
+#### Walkthrough of notebooks
 
 **NOTE**: You should be reading this from inside the code editor in your browser.
 
-Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the 
+Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the
 `notebooks` directory and open the first notebook.
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-### 💻 Testing in simulation
+#### 💻 Testing in simulation
 
 To test in simulation, use the command
 
     $ dts code workbench --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the 
+There will be two URLs popping up to open in your browser: one is the direct view of the
 simulated environment. The other is VNC and only useful for some exercises, follow the instructions
 in the notebooks to see if you need to access VNC.
 
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate 
+This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
 
 
-### 🚙 Testing on a physical robot
+#### 🚙 Testing on a physical robot
 
 You can test your agent on the robot using the command,
 
@@ -79,17 +98,29 @@ You can also test using
 This is the modality "drivers running on the robot, agent runs on the laptop."
 
 
-### Perform local evaluation
+#### 📽 Perform local evaluation
 
-TODO:
+We suggest you evaluate your work locally before submitting your solution.
+You can do so by running the following command,
 
-## Phase 3: Make a submission
+    dts code evaluate
 
-At the end, to submit your homework, you should submit your agent using
+This should take a few minutes.
+This is not supposed to be an interactive process: just let it run, and when you return,
+you will find the output in a folder, including videos, and trajectories, and all the statistics
+you would usually find on the website.
+
+
+### 📬 Submit your solution
+
+When you are ready to submit your homework, use the following command,
 
     dts code submit
 
-The robot should travel at least an average of 2 meters from the starting point.
+This will package all your code and send it to the Duckietown servers for evaluation.
+
+
+### 🛠 Troubleshooting
 
 
 If an error of this form occurs
@@ -114,34 +145,11 @@ you need to log into docker using `dts`. Use this command:
 dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
 ```
 
-### Happy life all together in harmony
-
-We run the cloud evaluation service based on limited resources from our universities 
-and sponsorships. To avoid a denial-of-service-by-many-exercises-submissions attack, 
-we implemented a priority queue: the more submissions you send, the lower priority you have 
-and it will take more time to do them. 
-This is fair in the sense that, if you have never submitted, you are on top of the queue. 
-However, we try to evaluate all submissions.
-
-We hope this works and we don't need more stringent policies.
-
-You can help us in the following ways.
-
 
 ### Retire obsolete submissions
 
 Note that you can "retire" submissions that you know are wrong.
 You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
 
-
-### Do local evaluations
-
-# TODO: this is not supported right now as the `submission.yaml` file is stored in the recipe.
-
-We suggest you evaluate your work using the command
-
-    dts challenges evaluate
-
-This should take a few minutes. This is not supposed to be an interactive process: just let it run,
-and when you return, you will find the output in a folder, including videos, and trajectories,
-and all the statistics you find on the website.
+To do so, login using your token, then find the submission you want to retire from the list of submission
+in your user profile page. Use the button "retire" to the right of the submission record line.
