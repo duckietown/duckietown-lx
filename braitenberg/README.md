@@ -1,11 +1,10 @@
 # **Exercise: Braitenberg**
+
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
-
-# TODO [A.Censi] ===> Fill in this section
-
 # About this exercise
-TODO
+
+In this exercise you will create your very own Braitenberg vehicle.
 
 
 ## Grading challenge
@@ -15,10 +14,8 @@ Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
 
 ## Grading criteria
+
 TODO
-
-# TODO [A.Censi] <=== Fill in this section
-
 
 
 # Instructions

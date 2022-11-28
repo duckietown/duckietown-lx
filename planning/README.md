@@ -1,4 +1,5 @@
 # **Exercise: Planning**
+
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 
@@ -7,28 +8,29 @@
 In this exercise, you will write a path planner. You will need to have solved the `collision-checker` 
 exercise already because you will be reusing your collision checker.
 
-# TODO [A.Censi] ===> Fill in this section
-More instructions here on where to copy the `collision-checker` solution.
-# TODO [A.Censi] <=== Fill in this section
+You will have to move manually the code in the `collision-checker` exercise to this one.
+You likely will have to copy the module in the directory `packages/` of that exercises to the directory `packages/` of this exercise.  
+
 
 Note: This is a code-only exercise: you don't need the Duckiebot.
 
-
+ 
 ## Grading challenges
 
 Your submissions will be sent to the `lx22-planning-*` challenges. To see the full list of challenges
-check the [Challenges web page][https://challenges-stage.duckietown.org/humans/challenges]
+check the [Challenges website][challenges].
 
 
 ## Grading criteria
 
 In order to pass, the submitted agent must:
 
-- Achieve at least `95%` of the queries correct on the `lx22-planning-*-test` challenges.
+- Achieve at least 95% of the queries correct on the `lx22-planning-*-test` challenges.
 
-You can verify the scores of your submissions on the [Challenges website][https://challenges-stage.duckietown.org/humans/challenges] after your submission is evaluated.
+You can verify the scores of your submissions on the [Challenges website][challenges] after your submission is evaluated.
 
 
+[challenges]: https://challenges.duckietown.org/v4/humans/challenges
 
 # Instructions
 
@@ -37,7 +39,7 @@ You can verify the scores of your submissions on the [Challenges website][https:
 
 ## 1. Make sure your exercise is up-to-date
 
-Update your exercise definition and instructions,
+Update your exercise definition and instructions using:
 
     git pull upstream mooc2022
 
@@ -49,8 +51,6 @@ Update your exercise definition and instructions,
 - 💻 Update the shell commands: `dts update`
 
 - 💻 Update your laptop/desktop: `dts desktop update`
-
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
 ## 3. Work on the exercise
@@ -76,35 +76,6 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 `notebooks` directory and open the first notebook.
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
-
-
-### 💻 Testing in simulation
-
-To test in simulation, use the command
-
-    $ dts code workbench --sim
-
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
-
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
-metric of performance, continue reading to the `Perform local evaluation` section below.
-
-
-### 🚙 Testing on a physical robot
-
-You can test your agent on the robot using the command,
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT
-
-This is the modality "everything runs on the robot".
-
-You can also test using
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
-
-This is the modality "drivers running on the robot, agent runs on the laptop."
 
 
 ### 📽 Perform local evaluation
@@ -158,7 +129,7 @@ dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
 ## Retire obsolete submissions
 
 Note that you can "retire" submissions that you know are wrong.
-You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
+You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/v4/).
 
 To do so, login using your token, then find the submission you want to retire from the list of submission
 in your user profile page. Use the button "retire" to the right of the submission record line.
