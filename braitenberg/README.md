@@ -4,8 +4,7 @@
 
 # About this exercise
 
-In this exercise you will create your very own Braitenberg vehicle.
-
+In this exercise, you will learn how to manipulate and filter images to highlight specific objects before using these techniques to create your own Braitenberg agent for the task of avoiding duckies on the road. We'll guide you through the process step by step as you progress through the notebooks, and when you're satisfied with your results, you can submit your work to evaluate how your agent compares to solutions from other developers.
 
 ## Grading challenge
 
@@ -14,9 +13,7 @@ Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
 
 ## Grading criteria
-
 TODO
-
 
 # Instructions
 
