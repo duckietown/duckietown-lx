@@ -1,20 +1,20 @@
-# **Exercise: Visual Lane Servoing**
+# **Exercise: Object Detection**
 <img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 
 # TODO [L.Paull] ===> Fill in this section
 
-## About this exercise
+# About this exercise
 TODO
 
 # TODO [L.Paull] <=== Fill in this section
 
-### Grading challenge
+## Grading challenge
 
 Your submissions will be sent to the [`lx22-objdet`][challenge] challenge.
 
 
-### Grading criteria
+## Grading criteria
 
 In order to pass, the submitted agent must:
 
@@ -30,19 +30,19 @@ Note that we reserve the right to change these thresholds in order to filter out
 
 
 
-## Instructions
+# Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
 
-### 1. Make sure your exercise is up-to-date
+## 1. Make sure your exercise is up-to-date
 
 Update your exercise definition and instructions,
 
     git pull upstream mooc2022
 
 
-### 2. Make sure your system is up-to-date
+## 2. Make sure your system is up-to-date
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
 
@@ -53,9 +53,9 @@ Update your exercise definition and instructions,
 - 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
-## Work on the exercise
+## 3. Work on the exercise
 
-#### Launch the code editor
+### Launch the code editor
 
 Open the code editor by running the following command,
 
@@ -68,7 +68,7 @@ of your browser to access the code editor. The first thing you will see in the c
 this same document, you can continue there.
 
 
-#### Walkthrough of notebooks
+### Walkthrough of notebooks
 
 **NOTE**: You should be reading this from inside the code editor in your browser.
 
@@ -78,7 +78,7 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-#### 💻 Testing in simulation
+### 💻 Testing in simulation
 
 To test in simulation, use the command
 
@@ -92,7 +92,7 @@ This simulation test is just that, a test. Don't trust it fully. If you want a m
 metric of performance, continue reading to the `Perform local evaluation` section below.
 
 
-#### 🚙 Testing on a physical robot
+### 🚙 Testing on a physical robot
 
 You can test your agent on the robot using the command,
 
@@ -107,7 +107,7 @@ You can also test using
 This is the modality "drivers running on the robot, agent runs on the laptop."
 
 
-#### 📽 Perform local evaluation
+### 📽 Perform local evaluation
 
 We suggest you evaluate your work locally before submitting your solution.
 You can do so by running the following command,
@@ -129,7 +129,7 @@ When you are ready to submit your homework, use the following command,
 This will package all your code and send it to the Duckietown servers for evaluation.
 
 
-### 🛠 Troubleshooting
+## Troubleshooting
 
 
 If an error of this form occurs
@@ -155,7 +155,7 @@ dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
 ```
 
 
-### Retire obsolete submissions
+## Retire obsolete submissions
 
 Note that you can "retire" submissions that you know are wrong.
 You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
