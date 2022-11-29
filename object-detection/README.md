@@ -1,78 +1,164 @@
-# Activity and Exercise Instructions
+# **Exercise: Object Detection**
+<img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
-Follow these instructions to run these activities. At the end will be instructions to submit the exercise.
 
-## Phase 0: System update
+# TODO [L.Paull] ===> Fill in this section
+
+# About this exercise
+TODO
+
+# TODO [L.Paull] <=== Fill in this section
+
+## Grading challenge
+
+Your submissions will be sent to the [`lx22-objdet`][challenge] challenge.
+
+
+## Grading criteria
+
+In order to pass, the submitted agent must:
+
+- Have a _survival time_ > 59 (it should basically never crash)
+- Have a _Traveled distance_ > 1
+
+You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
+
+Note that we reserve the right to change these thresholds in order to filter out unstable agents.
+
+[challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet
+[leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet/leaderboard
+
+
+
+# Instructions
+
+**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
+
+
+## 1. Make sure your exercise is up-to-date
+
+Update your exercise definition and instructions,
+
+    git pull upstream mooc2022
+
+
+## 2. Make sure your system is up-to-date
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
 
 - 💻 Update the shell commands: `dts update`
 
-- 💻 Pull latest containers on your laptop: `dts desktop update`
+- 💻 Update your laptop/desktop: `dts desktop update`
 
-- 🚙 Clean and update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
-
-- 🚙 Reboot your Duckiebot.
+- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
-## Phase 1: Notebooks walkthrough
+## 3. Work on the exercise
 
- - Build the workspace with:
+### Launch the code editor
 
-  💻$ `dts exercises build`
-  
- - Run the notebooks **with the `--vnc` flag**
+Open the code editor by running the following command,
 
-  💻$ `dts exercises lab --vnc`
-  
-This will run a [Jupyter Lab][lab] and open a browser window. Enter the password `quackquack`.
+```
+dts code editor
+```
 
-[lab]: https://jupyterlab.readthedocs.io/en/stable/
-
-Click through to `01-CNN` and then click on [`cnn.ipynb`](localhost:8888/lab/tree/01-CNN/cnn.ipynb). Once you have completed that notebook, move on to the next. Make sure that you go through them in order (especially `02`-`04`).
-
-Since we are working with neural networks now, some of these exercises require you to train neural network models. We will use [Google Colaboratory](https://colab.research.google.com/) for this. As a result, having a Google account is a prerequisite. 
+Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar
+of your browser to access the code editor. The first thing you will see in the code editor is
+this same document, you can continue there.
 
 
+### Walkthrough of notebooks
 
-## Phase 2: Evaluate and refine your model and solution
+**NOTE**: You should be reading this from inside the code editor in your browser.
 
-You can finetune your solution and see how it behaves in the simulator using:
+Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the
+`notebooks` directory and open the first notebook.
 
-    💻$ `dts exercises test --sim` 
-
-NB: You may need to stop your `dts exercises lab --vnc` command and rerun without the `--vnc` since we will also use VNC
-for `dts exercises test`.
-
-Similar to the last exercises, you can open up the noVNC browser and look at the image stream in `rqt_image_view` to 
-gauge the performance of your model. In noVNC, click on the `rqt_image_view` icon and in the dropdown menu select 
-`agent/object_detection_node/object_detections_img`. This image will show boxes with labels for any objects that
-are reported by your model. 
-
-You can similarly run your agent on your Duckiebot (if you have a Jetson Nano) using:
-
-    💻$ `dts exercises test -b ![DUCKIEBOT_NAME]`
-
-You can repeat the procedure above for viewing the detections overlaid on your camera image.
+Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-## Phase 3: Submit the homework
+### 💻 Testing in simulation
 
-Once you are satisfied with your agent's performance, you can submit it. It's a good idea to evaluate it locally with the exact challenge conditions first. This can be done with:
+To test in simulation, use the command
 
-    💻$ `dts challenges evaluate`
-    
-Then finally submit with 
+    $ dts code workbench --sim
 
-    💻$ `dts challenges submit`
+There will be two URLs popping up to open in your browser: one is the direct view of the
+simulated environment. The other is VNC and only useful for some exercises, follow the instructions
+in the notebooks to see if you need to access VNC.
 
-NB: it's a good idea to delete the `duckietown_dataset` that you created before submitting because it will make your submission unnessarily large. 
+This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
+metric of performance, continue reading to the `Perform local evaluation` section below.
 
-## Grading Criteria
 
-In order to pass, the submitted agent must:
- 
- - Have a _survival time_ > 59 (it should basically never crash)
- - Have a _Traveled distance_ > 1
+### 🚙 Testing on a physical robot
 
-You can verify the score of submission on the [objdet challenge leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-modcon/leaderboard) after your submission has finished evaluating. 
+You can test your agent on the robot using the command,
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT
+
+This is the modality "everything runs on the robot".
+
+You can also test using
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
+
+This is the modality "drivers running on the robot, agent runs on the laptop."
+
+
+### 📽 Perform local evaluation
+
+We suggest you evaluate your work locally before submitting your solution.
+You can do so by running the following command,
+
+    dts code evaluate
+
+This should take a few minutes.
+This is not supposed to be an interactive process: just let it run, and when you return,
+you will find the output in a folder, including videos, and trajectories, and all the statistics
+you would usually find on the website.
+
+
+### 📬 Submit your solution
+
+When you are ready to submit your homework, use the following command,
+
+    dts code submit
+
+This will package all your code and send it to the Duckietown servers for evaluation.
+
+
+## Troubleshooting
+
+
+If an error of this form occurs
+
+```bash
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
+    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
+    f(rest, environment)
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
+    br = submission_build(
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
+    raise ZException(msg, available=list(credentials))
+zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
+available:
+```
+
+you need to log into docker using `dts`. Use this command:
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
+
+
+## Retire obsolete submissions
+
+Note that you can "retire" submissions that you know are wrong.
+You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
+
+To do so, login using your token, then find the submission you want to retire from the list of submission
+in your user profile page. Use the button "retire" to the right of the submission record line.

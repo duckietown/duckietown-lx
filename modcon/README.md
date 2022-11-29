@@ -1,11 +1,58 @@
-# **Exercise: ModCon - Modeling and Control**
+# **Activities: Modeling and Control (ModCon)**
+<img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
+
+In this repository we collect learning materials for the topic of modeling and control (`ModCon`) of a differential drive robot. 
+
+# 💻 🚙 About this learning experience
+
+We include `activities` and one `exercise`.
+
+- Activies are designed as guided tutorials and solutions are publicly available. 
+
+- Exercises are designed as "do it yourself", and solutions are not publicly available. 
+
+  - Exercises have associated "challenges", to which solutions (agents) are submitted for evaluation. Duckietown challenges are available on our [challenges server][challenges-server].
+
+[challenges-server]: https://challenges.duckietown.org/v4/humans/challenges/
+
+## Evaluation
+
+Submissions to the exercise of this learning experience will be sent to the [`lx22-modcon`][challenge] challenge.
+
+You can verify the performance metrics of your submitted agents on the [Challenge Leaderboard][leaderboard]. 
+
+Evaluations are computationally intensive and performed on a best-effort basis. We deprioritize evaluating submissions from users that have already submitted in favor of those who have not. 
+
+To ensure priority evaluation services, please reach out to Duckietown at info@duckietown.com. 
+
+[challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon
+[leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon/leaderboard
+
+## Supported hardware
+
+The activities of this module have been tested on the following hardware configurations:
+
+- Duckiebot: `DB21-M`, `DB21-J2`, `DB21-J4`, `DB-J` 
+
+Additional information on Duckietown robot configurations can be found on the [Duckietown Online Library][duckiedocs-robots]. Duckietown hardware is available on the Duckietown project [online store][get-hardware].
+
+[duckiedocs-robots]: https://docs.duckietown.org/daffy/opmanual_duckiebot/out/duckiebot_configurations.html
+[get-hardware]:https://get.duckietown.com/
+
 
 # Instructions
 
-The final exercise counts towards grading and must be submitted for evaluation if you are pursuing the MOOC verified track.
+**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this `README`).
 
 
-## Make sure your system is up to date
+## 1. Make sure your exercise is up-to-date
+
+Update your exercise definition and instructions,
+
+    git pull upstream mooc2022
+
+
+## 2. Make sure your system is up-to-date
 
 - 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
 
@@ -16,28 +63,107 @@ The final exercise counts towards grading and must be submitted for evaluation i
 - 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
-## Execute the activities
+## 3. Work on the exercise
 
-- Clone this repository (or pull from the upstream remote if you already have a fork).
+### Launch the code editor
 
-- Navigate to the exercise root directory and start the code editor with `dts code editor`. It will show a URL that you can open in your browser. The same instructions will appear on the web page, continue there.
+Open the code editor by running the following command,
 
-- Open the first notebook ([01-Representations](./notebooks/01-Representations/pose_representation.ipynb)), and follow the instructions.
+```
+dts code editor
+```
 
-- You will have to execute the activities in order, from [01-Representations](./notebooks/01-Representations/pose_representation.ipynb) to [05-PID-Control](./notebooks/05-PID-Control/PID_controller.ipynb). Skipping activities might result in errors.
+Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar
+of your browser to access the code editor. The first thing you will see in the code editor is
+this same document, you can continue there.
 
 
-## Submit the homework
+### Walkthrough of notebooks
 
-- After completing the activities, you can proceed to [06-PID-Control-Homework](./notebooks/06-PID-Control-Homework/PID_controller_homework.ipynb) and follow the instructions to submit your assignment.
+**NOTE**: You should be reading this from inside the code editor in your browser.
+
+Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the
+`notebooks` directory and open the first notebook.
+
+Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-## Grading criteria
+### 💻 Testing in simulation
 
-To pass, the submitted agent must produce a stable driving behavior.
+To test in simulation, use the command
 
-The performance metrics that will determine pass / no pass are:
-- Major Infractions smaller or equal to 20; **and**
-- Survival Time bigger or equal to 40 seconds;
+    $ dts code workbench --sim
 
-You can verify the scores of your submissions on the [Challenge Leaderboard](https://challenges.duckietown.org/v4/humans/challenges/mooc-modcon/leaderboard) after your submission is evaluated.
+There will be two URLs popping up to open in your browser: one is the direct view of the
+simulated environment. The other is VNC and only useful for some exercises, follow the instructions
+in the notebooks to see if you need to access VNC.
+
+This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
+metric of performance, continue reading to the `Perform local evaluation` section below.
+
+
+### 🚙 Testing on a physical robot
+
+You can test your agent on the robot using the command,
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT
+
+In this mode "everything runs on the robot".
+
+You can also test using
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
+
+In this mode instead "drivers run on the robot, agent runs on the laptop.". When testing like this you should expect reduced latency from computation (your computer is likely more powerful than the Duckiebot's onboard computer) but increased latency from network (as data and commands need to be shipped back and forth). Generally speaking the performance of this mode should be better than runnning the agent on the robot for computationally intensive agents, but this mode suffers from environmental factors (network quality and use).
+
+
+### 📽 Perform local evaluation
+
+We suggest you evaluate your work locally before submitting your solution.
+You can do so by running the following command,
+
+    dts code evaluate
+
+This will take a few minutes and it is not supposed to be an interactive process: just let it run, and when you return you will find the output in a folder, including videos, and trajectories, and all the statistics you would usually find on the website.
+
+
+### 📬 Submit your solution
+
+When you are ready to submit your agent solution, use the following command:
+
+    dts code submit
+
+This will package all your code and send it to the Duckietown [challenges server][challenges-server] for evaluation.
+
+
+## Troubleshooting
+
+
+If an error of this form occurs
+
+```bash
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
+    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
+    f(rest, environment)
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
+    br = submission_build(
+  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
+    raise ZException(msg, available=list(credentials))
+zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
+available:
+```
+
+you need to log into docker using `dts`. Use this command:
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
+
+
+## Retire obsolete submissions
+
+Note that you can "retire" submissions that you know are wrong.
+
+You can do so by logging in on the [challenges server][challenges-server] using your token, finding the submission you want to retire from the list of submission in your user profile page, and using the "retire" button to the right of the submission record line.
