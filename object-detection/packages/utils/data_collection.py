@@ -16,14 +16,15 @@ from utils import launch_env, seed, makedirs, xminyminxmaxymax2xywfnormalized, r
 from setup import find_all_boxes_and_classes
 
 
+# constants
+DATASET_DIR="/code/object-detection/assets/duckietown_object_detection_dataset"
+IMAGE_SIZE = 416
+# this is the percentage of simulated data that will go into the training set (as opposed to the testing set)
+SIMULATED_TRAIN_SPLIT_PERCENTAGE = 0.8
+
 
 class SkipException(Exception):
     pass
-
-# Need to change this dataset directory if not running inside docker container... TODO fix
-DATASET_DIR="/jupyter_ws/solution/duckietown_dataset"
-IMAGE_SIZE=416
-SPLIT_PERCENTAGE=0.8
 
 
 npz_index = 0
@@ -114,5 +115,3 @@ print("NOW GOING TO MOVE IMAGES INTO TRAIN AND VAL")
 all_image_names = [str(idx) for idx in range(npz_index)]
 train_test_split(all_image_names, SPLIT_PERCENTAGE, DATASET_DIR)
 print("DONE!")
-#run(f"rm -rf {DATASET_DIR}/images {DATASET_DIR}/labels")
-
