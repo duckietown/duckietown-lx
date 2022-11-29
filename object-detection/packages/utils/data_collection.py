@@ -1,19 +1,10 @@
 #!/usr/bin/env python3
 
-import os
-from functools import reduce
-
 import cv2
 import numpy as np
-
-## Important - don't remove these imports even though they seem unneeded
-import pyglet
-from pyglet.window import key
-
-from agent import PurePursuitPolicy
-from utils import launch_env, seed, makedirs, xminyminxmaxymax2xywfnormalized, run, train_test_split
-
-from setup import find_all_boxes_and_classes
+from utils.agent import PurePursuitPolicy
+from utils.setup import find_all_boxes_and_classes
+from utils.utils import launch_env, seed, xminyminxmaxymax2xywfnormalized, train_test_split
 
 
 # constants
