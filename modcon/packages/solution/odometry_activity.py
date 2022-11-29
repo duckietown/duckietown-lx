@@ -14,9 +14,15 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
             ticks: current number of ticks.
     """
 
-    # TODO: these are random values, you have to implement your own solution in here
-    ticks = prev_ticks + int(np.random.uniform(0, 10))
-    dphi = np.random.random()
+    # Calculate the total rotation of the motor shaft, given the wheel encoder ticks
+    delta_ticks = ticks-prev_ticks
+
+    # Assuming no wheel slipping
+    dphi = 2*np.pi*delta_ticks/resolution
+    
+    #Dticks = prev_ticks + int(np.random.uniform(0, 10))
+    #dphi = np.random.random()
+
     # ---
     return dphi, ticks
 
@@ -30,11 +36,12 @@ def pose_estimation(
         delta_phi_left: float,
         delta_phi_right: float,
 ) -> Tuple[float, float, float]:
+
     """
-    Calculate the current Duckiebot pose using the dead-reckoning approach.
+    Calculate the current Duckiebot pose using the dead-reckoning model.
 
     Args:
-        R:                  radius of wheel (assumed identical) - this is fixed in simulation,
+        R:                  radius of wheel (both wheels are assumed to have the same size) - this is fixed in simulation,
                             and will be imported from your saved calibration for the real robot
         baseline:           distance from wheel to wheel; 2L of the theory
         x_prev:             previous x estimate - assume given
@@ -49,9 +56,26 @@ def pose_estimation(
         theta:              estimated heading
     """
 
-    # TODO: these are random values, you have to implement your own solution in here
-    x_curr = np.random.random()
-    y_curr = np.random.random()
-    theta_curr = np.random.random()
+    # Use the odometry model to estimate the Duckiebot's pose
+
+    w = [R, 2*R / baseline, 1]
+
+    x = np.array(
+        [
+            [
+                (delta_phi_left + delta_phi_right) * np.cos(theta_prev) / 2,
+                (delta_phi_left + delta_phi_right) * np.sin(theta_prev) / 2,
+                0,
+            ],
+            [0, 0, (delta_phi_right - delta_phi_left) / 2],
+            [x_prev, y_prev, theta_prev],
+        ]
+    )
+
+    x_curr, y_curr, theta_curr = np.array(w).dot(x)
+
+    # x_curr = np.random.random()
+    # y_curr = np.random.random()
+    # theta_curr = np.random.random()
     # ---
     return x_curr, y_curr, theta_curr

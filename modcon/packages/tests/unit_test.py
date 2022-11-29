@@ -29,8 +29,10 @@ class UnitTestMessage:
 class UnitTestOdometry:
     # Test the odometry
     def __init__(self, R, baseline_wheel2wheel, poseEstimation):
-        x_prev = y_prev = theta_prev = 0  # initial conditions
-
+        
+        # initial conditions
+        x_prev = y_prev = theta_prev = 0  
+        
         # to store the estimates, so we can plot them
         x_prev_ = []
         y_prev_ = []
@@ -42,17 +44,18 @@ class UnitTestOdometry:
             x_prev,
             y_prev,
             theta_prev,
-            5 * np.pi / 180,  # wheel rotates of 5 degree
-            10 * np.pi / 180,
-        )  # wheel rotates of 10 degree
+            5 * np.pi / 180,  # left wheel rotates of 5 degree
+            10 * np.pi / 180, # right wheel rotates of 10 degree
+            )  
         # given how much the robot rotates with wheels rotation of 5 and 10 degree,
         # calculate the number of steps required to do a circle.
-        # this is indipendent fro R and the baseline int this way!
+        # this is indipendent from R and the baseline
         steps4circle = int(2 * np.pi / robot_rotation)
 
-        # iterate steps4circle times the pose estiamtion.
+        # iterate steps4circle times the pose estimation 
+        # function to be tested.
         for _ in range(0, steps4circle):
-            # save the current values of y, x and theta
+            # save the current values of x, y and theta
             x_prev_.append(x_prev)
             y_prev_.append(y_prev)
             theta_prev_.append(theta_prev)
@@ -62,9 +65,10 @@ class UnitTestOdometry:
                 x_prev,
                 y_prev,
                 theta_prev,
-                5 * np.pi / 180,  # wheel rotates of 5 degree
+                5 * np.pi / 180, 
                 10 * np.pi / 180,
-            )  # wheel rotates of 10 degree
+            )  
+        
         # plot the results
         self.plot(x_prev_, y_prev_, theta_prev_)
 
