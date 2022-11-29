@@ -3,7 +3,12 @@
 
 # About this exercise
 
+Collision checking
+As part of this exercise, you will *write your very own collision checker*. 
+While this checker will only function in-simulation, it should give you a good idea of the complexity associated with detecting collisions in the real world.
+
 The boilerplate code contained in this folder is a fully functional (albeit wrong) solution. 
+
 Currently, the solution submits random guesses as to whether the robot collides with the environment or not. 
 You can try to evaluate right away to see how it works.
 
@@ -46,8 +51,6 @@ Update your exercise definition and instructions,
 
 - 💻 Update your laptop/desktop: `dts desktop update`
 
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
-
 
 ## 3. Work on the exercise
 
@@ -72,35 +75,6 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 `notebooks` directory and open the first notebook.
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
-
-
-### 💻 Testing in simulation
-
-To test in simulation, use the command
-
-    $ dts code workbench --sim
-
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
-
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
-metric of performance, continue reading to the `Perform local evaluation` section below.
-
-
-### 🚙 Testing on a physical robot
-
-You can test your agent on the robot using the command,
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT
-
-This is the modality "everything runs on the robot".
-
-You can also test using
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
-
-This is the modality "drivers running on the robot, agent runs on the laptop."
 
 
 ### 📽 Perform local evaluation

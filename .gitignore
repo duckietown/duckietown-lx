@@ -14,3 +14,4 @@ catkin_ws/.catkin_tools/
 *resolved
 .ipynb_checkpoints
 *-filtered*
+.pytest_cache
