@@ -56,26 +56,9 @@ def pose_estimation(
         theta:              estimated heading
     """
 
-    # Use the odometry model to estimate the Duckiebot's pose
-
-    w = [R, 2*R / baseline, 1]
-
-    x = np.array(
-        [
-            [
-                (delta_phi_left + delta_phi_right) * np.cos(theta_prev) / 2,
-                (delta_phi_left + delta_phi_right) * np.sin(theta_prev) / 2,
-                0,
-            ],
-            [0, 0, (delta_phi_right - delta_phi_left) / 2],
-            [x_prev, y_prev, theta_prev],
-        ]
-    )
-
-    x_curr, y_curr, theta_curr = np.array(w).dot(x)
-
-    # x_curr = np.random.random()
-    # y_curr = np.random.random()
-    # theta_curr = np.random.random()
+    # These are random values, replace with your own
+    x_curr = np.random.random()
+    y_curr = np.random.random()
+    theta_curr = np.random.random()
     # ---
     return x_curr, y_curr, theta_curr

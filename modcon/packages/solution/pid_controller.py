@@ -29,7 +29,8 @@ def PIDController(
         e_int:   current integral error (automatically becomes prev_int_y at next iteration).
     """
 
-# Tracking error
+
+    # Tracking error
     e = theta_ref - theta_hat
 
     # integral of the error
@@ -48,7 +49,30 @@ def PIDController(
 
     # PID controller for omega
     omega = Kp*e + Ki*e_int + Kd*e_der
+
+    u = [v_0, omega]
     
-    #print(f"\n\nDelta time : {delta_t} \nE : {np.rad2deg(e)} \nE int : {e_int} \nPrev e : {prev_e} \nU : {u} \nTheta hat: {np.rad2deg(theta_hat)} \n")
+    print(f"\n\nDelta time : {delta_t} \nE : {np.rad2deg(e)} \nE int : {e_int} \nPrev e : {prev_e} \nU : {u} \nTheta hat: {np.rad2deg(theta_hat)} \n")
+ 
+
+    # Tracking error
+  
+    # integral of the error
+    
+    # (anti-windup - preventing the integral error from growing too much)
+    
+    # derivative of the error
+    
+    # controller coefficients
+
+    # PID controller for omega
+    
+    # Hint: print for debugging
+    # print(f"\n\nDelta time : {delta_t} \nE : {np.rad2deg(e)} \nE int : {e_int} \nPrev e : {prev_e} \nU : {u} \nTheta hat: {np.rad2deg(theta_hat)} \n")
    
+    # These are random values, replace with your own function
+    omega = np.random.uniform(-8.0, 8.0)
+    e = np.random.random()
+    e_int = np.random.random()
+
     return v_0, omega, e, e_int
