@@ -106,8 +106,7 @@ class UnitTestHeadingPID:
         u_l_ = []
 
         for _ in self.t1:
-            theta_hat, u_r, u_l = self.sim(
-                omega, self.v_0, self.delta_t)  # simulate driving
+            theta_hat, u_r, u_l = self.sim(omega, self.v_0, self.delta_t)  # simulate driving
 
             # For plotting
             theta_hat_.append(theta_hat)
@@ -124,8 +123,7 @@ class UnitTestHeadingPID:
             omega = u[1]
 
         # plot the theta_hat and the error on theta
-        self.plot_pose(theta_hat_, err_, "Duckiebot heading (Theta)",
-                       "Time (s)", "Theta (Degree)")
+        self.plot_pose(theta_hat_, err_, "Duckiebot heading (Theta)", "Time (s)", "Theta (Degree)")
         # plot the control inputs
         self.plot_input(u_r_, u_l_, "Control inputs", "Time (s)", "PWM")
 
@@ -157,8 +155,7 @@ class UnitTestHeadingPID:
             omega = u[1]
 
         # plot theta with noise and the error on theta
-        self.plot_pose(theta_hat_, err_, "Theta with noise",
-                       "Time (s)", "Theta (Degree)")
+        self.plot_pose(theta_hat_, err_, "Theta with noise", "Time (s)", "Theta (Degree)")
         # plot the input to the wheels
         self.plot_input(u_r_, u_l_, "Control inputs", "Time (s)", "PWM")
 
@@ -171,8 +168,7 @@ class UnitTestHeadingPID:
         plt.xticks(np.arange(0, len(u_l) + 1, 1))
 
         # plot the control inputs
-        plt.axis([0, 10, np.min([np.min(u_r), np.min(u_l)]),
-                 np.max([np.max(u_r), np.max(u_l)])])
+        plt.axis([0, 10, np.min([np.min(u_r), np.min(u_l)]), np.max([np.max(u_r), np.max(u_l)])])
 
         plt.plot(self.t1, (u_r), "r--", self.t1, (u_l), "b--")
 
@@ -215,8 +211,7 @@ class UnitTestHeadingPID:
         delta_phi_left = time * omega_l
         delta_phi_right = time * omega_r
 
-        self.theta_prev = self.theta_prev + self.R * \
-            (delta_phi_right - delta_phi_left) / (self.L)
+        self.theta_prev = self.theta_prev + self.R * (delta_phi_right - delta_phi_left) / (self.L)
 
         u_r, u_l = self.wheel_inputs(omega_r, omega_l)
 
@@ -231,12 +226,10 @@ class UnitTestHeadingPID:
 
         # variance of the additive measurement noise
         measurement_noise_variance_deg = 0.5
-        measurement_noise = np.random.normal(
-            0, np.deg2rad(measurement_noise_variance_deg))
+        measurement_noise = np.random.normal(0, np.deg2rad(measurement_noise_variance_deg))
 
         self.theta_prev = (
-            self.theta_prev + self.R *
-            (delta_phi_right - delta_phi_left) / (self.L) + measurement_noise
+            self.theta_prev + self.R * (delta_phi_right - delta_phi_left) / (self.L) + measurement_noise
         )
 
         u_r, u_l = self.wheel_inputs(omega_r, omega_l)
@@ -323,10 +316,8 @@ class UnitTestPositionPID:
             self.v_0 = u[0]
             omega = u[1]
 
-        self.plot_pose(y_hat_, err_, "With noise",
-                       "Time steps (0.2 s)", "Y (m)")
-        self.plot_input(u_r_, u_l_, "Control inputs",
-                        "Time steps (0.2 s)", "PWM")
+        self.plot_pose(y_hat_, err_, "With noise", "Time steps (0.2 s)", "Y (m)")
+        self.plot_input(u_r_, u_l_, "Control inputs", "Time steps (0.2 s)", "PWM")
 
     def plot_input(self, u_r, u_l, title, x_label, y_label):
         import matplotlib.pyplot as plt
@@ -338,8 +329,7 @@ class UnitTestPositionPID:
 
         # plot the control inputs
         plt.axis(
-            [0, self.test_horizon, np.min([np.min(u_r), np.min(u_l)]), np.max([
-                np.max(u_r), np.max(u_l)])]
+            [0, self.test_horizon, np.min([np.min(u_r), np.min(u_l)]), np.max([np.max(u_r), np.max(u_l)])]
         )
 
         plt.plot(self.t1, (u_r), "r--", self.t1, (u_l), "b")
@@ -376,11 +366,9 @@ class UnitTestPositionPID:
         delta_phi_left = time * omega_l
         delta_phi_right = time * omega_r
 
-        self.y_prev = self.y_prev + self.R * \
-            (delta_phi_right + delta_phi_left) * np.sin(self.theta_prev) / 2
+        self.y_prev = self.y_prev + self.R * (delta_phi_right + delta_phi_left) * np.sin(self.theta_prev) / 2
 
-        self.theta_prev = self.theta_prev + self.R * \
-            (delta_phi_right - delta_phi_left) / (self.L)
+        self.theta_prev = self.theta_prev + self.R * (delta_phi_right - delta_phi_left) / (self.L)
 
         u_r, u_l = self.wheel_inputs(omega_r, omega_l)
 
@@ -398,12 +386,13 @@ class UnitTestPositionPID:
         measurement_noise_variance_m = 0.005
         measurement_noise = np.random.normal(0, measurement_noise_variance_m)
 
-        self.y_prev = self.y_prev + self.R * \
-            (delta_phi_right + delta_phi_left) * \
-            np.sin(self.theta_prev) / 2 + measurement_noise
+        self.y_prev = (
+            self.y_prev
+            + self.R * (delta_phi_right + delta_phi_left) * np.sin(self.theta_prev) / 2
+            + measurement_noise
+        )
 
-        self.theta_prev = self.theta_prev + self.R * \
-            (delta_phi_right - delta_phi_left) / self.L
+        self.theta_prev = self.theta_prev + self.R * (delta_phi_right - delta_phi_left) / self.L
 
         u_r, u_l = self.wheel_inputs(omega_r, omega_l)
 

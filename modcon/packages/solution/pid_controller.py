@@ -4,12 +4,7 @@ import numpy as np
 
 
 def PIDController(
-        v_0: float,
-        theta_ref: float,
-        theta_hat: float,
-        prev_e: float,
-        prev_int: float,
-        delta_t: float
+    v_0: float, theta_ref: float, theta_hat: float, prev_e: float, prev_int: float, delta_t: float
 ) -> Tuple[float, float, float, float]:
     """
     PID performing heading control.

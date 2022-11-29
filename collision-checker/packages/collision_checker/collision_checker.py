@@ -33,8 +33,9 @@ class CollisionChecker:
         context.write("response", result)
 
 
-def check_collision(environment: List[PlacedPrimitive], robot_body: List[PlacedPrimitive],
-                    robot_pose: FriendlyPose) -> bool:
+def check_collision(
+    environment: List[PlacedPrimitive], robot_body: List[PlacedPrimitive], robot_pose: FriendlyPose
+) -> bool:
     # This is just some code to get you started, but you don't have to follow it exactly
 
     # You can start by rototranslating the robot_body by the robot_pose
@@ -48,8 +49,9 @@ def check_collision(environment: List[PlacedPrimitive], robot_body: List[PlacedP
     return random.uniform(0, 1) > 0.5
 
 
-def check_collision_list(rototranslated_robot: List[PlacedPrimitive],
-                         environment: List[PlacedPrimitive]) -> bool:
+def check_collision_list(
+    rototranslated_robot: List[PlacedPrimitive], environment: List[PlacedPrimitive]
+) -> bool:
     # This is just some code to get you started, but you don't have to follow it exactly
     for robot, envObject in itertools.product(rototranslated_robot, environment):
         if check_collision_shape(robot, envObject):
