@@ -3,7 +3,11 @@ from typing import List
 from aido_schemas import Context, FriendlyPose
 from dt_protocols import (
     PlacedPrimitive,
-    PlanningQuery, PlanningResult, PlanningSetup, PlanStep, Rectangle,
+    PlanningQuery,
+    PlanningResult,
+    PlanningSetup,
+    PlanStep,
+    Rectangle,
 )
 
 __all__ = ["Planner"]
@@ -71,11 +75,16 @@ class Planner:
         duration_turn_deg_s = 90.0 / self.params.max_angular_velocity_deg_s
         # The plan will be: straight, turn, straight, turn, straight, turn, straight, turn
 
-        straight = PlanStep(duration=duration_straight_m_s, angular_velocity_deg_s=0.0,
-                            velocity_x_m_s=self.params.max_linear_velocity_m_s)
-        turn = PlanStep(duration=duration_turn_deg_s,
-                        angular_velocity_deg_s=self.params.max_angular_velocity_deg_s,
-                        velocity_x_m_s=0.0)
+        straight = PlanStep(
+            duration=duration_straight_m_s,
+            angular_velocity_deg_s=0.0,
+            velocity_x_m_s=self.params.max_linear_velocity_m_s,
+        )
+        turn = PlanStep(
+            duration=duration_turn_deg_s,
+            angular_velocity_deg_s=self.params.max_angular_velocity_deg_s,
+            velocity_x_m_s=0.0,
+        )
 
         plan.append(straight)
         plan.append(turn)

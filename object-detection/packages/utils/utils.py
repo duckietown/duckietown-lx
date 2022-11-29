@@ -8,7 +8,9 @@ import subprocess
 
 def run(input, exception_on_failure=False):
     try:
-        return subprocess.check_output(f"{input}", shell=True, universal_newlines=True, stderr=subprocess.STDOUT)
+        return subprocess.check_output(
+            f"{input}", shell=True, universal_newlines=True, stderr=subprocess.STDOUT
+        )
     except Exception as e:
         if exception_on_failure:
             raise e
@@ -21,16 +23,18 @@ def runp(input, exception_on_failure=False):
     if len(output) > 0:
         print(output)
 
-#make boxes to xywh format:
+
+# make boxes to xywh format:
 def xminyminxmaxymax2xywfnormalized(box, image_size):
     xmin, ymin, xmax, ymax = np.array(box, dtype=np.float64)
-    center_x = (xmin+xmax)/2
-    center_y = (ymin+ymax)/2
-    width = xmax-xmin
-    height = ymax-ymin
+    center_x = (xmin + xmax) / 2
+    center_y = (ymin + ymax) / 2
+    width = xmax - xmin
+    height = ymax - ymin
 
-    normalized = np.array([center_x, center_y, width, height])/image_size
+    normalized = np.array([center_x, center_y, width, height]) / image_size
     return np.round(normalized, 5)
+
 
 def train_test_split(filenames, split_percentage, dataset_dir):
     train_txt = np.array(filenames)
@@ -63,12 +67,14 @@ def makedirs(name):
         pass
     yield None
 
+
 @contextlib.contextmanager
 def directory(name):
     ret = os.getcwd()
     os.chdir(name)
     yield None
     os.chdir(ret)
+
 
 def makedirs(name):
     try:
@@ -77,14 +83,17 @@ def makedirs(name):
         pass
     yield None
 
+
 def seed(seed):
     # torch.manual_seed(seed)
     np.random.seed(seed)
     random.seed(seed)
 
+
 def launch_env(map):
     import gym_duckietown
     from gym_duckietown.envs import DuckietownEnv
+
     env = DuckietownEnv(
         map_name=map,
         domain_rand=False,
@@ -92,7 +101,9 @@ def launch_env(map):
     )
     return env
 
+
 import cv2
+
 
 def _mod_mask(mask):
     temp = mask.copy()
@@ -104,11 +115,9 @@ def _mod_mask(mask):
     mask = cv2.applyColorMap(temp, cv2.COLORMAP_RAINBOW)
     return mask
 
+
 def display_img_seg_mask(real_img, seg_img):
-    all = np.concatenate(
-        (cv2.cvtColor(real_img, cv2.COLOR_RGB2BGR), seg_img),
-        axis=1
-    )
+    all = np.concatenate((cv2.cvtColor(real_img, cv2.COLOR_RGB2BGR), seg_img), axis=1)
 
     cv2.imshow("image", all)
     cv2.waitKey(0)

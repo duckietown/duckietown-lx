@@ -5,13 +5,13 @@ import numpy as np
 
 def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, float]:
     """
-        Args:
-            ticks: Current tick count from the encoders.
-            prev_ticks: Previous tick count from the encoders.
-            resolution: Number of ticks per full wheel rotation returned by the encoder.
-        Return:
-            rotation_wheel: Rotation of the wheel in radians.
-            ticks: current number of ticks.
+    Args:
+        ticks: Current tick count from the encoders.
+        prev_ticks: Previous tick count from the encoders.
+        resolution: Number of ticks per full wheel rotation returned by the encoder.
+    Return:
+        rotation_wheel: Rotation of the wheel in radians.
+        ticks: current number of ticks.
     """
 
     # TODO: these are random values, you have to implement your own solution in here
@@ -22,13 +22,13 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
 
 
 def pose_estimation(
-        R: float,
-        baseline: float,
-        x_prev: float,
-        y_prev: float,
-        theta_prev: float,
-        delta_phi_left: float,
-        delta_phi_right: float,
+    R: float,
+    baseline: float,
+    x_prev: float,
+    y_prev: float,
+    theta_prev: float,
+    delta_phi_left: float,
+    delta_phi_right: float,
 ) -> Tuple[float, float, float]:
     """
     Calculate the current Duckiebot pose using the dead-reckoning approach.

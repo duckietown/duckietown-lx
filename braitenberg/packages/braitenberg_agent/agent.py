@@ -63,7 +63,7 @@ class BraitenbergAgent:
         self.rgb = dcu.bgr_from_rgb(dcu.bgr_from_jpg(camera.jpg_data))
 
     def compute_commands(self) -> Tuple[float, float]:
-        """ Returns the commands (pwm_left, pwm_right) """
+        """Returns the commands (pwm_left, pwm_right)"""
         # If we have not received any image, we don't move
         if self.rgb is None:
             return 0.0, 0.0

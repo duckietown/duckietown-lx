@@ -3,7 +3,6 @@ import cv2
 from matplotlib import pyplot as plt
 
 
-
 class UnitTestMessage:
     # Test the WheelEncoderStamped messages
     def __init__(self, callback):
@@ -29,33 +28,33 @@ class UnitTestMessage:
 class UnitTestLMO:
     # Test the detection and estimation of lane marking orientations
     def __init__(self, LMOrientation):
-        imgbgr = cv2.imread('../images/visual_control/test.png')
+        imgbgr = cv2.imread("../images/visual_control/test.png")
 
         theta_left, theta_right, mask_lt, mask_rt = LMOrientation(imgbgr)
         print()
-        print('Function returned the following orientations for the given image:')
-        print('    Left Edge:   %.2f radians (%.2f degrees)' % (theta_left, theta_left*180/np.pi))
-        print('    Right Edge:  %.2f radians (%.2f degrees)' % (theta_right, theta_right*180/np.pi))
+        print("Function returned the following orientations for the given image:")
+        print("    Left Edge:   %.2f radians (%.2f degrees)" % (theta_left, theta_left * 180 / np.pi))
+        print("    Right Edge:  %.2f radians (%.2f degrees)" % (theta_right, theta_right * 180 / np.pi))
 
         fig = plt.figure(figsize=(20, 5))
         ax1 = fig.add_subplot(1, 3, 1)
         # OpenCV uses BGR by default, whereas matplotlib uses RGB, so we generate an RGB version for the sake of visualization
         ax1.imshow(cv2.cvtColor(imgbgr, cv2.COLOR_BGR2RGB))
-        ax1.set_title('Do these orientations look right?'), ax1.set_xticks([]), ax1.set_yticks([])
+        ax1.set_title("Do these orientations look right?"), ax1.set_xticks([]), ax1.set_yticks([])
 
         ax2 = fig.add_subplot(1, 3, 2)
         ax2.imshow(cv2.cvtColor(mask_lt, cv2.COLOR_BGR2RGB))
-        ax2.set_title('Mask (Left)'), ax2.set_xticks([]), ax2.set_yticks([])
+        ax2.set_title("Mask (Left)"), ax2.set_xticks([]), ax2.set_yticks([])
 
         ax3 = fig.add_subplot(1, 3, 3)
         ax3.imshow(cv2.cvtColor(mask_rt, cv2.COLOR_BGR2RGB))
-        ax3.set_title('Mask (Right)'), ax3.set_xticks([]), ax3.set_yticks([])
+        ax3.set_title("Mask (Right)"), ax3.set_xticks([]), ax3.set_yticks([])
 
 
 class UnitTestDLM:
     # Test the detection and estimation of lane marking orientations
     def __init__(self, detect_lane_markings):
-        imgbgr = cv2.imread('../images/visual_control/pic10.png')
+        imgbgr = cv2.imread("../images/visual_control/pic10.png")
         img = cv2.cvtColor(imgbgr, cv2.COLOR_BGR2GRAY)
 
         left_masked_img, right_masked_img = detect_lane_markings(imgbgr)
@@ -64,40 +63,51 @@ class UnitTestDLM:
         ax1 = fig.add_subplot(1, 3, 1)
         # OpenCV uses BGR by default, whereas matplotlib uses RGB, so we generate an RGB version for the sake of visualization
         ax1.imshow(cv2.cvtColor(imgbgr, cv2.COLOR_BGR2RGB))
-        ax1.set_title('Input image'), ax1.set_xticks([]), ax1.set_yticks([])
+        ax1.set_title("Input image"), ax1.set_xticks([]), ax1.set_yticks([])
 
         ax2 = fig.add_subplot(1, 3, 2)
         ax2.imshow(cv2.cvtColor(imgbgr, cv2.COLOR_BGR2RGB))
-        ax2.imshow(left_masked_img * img, cmap='gray')
-        ax2.set_title('Mask (Left)'), ax2.set_xticks([]), ax2.set_yticks([])
+        ax2.imshow(left_masked_img * img, cmap="gray")
+        ax2.set_title("Mask (Left)"), ax2.set_xticks([]), ax2.set_yticks([])
 
         ax3 = fig.add_subplot(1, 3, 3)
-        ax3.imshow(right_masked_img * img, cmap='gray')
-        ax3.set_title('Mask (Right)'), ax3.set_xticks([]), ax3.set_yticks([]);
+        ax3.imshow(right_masked_img * img, cmap="gray")
+        ax3.set_title("Mask (Right)"), ax3.set_xticks([]), ax3.set_yticks([])
+
 
 class UnitTestELRH:
     # Test the estimate of the robot's lane-relative heading
     def __init__(self, estimate_lane_relative_heading):
-        imgbgr_straight = cv2.imread('../images/visual_control/pic10.png')
-        imgbgr_turn = cv2.imread('../images/visual_control/turn.png')
+        imgbgr_straight = cv2.imread("../images/visual_control/pic10.png")
+        imgbgr_turn = cv2.imread("../images/visual_control/turn.png")
 
         # The image-to-ground homography associated with this image (Jacopo's)
-        H = np.array([-4.137917960301845e-05, -0.00011445854191468058, -0.1595567007347241,
-                      0.0008382870319844166, -4.141689222457687e-05, -0.2518201638170328,
-                      -0.00023561657746150284, -0.005370140574116084, 0.9999999999999999])
+        H = np.array(
+            [
+                -4.137917960301845e-05,
+                -0.00011445854191468058,
+                -0.1595567007347241,
+                0.0008382870319844166,
+                -4.141689222457687e-05,
+                -0.2518201638170328,
+                -0.00023561657746150284,
+                -0.005370140574116084,
+                0.9999999999999999,
+            ]
+        )
         H = np.reshape(H, (3, 3))
 
         theta_hat, lines_left, lines_right = estimate_lane_relative_heading(imgbgr_straight)
 
-        print('First Image: theta_hat: %.2f degrees' % (theta_hat*180/np.pi))
+        print("First Image: theta_hat: %.2f degrees" % (theta_hat * 180 / np.pi))
         fig = plt.figure(figsize=(20, 20))
         ax1 = fig.add_subplot(2, 2, 1)
         # OpenCV uses BGR by default, whereas matplotlib uses RGB, so we generate an RGB version for the sake of visualization
         ax1.imshow(cv2.cvtColor(imgbgr_straight, cv2.COLOR_BGR2RGB))
-        ax1.set_title('Input image'), ax1.set_xticks([]), ax1.set_yticks([])
+        ax1.set_title("Input image"), ax1.set_xticks([]), ax1.set_yticks([])
 
         ax2 = fig.add_subplot(2, 2, 2)
-        ax2.set_title('Lines Projected on Ground Plane'), ax2.set_xticks([]), ax2.set_yticks([]);
+        ax2.set_title("Lines Projected on Ground Plane"), ax2.set_xticks([]), ax2.set_yticks([])
         if lines_left is not None:
             # Visualize the edges projected on to the ground plane
             for line in lines_left:
@@ -113,7 +123,7 @@ class UnitTestELRH:
                 Y = np.array([XY1[1], XY2[1]])
                 # The ground reference frame has positive X up and positivy Y left
                 # So, for the sake of plotting we treat X as Y, and Y as -X
-                ax2.plot(-Y, X, 'g-')
+                ax2.plot(-Y, X, "g-")
 
         if lines_right is not None:
             # Visualize the edges projected on to the ground plane
@@ -130,18 +140,18 @@ class UnitTestELRH:
                 Y = np.array([XY1[1], XY2[1]])
                 # The ground reference frame has positive X up and positivy Y left
                 # So, for the sake of plotting we treat X as Y, and Y as -X
-                ax2.plot(-Y, X, 'b-')
+                ax2.plot(-Y, X, "b-")
 
         theta_hat, lines_left, lines_right = estimate_lane_relative_heading(imgbgr_turn)
 
-        print('Second Image: theta_hat: %.2f degrees' % (theta_hat * 180 / np.pi))
+        print("Second Image: theta_hat: %.2f degrees" % (theta_hat * 180 / np.pi))
         ax3 = fig.add_subplot(2, 2, 3)
         # OpenCV uses BGR by default, whereas matplotlib uses RGB, so we generate an RGB version for the sake of visualization
         ax3.imshow(cv2.cvtColor(imgbgr_turn, cv2.COLOR_BGR2RGB))
-        ax3.set_title('Input image'), ax3.set_xticks([]), ax3.set_yticks([])
+        ax3.set_title("Input image"), ax3.set_xticks([]), ax3.set_yticks([])
 
         ax4 = fig.add_subplot(2, 2, 4)
-        ax4.set_title('Lines Projected on Ground Plane'), ax4.set_xticks([]), ax4.set_yticks([]);
+        ax4.set_title("Lines Projected on Ground Plane"), ax4.set_xticks([]), ax4.set_yticks([])
         if lines_left is not None:
             # Visualize the edges projected on to the ground plane
             for line in lines_left:
@@ -157,7 +167,7 @@ class UnitTestELRH:
                 Y = np.array([XY1[1], XY2[1]])
                 # The ground reference frame has positive X up and positivy Y left
                 # So, for the sake of plotting we treat X as Y, and Y as -X
-                ax4.plot(-Y, X, 'g-')
+                ax4.plot(-Y, X, "g-")
 
         if lines_right is not None:
             # Visualize the edges projected on to the ground plane
@@ -174,16 +184,16 @@ class UnitTestELRH:
                 Y = np.array([XY1[1], XY2[1]])
                 # The ground reference frame has positive X up and positivy Y left
                 # So, for the sake of plotting we treat X as Y, and Y as -X
-                ax4.plot(-Y, X, 'b-')
+                ax4.plot(-Y, X, "b-")
 
 
 def project_image_to_ground(H, x):
     """
-        Args:
-            H: The 3x3 image-to-ground plane homography (numpy.ndarray)
-            x: An array of non-homogeneous image coordinates, one per column (numpy.ndarray)
-        Returns:
-            X: An array of non-homogeneous coordinates in the world (ground) frame, one per column (numpy.ndarray)
+    Args:
+        H: The 3x3 image-to-ground plane homography (numpy.ndarray)
+        x: An array of non-homogeneous image coordinates, one per column (numpy.ndarray)
+    Returns:
+        X: An array of non-homogeneous coordinates in the world (ground) frame, one per column (numpy.ndarray)
     """
 
     if x.shape[0] == 2:
@@ -195,4 +205,6 @@ def project_image_to_ground(H, x):
     X = H.dot(x)
     X = X / X[2, None]
 
-    return X[0:2, ]
+    return X[
+        0:2,
+    ]

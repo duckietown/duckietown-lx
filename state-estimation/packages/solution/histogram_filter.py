@@ -18,8 +18,7 @@ def histogram_prior(belief, grid_spec, mean_0, cov_0):
 # Now let's define the predict function
 
 
-def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_spec, robot_spec,
-                      cov_mask):
+def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_spec, robot_spec, cov_mask):
     belief_in = belief
     delta_t = dt
 
@@ -28,8 +27,8 @@ def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_
     w = 0.0  # replace this with a function that uses the encoder
 
     # TODO propagate each centroid forward using the kinematic function
-    d_t = grid_spec['d']  # replace this with something that adds the new odometry
-    phi_t = grid_spec['phi']  # replace this with something that adds the new odometry
+    d_t = grid_spec["d"]  # replace this with something that adds the new odometry
+    phi_t = grid_spec["phi"]  # replace this with something that adds the new odometry
 
     p_belief = np.zeros(belief.shape)
 
@@ -40,10 +39,10 @@ def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_
             if belief[i, j] > 0:
                 # Now check that the centroid of the cell wasn't propagated out of the allowable range
                 if (
-                        d_t[i, j] > grid_spec['d_max']
-                        or d_t[i, j] < grid_spec['d_min']
-                        or phi_t[i, j] < grid_spec['phi_min']
-                        or phi_t[i, j] > grid_spec['phi_max']
+                    d_t[i, j] > grid_spec["d_max"]
+                    or d_t[i, j] < grid_spec["d_min"]
+                    or phi_t[i, j] < grid_spec["phi_min"]
+                    or phi_t[i, j] > grid_spec["phi_max"]
                 ):
                     continue
 
@@ -66,6 +65,7 @@ def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_
 
 # We will start by doing a little bit of processing on the segments to remove anything that is
 # behing the robot (why would it be behind?) or a color not equal to yellow or white
+
 
 def prepare_segments(segments):
     filtered_segments = []
@@ -102,33 +102,37 @@ def generate_vote(segment, road_spec):
     phi_i = np.arcsin(t_hat[1])
     if segment.color == segment.WHITE:  # right lane is white
         if p1[0] > p2[0]:  # right edge of white lane
-            d_i -= road_spec['linewidth_white']
+            d_i -= road_spec["linewidth_white"]
         else:  # left edge of white lane
             d_i = -d_i
             phi_i = -phi_i
-        d_i -= road_spec['lanewidth'] / 2
+        d_i -= road_spec["lanewidth"] / 2
 
     elif segment.color == segment.YELLOW:  # left lane is yellow
         if p2[0] > p1[0]:  # left edge of yellow lane
-            d_i -= road_spec['linewidth_yellow']
+            d_i -= road_spec["linewidth_yellow"]
             phi_i = -phi_i
         else:  # right edge of white lane
             d_i = -d_i
-        d_i = road_spec['lanewidth'] / 2 - d_i
+        d_i = road_spec["lanewidth"] / 2 - d_i
 
     return d_i, phi_i
 
 
 def generate_measurement_likelihood(segments, road_spec, grid_spec):
     # initialize measurement likelihood to all zeros
-    measurement_likelihood = np.zeros(grid_spec['d'].shape)
+    measurement_likelihood = np.zeros(grid_spec["d"].shape)
 
     for segment in segments:
         d_i, phi_i = generate_vote(segment, road_spec)
 
         # if the vote lands outside of the histogram discard it
-        if d_i > grid_spec['d_max'] or d_i < grid_spec['d_min'] or phi_i < grid_spec[
-            'phi_min'] or phi_i > grid_spec['phi_max']:
+        if (
+            d_i > grid_spec["d_max"]
+            or d_i < grid_spec["d_min"]
+            or phi_i < grid_spec["phi_min"]
+            or phi_i > grid_spec["phi_max"]
+        ):
             continue
 
         # TODO find the cell index that corresponds to the measurement d_i, phi_i

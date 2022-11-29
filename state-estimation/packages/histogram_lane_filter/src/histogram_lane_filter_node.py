@@ -86,7 +86,7 @@ class HistogramLaneFilterNode(DTROS):
         self.right_encoder_ticks_delta = 0
         self.left_encoder_ticks_delta = 0
         self.last_encoder_stamp = None
-        
+
         # Set up a timer for prediction (if we got encoder data) since that data can come very quickly
         rospy.Timer(rospy.Duration(1 / self._predict_freq), self.cbPredict)
 
@@ -109,7 +109,6 @@ class HistogramLaneFilterNode(DTROS):
             self.filter.initialized = True
         self.right_encoder_ticks_delta = right_encoder_msg.data - self.right_encoder_ticks
         self.last_encoder_stamp = right_encoder_msg.header.stamp
-        
 
     def cbPredict(self, event):
         # first let's check if we moved at all, if not abort
