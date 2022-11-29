@@ -1,4 +1,4 @@
-# default parameters for lane_filter/lane_filter_node
+# default parameters for lane_filter/histogram_lane_filter_node
 
 debug : True
 predict_frequency: 30.0 # in Hz

@@ -18,7 +18,7 @@ import numpy as np
 from cv_bridge import CvBridge
 
 
-class LaneFilterNode(DTROS):
+class HistogramLaneFilterNode(DTROS):
     """Generates an estimate of the lane pose.
 
     Creates a `lane_filter` to get estimates on `d` and `phi`, the lateral and heading deviation from the center of the lane.
@@ -44,7 +44,7 @@ class LaneFilterNode(DTROS):
     """
 
     def __init__(self, node_name):
-        super(LaneFilterNode, self).__init__(node_name=node_name, node_type=NodeType.PERCEPTION)
+        super(HistogramLaneFilterNode, self).__init__(node_name=node_name, node_type=NodeType.PERCEPTION)
 
         veh = os.getenv("VEHICLE_NAME")
 
@@ -165,5 +165,5 @@ class LaneFilterNode(DTROS):
 
 
 if __name__ == "__main__":
-    lane_filter_node = LaneFilterNode(node_name="lane_filter_node")
+    lane_filter_node = HistogramLaneFilterNode(node_name="histogram_lane_filter_node")
     rospy.spin()

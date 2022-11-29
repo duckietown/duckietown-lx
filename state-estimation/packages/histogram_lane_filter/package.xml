@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <package>
-  <name>lane_filter</name>
+  <name>histogram_lane_filter</name>
   <version>1.0.0</version>
   <description>TODO: Add a description of package `lane_filter` in `package.xml`.</description>
 
