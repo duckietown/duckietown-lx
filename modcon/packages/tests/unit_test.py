@@ -26,7 +26,9 @@ class UnitTestMessage:
 class UnitTestOdometry:
     # Test the odometry
     def __init__(self, R, baseline_wheel2wheel, poseEstimation):
-        x_prev = y_prev = theta_prev = 0  # initial conditions
+
+        # initial conditions
+        x_prev = y_prev = theta_prev = 0
 
         # to store the estimates, so we can plot them
         x_prev_ = []
@@ -39,17 +41,18 @@ class UnitTestOdometry:
             x_prev,
             y_prev,
             theta_prev,
-            5 * np.pi / 180,  # wheel rotates of 5 degree
-            10 * np.pi / 180,
-        )  # wheel rotates of 10 degree
+            5 * np.pi / 180,  # left wheel rotates of 5 degree
+            10 * np.pi / 180, # right wheel rotates of 10 degree
+            )
         # given how much the robot rotates with wheels rotation of 5 and 10 degree,
         # calculate the number of steps required to do a circle.
-        # this is indipendent fro R and the baseline int this way!
+        # this is indipendent from R and the baseline
         steps4circle = int(2 * np.pi / robot_rotation)
 
-        # iterate steps4circle times the pose estiamtion.
+        # iterate steps4circle times the pose estimation
+        # function to be tested.
         for _ in range(0, steps4circle):
-            # save the current values of y, x and theta
+            # save the current values of x, y and theta
             x_prev_.append(x_prev)
             y_prev_.append(y_prev)
             theta_prev_.append(theta_prev)
@@ -59,9 +62,10 @@ class UnitTestOdometry:
                 x_prev,
                 y_prev,
                 theta_prev,
-                5 * np.pi / 180,  # wheel rotates of 5 degree
+                5 * np.pi / 180,
                 10 * np.pi / 180,
-            )  # wheel rotates of 10 degree
+            )
+
         # plot the results
         self.plot(x_prev_, y_prev_, theta_prev_)
 
@@ -85,7 +89,7 @@ class UnitTestHeadingPID:
         self.R = R  # wheel radius
         # distance from wheel to wheel (notice, this is 2*L as defined in the theory)
         self.L = baseline
-        self.v_0 = v_0  # fixed robot linear speed
+        self.v_0 = v_0  # constant robot linear speed
         self.PIDController = PIDController  # controller being used
         self.delta_t = 0.02  # unit test simulation time step
         self.t1 = np.arange(0.0, 10.0, self.delta_t)  # time vector
@@ -96,14 +100,16 @@ class UnitTestHeadingPID:
         self.k_l_inv = (gain - trim) / 27.0
 
     def test(self):
+
         omega = 0  # initial command
-        prev_e = 0  # initializing error (TODO, should be theta_ref - theta_0)
+        prev_e = self.theta_ref-self.theta_prev  # initializing error
         prev_int = 0  # initializing integral term
 
-        err_ = []
-        theta_hat_ = []
-        u_r_ = []
-        u_l_ = []
+        # initializing arrays to hold variables
+        err_ = [] # tracking error
+        theta_hat_ = [] # estimated heading
+        u_r_ = [] # input to the right wheel
+        u_l_ = [] # input to the left wheel
 
         for _ in self.t1:
             theta_hat, u_r, u_l = self.sim(omega, self.v_0, self.delta_t)  # simulate driving
@@ -115,12 +121,11 @@ class UnitTestHeadingPID:
             u_l_.append(u_l)
 
             # Calculating wheel commands
-            u, prev_e, prev_int = self.PIDController(
+            v_0, omega, prev_e, prev_int = self.PIDController(
                 self.v_0, self.theta_ref, theta_hat, prev_e, prev_int, self.delta_t
             )
 
-            self.v_0 = u[0]
-            omega = u[1]
+            self.v_0 = v_0
 
         # plot the theta_hat and the error on theta
         self.plot_pose(theta_hat_, err_, "Duckiebot heading (Theta)", "Time (s)", "Theta (Degree)")
@@ -147,12 +152,11 @@ class UnitTestHeadingPID:
             u_r_.append(u_r)
             u_l_.append(u_l)
 
-            u, prev_e, prev_int = self.PIDController(
+            v_0, omega, prev_e, prev_int = self.PIDController(
                 self.v_0, self.theta_ref, theta_hat, prev_e, prev_int, self.delta_t
             )
 
-            self.v_0 = u[0]
-            omega = u[1]
+            self.v_0 = v_0
 
         # plot theta with noise and the error on theta
         self.plot_pose(theta_hat_, err_, "Theta with noise", "Time (s)", "Theta (Degree)")
@@ -280,12 +284,11 @@ class UnitTestPositionPID:
             u_r_.append(u_r)
             u_l_.append(u_l)
 
-            u, prev_e, prev_int = self.PIDController(
+            v_0, omega, prev_e, prev_int = self.PIDController(
                 self.v_0, self.y_ref, y_hat, prev_e, prev_int, self.delta_t
             )
 
-            self.v_0 = u[0]
-            omega = u[1]
+            self.v_0 = v_0
 
         self.plot_pose(y_hat_, err_, "No noise", "Time (s)", "y (m)")
         self.plot_input(u_r_, u_l_, "Control inputs", "Time (s)", "PWM")
@@ -309,12 +312,11 @@ class UnitTestPositionPID:
             u_r_.append(u_r)
             u_l_.append(u_l)
 
-            u, prev_e, prev_int = self.PIDController(
+            v_0, omega, prev_e, prev_int = self.PIDController(
                 self.v_0, self.y_ref, y_hat, prev_e, prev_int, self.delta_t
             )
 
-            self.v_0 = u[0]
-            omega = u[1]
+            self.v_0 = v_0
 
         self.plot_pose(y_hat_, err_, "With noise", "Time steps (0.2 s)", "Y (m)")
         self.plot_input(u_r_, u_l_, "Control inputs", "Time steps (0.2 s)", "PWM")
