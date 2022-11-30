@@ -1,5 +1,8 @@
+<p align="center">
+<img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
+</p>
+
 # **Activities: Modeling and Control (ModCon)**
-<img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 In this repository we collect learning materials for the topic of modeling and control (`ModCon`) of a differential drive robot. 
 
