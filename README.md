@@ -29,13 +29,43 @@ Then update your Duckietown shell and shell commands,
 
 ## Step 2 - SSL certificate
 
-Next, set up your local SSL certificate needed to run the exercises editor,
+Next, set up your local SSL certificate needed to run the exercises' editor,
 
     dts setup mkcert
 
-## Step 3 - Fork the repository
+## Step 3 - Fork this repository
 
-    git clone -b mooc2022 git@github.com:duckietown/duckietown-lx
+In order to store your own code, while also keeping the ability to pull updates from our version of this repo, you 
+need to create your own fork.
+
+Start by pressing "Fork" in the top right corner of this repository page on GitHub. You will be able to create a new 
+fork: `<your_username>/duckietown-lx`
+
+Then clone your new repository, replacing your GitHub username in the address below,
+
+    git clone -b mooc2022 git@github.com:<your_username>/duckietown-lx
+
+## Step 4 - Set up the remote
+
+Now we will configure the Duckietown version of this repository as the upstream repository to sync with your fork.
+
+List the current remote repository for your fork,
+
+    git remote -v
+
+Specify a new remote upstream repository,
+
+    git remote add upstream git@github.com:duckietown/duckietown-lx
+
+Confirm that the new upstream repository was added to the list,
+
+    git remote -v
+
+You can now push your work to your own repository using the standard GitHub workflow, and the beginning of every 
+exercise will prompt you to pull from the upstream repository - updating your exercises to the latest Duckietown 
+version,
+
+    git pull upstream mooc2022
 
 ## What next?
 
