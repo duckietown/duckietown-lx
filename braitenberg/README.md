@@ -12,8 +12,6 @@ Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
 
-## Grading criteria
-TODO
 
 # Instructions
 
