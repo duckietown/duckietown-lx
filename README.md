@@ -1,6 +1,6 @@
 # **Duckietown Learning Experiences (LX) - MOOC Exercises**
 
-<img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
+<img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 # About this repository
 
@@ -70,7 +70,7 @@ version,
 
 You will find the following set of instructions in every individual directory in this repository. This 
 workflow will allow you to build and test your code, run solutions in simulation and on the [Duckiebot](https://get.duckietown.com/collections/dt-robots/products/duckiebot-db21?variant=41543707099311), and submit your 
-work to the challenges server to evaluate it against other developers.
+work to the challenges server to evaluate it.
 
 # Instructions
 
@@ -159,7 +159,7 @@ You can do so by running the following command,
 This should take a few minutes.
 This is not supposed to be an interactive process: just let it run, and when you return,
 you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the website.
+you would usually find on the [challenges website](https://challenges.duckietown.org/).
 
 
 ### 📬 Submit your solution
