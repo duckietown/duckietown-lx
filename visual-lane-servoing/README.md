@@ -4,8 +4,8 @@
 
 # About this exercise
 
-# TODO [M.Walter]: ===> Complete this section
-# TODO [M.Walter]: <=== Complete this section
+In these activities, we will develop image processing techniques necessary for **visual lane servoing** which allows controlling 
+your Duckiebot to drive within lane markings.
 
 
 ## Grading challenge
