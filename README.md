@@ -1,15 +1,14 @@
-# **Duckietown LX - MOOC Exercises**
+# **Duckietown Learning Experiences (LX) - MOOC Exercises**
 
-<img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: 
-block; float: right">
+<img src="./assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
 
 # About this repository
 
-This is an exercises repository to support the Duckietown MOOC.
+This is an exercises repository containing activites and exercises compatible with the Duckietown infrastructure.
 
 # Setup
 
-In order to use these exercises, you should complete the following steps:
+To use these learning experiences do the following:
 
 ## Step 0 - Requirements
 
@@ -36,8 +35,7 @@ Next, set up your local SSL certificate needed to run the exercises' editor,
 
 ## Step 3 - Fork this repository
 
-In order to store your own code, while also keeping the ability to pull updates from our version of this repo, you 
-need to create your own fork.
+To store your own code, while also keeping the ability to pull updates from our version of this repo, can create your own fork.
 
 Start by pressing "Fork" in the top right corner of this repository page on GitHub. You will be able to create a new 
 fork: `<your_username>/duckietown-lx`
@@ -70,18 +68,18 @@ version,
 
 ## What next?
 
-You will find the following set of instructions in every individual exercise directory in this repository. This 
-workflow will allow you to build and test your code, run solutions in simulation and on the robot, and submit your 
-work to the [challenges server](https://challenges.duckietown.org/) to evaluate the performance.
+You will find the following set of instructions in every individual directory in this repository. This 
+workflow will allow you to build and test your code, run solutions in simulation and on the [Duckiebot](https://get.duckietown.com/collections/dt-robots/products/duckiebot-db21?variant=41543707099311), and submit your 
+work to the challenges server to evaluate it against other developers.
 
 # Instructions
 
-**NOTE:** All commands below are intended to be executed from the root directory of a single exercise (i.e., the 
+**NOTE:** All commands below are intended to be executed from the root directory of a single exercise (e.g., the 
 `braitenberg` directory).
 
-## 1. Make sure your exercise is up-to-date
+## 1. Make sure your folder is up-to-date
 
-Update your exercise definition and instructions,
+Update your folder definition and instructions,
 
     git pull upstream mooc2022
 
@@ -161,7 +159,7 @@ You can do so by running the following command,
 This should take a few minutes.
 This is not supposed to be an interactive process: just let it run, and when you return,
 you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the [challenges website](https://challenges.duckietown.org/).
+you would usually find on the website.
 
 
 ### 📬 Submit your solution
