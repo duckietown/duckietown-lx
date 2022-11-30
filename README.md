@@ -1,6 +1,8 @@
-# **Duckietown Learning Experiences (LX) - MOOC Exercises**
+<p align="center">
+<img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
+</p>
 
-<img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown" height="60em" style="margin-top:-75px; display: block; float: right">
+# **Duckietown Learning Experiences (LX) - MOOC Exercises**
 
 # About this repository
 
