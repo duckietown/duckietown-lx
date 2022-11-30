@@ -29,7 +29,7 @@ Then update your Duckietown shell and shell commands,
 
 ## Step 2 - SSL certificate
 
-Next, set up your local SSL certificate needed to run the exercises' editor,
+Next, set up your local SSL certificate needed to run the learning experience editor,
 
     dts setup mkcert
 
