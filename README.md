@@ -70,7 +70,7 @@ version,
 
 You will find the following set of instructions in every individual directory in this repository. This 
 workflow will allow you to build and test your code, run solutions in simulation and on the [Duckiebot](https://get.duckietown.com/collections/dt-robots/products/duckiebot-db21?variant=41543707099311), and submit your 
-work to the challenges server to evaluate it.
+work to the [challenges server](https://challenges.duckietown.org/) to evaluate it.
 
 # Instructions
 
