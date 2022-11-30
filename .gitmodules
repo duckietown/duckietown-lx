@@ -1,8 +1,0 @@
-[submodule "DAFFY"]
-	path = DAFFY
-	url = https://github.com/duckietown/mooc-exercises
-	branch = daffy
-[submodule "FROZEN"]
-	path = FROZEN
-	url = https://github.com/duckietown/mooc-exercises
-	branch = daffy-frozen-mooc2022
