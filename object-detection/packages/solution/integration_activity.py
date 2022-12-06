@@ -11,12 +11,15 @@ def MODEL_NAME():
 
 
 def NUMBER_FRAMES_SKIPPED():
-    # todo: change this number to drop more frames
+    # TODO: change this number to drop more frames
     # (must be a positive integer)
     return 0
 
+    # NOTE: Sample solution
+    return 1
 
-def filter_by_classes(pred_class):
+
+def filter_by_classes(pred_class: int):
     """
     Args:
         pred_class: the class of a prediction
@@ -25,6 +28,17 @@ def filter_by_classes(pred_class):
     # TODO: Change this to only return True for duckies!
     # In other words, returning False means that this prediction is ignored.
     return True
+
+    # NOTE: Solution
+    """
+    | Object    | ID    |
+    | ---       | ---   |
+    | Duckie    | 0     |
+    | Cone      | 1     |
+    | Truck     | 2     |
+    | Bus       | 3     |
+    """
+    return pred_class == 0
 
 
 def filter_by_scores(score):
