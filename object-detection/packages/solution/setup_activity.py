@@ -1,21 +1,14 @@
 import json
-import os
-import cv2
-import numpy as np
-from tqdm import tqdm
 from typing import Dict
-from utils.utils import xminyminxmaxymax2xywfnormalized, train_test_split, makedirs, runp
-
 
 DATASET_DIR="/code/object-detection/assets/duckietown_object_detection_dataset"
 IMAGE_SIZE = 416
 # this is the percentage of real data that will go into the training set (as opposed to the testing set)
 REAL_TRAIN_TEST_SPLIT_PERCENTAGE = 0.8
 
-from PIL import Image
 import numpy as np
 import cv2
-import matplotlib.pyplot as plt
+
 mapping = {
     "house": "3deb34",
     "bus": "ebd334",
@@ -37,6 +30,7 @@ def segmented_image_one_class(segmented_img, class_name):
     mask = np.all(segmented_img == mapping[class_name], axis=-1)
     return mask
 
+
 def find_all_bboxes(mask):
     gray = mask.astype("uint8")
     gray[mask == True] = 255
@@ -50,6 +44,7 @@ def find_all_bboxes(mask):
         boxes.append([x,y,w+x,h+y])
     boxes = np.array(boxes)
     return boxes
+
 
 def find_all_boxes_and_classes(segmented_img):
     classes = ["duckie", "cone", "truck", "bus"]

@@ -2,14 +2,13 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Exercise: Object Detection**
+# **Activity: Object Detection**
 
-# TODO [L.Paull] ===> Fill in this section
+# About this activity
 
-# About this exercise
-TODO
+This learning experience will take us through the process of collecting data from the Duckietown simulator and format it to be used to train a Neural Network to perform object detection in the robot's camera image.
+We will use one of the most famous object detection neural networks, called [YOLO (v5)](https://docs.ultralytics.com/).
 
-# TODO [L.Paull] <=== Fill in this section
 
 ## Grading challenge
 
