@@ -1,23 +1,36 @@
-def DT_TOKEN():
+from typing import Tuple
+
+
+def DT_TOKEN() -> str:
     # TODO: change this to your duckietown token
-    dt_token = "dt1-3nT8KSoxVh4MdLnE1Bq2mTkhRpbR35G8mmbjExKF7zGm6g4-43dzqWFnWd8KBa1yev1g3UKnzVxZkkTbfYtfGWrfSxeihNZvYVNfNmnCBP28LeqDxL"
+    dt_token = "PUT_YOUR_TOKEN_HERE"
     return dt_token
 
 
-def MODEL_NAME():
+def MODEL_NAME() -> str:
     # TODO: change this to your model's name that you used to upload it on google colab.
     # if you didn't change it, it should be "yolov5"
     return "yolov5"
 
 
-def NUMBER_FRAMES_SKIPPED():
-    # todo: change this number to drop more frames
+def NUMBER_FRAMES_SKIPPED() -> int:
+    # TODO: change this number to drop more frames
     # (must be a positive integer)
     return 0
 
 
-def filter_by_classes(pred_class):
+def filter_by_classes(pred_class: int) -> bool:
     """
+    Remember the class IDs:
+
+        | Object    | ID    |
+        | ---       | ---   |
+        | Duckie    | 0     |
+        | Cone      | 1     |
+        | Truck     | 2     |
+        | Bus       | 3     |
+
+
     Args:
         pred_class: the class of a prediction
     """
@@ -27,7 +40,7 @@ def filter_by_classes(pred_class):
     return True
 
 
-def filter_by_scores(score):
+def filter_by_scores(score: float) -> bool:
     """
     Args:
         score: the confidence score of a prediction
@@ -38,7 +51,7 @@ def filter_by_scores(score):
     return True
 
 
-def filter_by_bboxes(bbox):
+def filter_by_bboxes(bbox: Tuple[int, int, int, int]) -> bool:
     """
     Args:
         bbox: is the bounding box of a prediction, in xyxy format

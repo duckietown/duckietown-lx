@@ -27,7 +27,7 @@ class PurePursuitPolicy:
     """
 
     def __init__(
-        self, env, ref_velocity=REF_VELOCITY, following_distance=FOLLOWING_DISTANCE, max_iterations=1000
+            self, env, ref_velocity=REF_VELOCITY, following_distance=FOLLOWING_DISTANCE, max_iterations=1000
     ):
         """
         Parameters

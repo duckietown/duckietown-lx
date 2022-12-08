@@ -1,9 +1,11 @@
 import contextlib
-import numpy as np
 import random
 import math
 import os
 import subprocess
+
+import numpy as np
+import cv2
 
 
 def run(input, exception_on_failure=False):
@@ -91,19 +93,12 @@ def seed(seed):
 
 
 def launch_env(map):
-    import gym_duckietown
     from gym_duckietown.envs import DuckietownEnv
-
-    env = DuckietownEnv(
+    return DuckietownEnv(
         map_name=map,
         domain_rand=False,
         max_steps=math.inf,
     )
-    return env
-
-
-import cv2
-
 
 def _mod_mask(mask):
     temp = mask.copy()

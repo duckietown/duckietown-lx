@@ -2,14 +2,13 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Exercise: Object Detection**
+# **Activity: Object Detection**
 
-# TODO [L.Paull] ===> Fill in this section
+# About this activity
 
-# About this exercise
-TODO
+This learning experience will take you through the process of collecting data from the Duckietown simulator and formatting it to be used to train a neural network to perform object detection using the robot's camera image. 
+We will use one of the most popular object detection neural networks, called [YOLO (v5)](https://docs.ultralytics.com/). You will also have to integrate this trained model into the autonomy stack. For now we will just stop whenever an object (duckie) is detected in the road. 
 
-# TODO [L.Paull] <=== Fill in this section
 
 ## Grading challenge
 
@@ -21,7 +20,7 @@ Your submissions will be sent to the [`lx22-objdet`][challenge] challenge.
 In order to pass, the submitted agent must:
 
 - Have a _survival time_ > 59 (it should basically never crash)
-- Have a _Traveled distance_ > 1
+- Have a _Traveled distance_ > 4
 
 You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
 
