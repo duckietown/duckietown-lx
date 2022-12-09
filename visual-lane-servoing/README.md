@@ -14,22 +14,10 @@ your Duckiebot to drive within lane markings.
 
 Your submissions will be sent to the [`lx22-visservoing`][challenge] challenge.
 
-
-## Grading criteria
-
-In order to pass, your agent should be capable of navigating in its lane in a *reasonable* manner, 
-where we define "reasonable" in terms of how well the vehicle stays centered in its lane 
-(measured in terms of lateral deviation) and the total distance that the vehicle travels.
-
-In particular, the following are both required in order to pass:
-- Traveled distance > 4.8
-- Lateral deviation < 4.0
-
 You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-visservoing
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-visservoing/leaderboard
-
 
 
 # Instructions
