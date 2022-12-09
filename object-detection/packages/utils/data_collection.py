@@ -19,12 +19,12 @@ from solution.setup_activity import find_all_boxes_and_classes
 # - the percentage of simulated data that will go into the training set (as opposed to the testing set)
 SIMULATED_TRAIN_SPLIT_PERCENTAGE = 0.8
 
-# - maps to use while generating new images
+# - maps to use while generating new images (you don't have to change this)
 MAPS = ["loop_pedestrians", "udem1", "loop_dyn_duckiebots", "zigzag_dists"]
 
 # - max number of images total and per map
-MAX_NUMBER_OF_IMAGES = 1000
-MAX_NUMBER_OF_IMAGES_PER_MAP = 250
+MAX_NUMBER_OF_IMAGES = 200
+MAX_NUMBER_OF_IMAGES_PER_MAP = 50
 
 # - every X images taken from a map we reset the environment
 RESET_ENVIRONMENT_EVERY_IMAGES = 100
