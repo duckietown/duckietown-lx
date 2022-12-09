@@ -9,8 +9,8 @@ def DT_TOKEN() -> str:
 
 def MODEL_NAME() -> str:
     # TODO: change this to your model's name that you used to upload it on google colab.
-    # if you didn't change it, it should be "yolov5"
-    return "yolov5"
+    # if you didn't change it, it should be "yolov5n"
+    return "yolov5n"
 
 
 def NUMBER_FRAMES_SKIPPED() -> int:
