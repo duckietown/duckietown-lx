@@ -14,17 +14,7 @@ We will use one of the most popular object detection neural networks, called [YO
 
 Your submissions will be sent to the [`lx22-objdet`][challenge] challenge.
 
-
-## Grading criteria
-
-In order to pass, the submitted agent must:
-
-- Have a _survival time_ > 59 (it should basically never crash)
-- Have a _Traveled distance_ > 4
-
 You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
-
-Note that we reserve the right to change these thresholds in order to filter out unstable agents.
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet/leaderboard
