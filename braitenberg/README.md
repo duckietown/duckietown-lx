@@ -26,6 +26,8 @@ Update your exercise definition and instructions,
 
     git pull upstream mooc2022
 
+**NOTE:** to pull from upstream, you need to have completed the instructions in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md) to *fork* this repository.
+
 
 ## 2. Make sure your system is up-to-date
 
