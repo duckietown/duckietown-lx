@@ -14,15 +14,9 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
         ticks: current number of ticks.
     """
 
-    # Calculate the total rotation of the motor shaft, given the wheel encoder ticks
-    delta_ticks = ticks-prev_ticks
-
-    # Assuming no wheel slipping
-    dphi = 2*np.pi*delta_ticks/resolution
-    
-    #Dticks = prev_ticks + int(np.random.uniform(0, 10))
-    #dphi = np.random.random()
-
+    # TODO: these are random values, you have to implement your own solution in here
+    ticks = prev_ticks + int(np.random.uniform(0, 10))
+    dphi = np.random.random()
     # ---
     return dphi, ticks
 
