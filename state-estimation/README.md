@@ -16,16 +16,10 @@ the code to be completed as part of the exercise.
 
 Your submissions will be sent to the [`lx22-state-estimation`][challenge] challenge.
 
-
-## Grading criteria
-
-In order to pass, your agent must be able to navigate an entire loop in Duckietown.
-
 You can verify the scores of your submissions on the [Challenge Leaderboard][leaderboard] after your submission is evaluated.
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-state-estimation
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-state-estimation/leaderboard
-
 
 
 # Instructions

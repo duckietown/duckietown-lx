@@ -21,13 +21,6 @@ Note: This is a code-only exercise: you don't need the Duckiebot.
 Your submissions will be sent to the `lx22-planning-*` challenges. To see the full list of challenges
 check the [Challenges website][challenges].
 
-
-## Grading criteria
-
-In order to pass, the submitted agent must:
-
-- Achieve at least 95% of the queries correct on the `lx22-planning-*-test` challenges.
-
 You can verify the scores of your submissions on the [Challenges website][challenges] after your submission is evaluated.
 
 
