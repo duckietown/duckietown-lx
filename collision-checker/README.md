@@ -23,12 +23,6 @@ Your submissions will be sent to two different challenges:
 - [`lx22-collision-check-vali`][vali] is the **validation** challenge. You will be able to see the score and other output.
 - [`lx22-collision-check-test`][test] is the **testing** challenge. You will not be able to see the scores.
 
-
-## Grading criteria
-
-In order to pass, your agent has to get at least 95% of the queries correct on the [`lx22-collision-check-test`][test] challenge.
-(This allows some slack, so that you can experiment with probabilistic algorithms).
-
 [vali]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-vali
 [test]: https://challenges.duckietown.org/v4/humans/challenges/lx22-collision-check-test
 
