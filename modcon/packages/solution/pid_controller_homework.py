@@ -25,11 +25,23 @@ def PIDController(
     """
     
   
+    # PID GAINS DEFINITION
+    Kp = 5
+    Kd = 30
+    Ki = 0.1
 
-    # These are random values, replace with your implementation of a PID controller in here
-    omega = np.random.uniform(-8.0, 8.0)
-    e = np.random.random()
-    e_int = np.random.random()
+    # PID errors computation
+    e = y_ref-y_hat
+
+    e_y_der = (e-prev_e_y)/delta_t
+
+    e_y_int = e*delta_t + prev_int_y
+    e_int = max(min(e_y_int,1),-1)
+
+    # control action computation
+    omega = Kp*e + Kd*e_y_der + Ki*e_int
+
     # ---
     
     return v_0, omega, e, e_int
+
