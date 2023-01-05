@@ -15,7 +15,7 @@ def get_steer_matrix_left_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
     """
     h, w, = shape
     steer_matrix_left = np.zeros((h,w))
-    steer_matrix_left[int(h/2):,int(w/4):int(w/2)] = -0.01
+    steer_matrix_left[:,:int(w/2)] = -0.005
     return steer_matrix_left
 
 
@@ -30,7 +30,7 @@ def get_steer_matrix_right_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
     """
     h, w, = shape
     steer_matrix_right = np.zeros((h,w))
-    steer_matrix_right[int(h/2):,int(w/2):int(w*3/4)] = +0.01
+    steer_matrix_right[:,int(w/2):] = +0.002
     # ---
     return steer_matrix_right
 
@@ -71,7 +71,7 @@ def detect_lane_markings(image: np.ndarray) -> Tuple[np.ndarray, np.ndarray]:
     """
     STEP 3: non-maximal suppression of the gradients magnitudes
     """
-    threshold =70
+    threshold = 60
 
     mask_mag = (Gmag > threshold)
 
