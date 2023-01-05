@@ -1,5 +1,5 @@
 {
-    "workbench.colorTheme": "Visual Studio Dark",
+    "workbench.colorTheme": "Visual Studio Light",
     "python.testing.unittestArgs": [
         "-v",
         "-s",
