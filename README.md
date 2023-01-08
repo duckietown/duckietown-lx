@@ -17,6 +17,15 @@ To use these learning experiences do the following:
 We assume here that you have already set up your Duckietown development environment following the steps in [Unit C-1 
 and C-2](https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html) of the Duckietown operation manual.
 
+Add your `docker.io` credentials to `dts` by running the following command,
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
+
+**NOTE:** these are the `<USERNAME>` and `<PASSWORD>` you use to login on DockerHub (hub.docker.io).
+
+
 ## Step 1 - Installation
 
 Start by installing a new dependency,
