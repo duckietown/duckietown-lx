@@ -15,7 +15,7 @@ def get_steer_matrix_left_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
     """
     h, w, = shape
     steer_matrix_left = np.zeros((h,w))
-    steer_matrix_left[:,:int(w/2)] = -0.005
+    steer_matrix_left[:,:int(w/2)] = -0.004
     return steer_matrix_left
 
 
@@ -30,7 +30,7 @@ def get_steer_matrix_right_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
     """
     h, w, = shape
     steer_matrix_right = np.zeros((h,w))
-    steer_matrix_right[:,int(w/2):] = +0.002
+    steer_matrix_right[:,int(w/2):] = +0.0015
     # ---
     return steer_matrix_right
 
