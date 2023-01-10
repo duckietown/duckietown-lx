@@ -14,6 +14,22 @@ Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
 
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
 
+## ⚠️ Check Robot Compatability
+While we try our best to support running these exercises on all Duckiebot, some activities require special hardware and
+are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your 
+robot.
+
+The support status of this exercise for each Duckiebot is described as follows:
+
+| Duckiebot Type   	                                                                          | Configuration 	 | Support Level   	   |
+|---------------------------------------------------------------------------------------------|-----------------|---------------------|
+| [DB21J](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 4GB    	 | ✔️ Supported    	   |
+| [DB21M](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 2GB    	 | ✔️ Supported 	 |
+| [DB-R](https://get.duckietown.com/products/duckiebot-powered-by-raspberry-pi)             	 | RPi4 4GB+     	 | ❔ Untested        	 |
+| [DB19](https://get.duckietown.com/products/duckiebot-db19)             	                    | RPI3B+        	 | ❔ Untested        	 |
+| DB18 and earlier 	                                                                          | Misc          	 | ❌ Not Supported   	 |
+
+
 
 # Instructions
 
