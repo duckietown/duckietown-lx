@@ -27,10 +27,10 @@ robot.
 
 The support matrix of this exercise is as follows:
 
-| Duckiebot Type   	                                                       | Configuration 	 | Support Level   	    |
-|--------------------------------------------------------------------------|-----------------|----------------------|
-| [DB21J](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
-| [DB21M](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ❌ Not Supported 	    |
+| Duckiebot Type   	                                                                                | Configuration 	 | Support Level   	    |
+|---------------------------------------------------------------------------------------------------|-----------------|----------------------|
+| [DB21-J4](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21-J2](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ❌ Not Supported 	    |
 
 
 # Instructions
