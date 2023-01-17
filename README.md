@@ -144,21 +144,17 @@ in the notebooks to see if you need to access VNC.
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
 
-### ⚠️ Check Robot Compatability
+### ℹ️ Check Robot Compatibility
 While we try our best to support running these exercises on all Duckiebot, some activities require special hardware and
 are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your 
 robot.
 
-The overall support status for each Duckiebot is described as follows:
+The support matrix of this exercise is as follows:
 
 | Duckiebot Type   	                                                                          | Configuration 	 | Support Level   	    |
 |---------------------------------------------------------------------------------------------|-----------------|----------------------|
-| [DB21J](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 4GB    	 | ✔️ Full Support    	 |
-| [DB21M](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 2GB    	 | ⚠️ Partial Support 	 |
-| [DB-R](https://get.duckietown.com/products/duckiebot-powered-by-raspberry-pi)             	 | RPi4 4GB+     	 | ❔ Untested        	  |
-| [DB19](https://get.duckietown.com/products/duckiebot-db19)             	                    | RPI3B+        	 | ❔ Untested        	  |
-| DB18 and earlier 	                                                                          | Misc          	 | ❌ Not Supported   	  |
-
+| [DB21J](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	                    | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21M](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	                    | Jetson 2GB    	 | ⚠️ Partial Support 	 |
 
 
 ### 🚙 Testing on a physical robot

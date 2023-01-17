@@ -19,20 +19,18 @@ You can verify the scores of your submissions on the [Challenge Leaderboard][lea
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-objdet/leaderboard
 
-## ⚠️ Check Robot Compatability
+## ℹ️️ Check Robot Compatibility
+
 While we try our best to support running these exercises on all Duckiebot, some activities require special hardware and
-are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your 
+are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
 robot.
 
-The support status of this exercise for each Duckiebot is described as follows:
+The support matrix of this exercise is as follows:
 
-| Duckiebot Type   	                                                                          | Configuration 	 | Support Level   	   |
-|---------------------------------------------------------------------------------------------|-----------------|---------------------|
-| [DB21J](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 4GB    	 | ✔️ Supported    	   |
-| [DB21M](https://get.duckietown.com/products/duckiebot-db21)            	                    | Jetson 2GB    	 | ❌ Not Supported 	 |
-| [DB-R](https://get.duckietown.com/products/duckiebot-powered-by-raspberry-pi)             	 | RPi4 4GB+     	 | ❌ Not Supported        	 |
-| [DB19](https://get.duckietown.com/products/duckiebot-db19)             	                    | RPI3B+        	 | ❌ Not Supported        	 |
-| DB18 and earlier 	                                                                          | Misc          	 | ❌ Not Supported   	 |
+| Duckiebot Type   	                                                       | Configuration 	 | Support Level   	    |
+|--------------------------------------------------------------------------|-----------------|----------------------|
+| [DB21J](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21M](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ❌ Not Supported 	    |
 
 
 # Instructions
