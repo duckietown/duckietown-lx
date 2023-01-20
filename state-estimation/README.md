@@ -2,14 +2,20 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Exercise: State Estimation**
+# **Learning Experience (LX): State Estimation**
 
-# About this exercise
+# About these activities
 
-In this exercise, we will implement a few state estimators.
+In this learning experience, we will implement a few state estimators.
 The first two notebooks have simple pedagogical examples of the `Kalman` and `particle filters`.
 The third notebook contains an implementation of the `histogram filter` in duckietown with some parts in
 the code to be completed as part of the exercise.
+
+This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
+[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
+
+For guided setup instructions, lecture content, and more related to this LX, see the [Self Driving Cars with 
+Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
 
 
 ## Grading challenge

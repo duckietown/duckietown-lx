@@ -2,9 +2,9 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Exercise: Planning**
+# **Learning Experience (LX): Planning**
 
-# About this exercise
+# About these activities
 
 In this exercise, you will write a path planner. You will need to have solved the `collision-checker` 
 exercise already because you will be reusing your collision checker.
@@ -12,8 +12,13 @@ exercise already because you will be reusing your collision checker.
 You will have to move manually the code in the `collision-checker` exercise to this one.
 You likely will have to copy the module in the directory `packages/` of that exercises to the directory `packages/` of this exercise.  
 
-
 Note: This is a code-only exercise: you don't need the Duckiebot.
+
+This learning experience is provided by the Duckietown team. Visit us at the 
+[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
+
+For guided setup instructions, lecture content, and more related to this LX, see the [Self Driving Cars with 
+Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
 
  
 ## Grading challenges
