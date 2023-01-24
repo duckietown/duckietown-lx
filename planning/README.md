@@ -87,6 +87,33 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
+### ℹ️️ Check Robot Compatibility
+
+While we try our best to support running these exercises on all Duckiebot, some activities require special hardware and
+are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
+robot.
+
+The support matrix of this exercise is as follows:
+
+| Duckiebot Type   	                                                                                | Configuration 	 | Support Level   	    |
+|---------------------------------------------------------------------------------------------------|-----------------|----------------------|
+| [DB21-J4](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21-J2](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ❌ Not Supported 	    |
+
+### 🚙 Testing on a physical robot
+
+You can test your agent on the robot using the command,
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT
+
+This is the modality "everything runs on the robot".
+
+You can also test using
+
+    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
+
+This is the modality "drivers running on the robot, agent runs on the laptop."
+
 
 ### 📽 Perform local evaluation
 
