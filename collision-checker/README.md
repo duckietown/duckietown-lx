@@ -78,7 +78,7 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 
 ### ℹ️️ Check Robot Compatibility
 
-While we try our best to support running these exercises on all Duckiebot, some activities require special hardware and
+While we try our best to support running these exercises on all versions of the Duckiebot, some activities require special hardware and
 are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
 robot.
 
