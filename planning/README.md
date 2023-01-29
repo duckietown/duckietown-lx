@@ -26,7 +26,6 @@ You can verify the scores of your submissions on the [Challenges website][challe
 
 [challenges]: https://challenges.duckietown.org/v4/humans/challenges
 
-
 # Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
