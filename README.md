@@ -6,7 +6,11 @@
 
 # About this repository
 
-This is an exercises repository containing activites and exercises compatible with the Duckietown infrastructure.
+This is a Duckietown learning experiences repository containing activites compatible with the Duckietown infrastructure. Visit us at the 
+[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
+
+For guided setup instructions, lecture content, and more related to these LX, see the [Self Driving Cars with 
+Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
 
 # Setup
 
