@@ -6,7 +6,11 @@
 
 # About this repository
 
-This is an exercises repository containing activites and exercises compatible with the Duckietown infrastructure.
+This is a Duckietown learning experiences repository containing activites compatible with the Duckietown infrastructure. Visit us at the 
+[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
+
+For guided setup instructions, lecture content, and more related to these LX, see the [Self Driving Cars with 
+Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
 
 # Setup
 
@@ -16,6 +20,15 @@ To use these learning experiences do the following:
 
 We assume here that you have already set up your Duckietown development environment following the steps in [Unit C-1 
 and C-2](https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html) of the Duckietown operation manual.
+
+Add your `docker.io` credentials to `dts` by running the following command,
+
+```
+dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
+```
+
+**NOTE:** these are the `<USERNAME>` and `<PASSWORD>` you use to login on DockerHub (hub.docker.io).
+
 
 ## Step 1 - Installation
 
