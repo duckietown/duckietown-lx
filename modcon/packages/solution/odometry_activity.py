@@ -14,7 +14,6 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
         ticks: current number of ticks.
     """
 
-    # ticks = prev_ticks
     delta_ticks = ticks-prev_ticks
     alpha = 2*np.pi/resolution
     dphi = delta_ticks*alpha
@@ -56,7 +55,6 @@ def pose_estimation(
     d_A = 0.5*(d_left+d_right)
     delta_theta = (d_right-d_left)/baseline
 
-    # These are random values, replace with your own
     x_curr = x_prev + d_A*np.cos(theta_prev)
     y_curr = y_prev + d_A*np.sin(theta_prev)
     theta_curr = theta_prev + delta_theta

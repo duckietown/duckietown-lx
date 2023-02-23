@@ -1,7 +1,8 @@
 from typing import Tuple
 
 import numpy as np
-
+import yaml
+import os
 
 def PIDController(
     v_0: float, y_ref: float, y_hat: float, prev_e_y: float, prev_int_y: float, delta_t: float
@@ -23,25 +24,34 @@ def PIDController(
         e:          current tracking error (automatically becomes prev_e_y at next iteration).
         e_int:      current integral error (automatically becomes prev_int_y at next iteration).
     """
-    
-    """
-    Try to perform tuning on: https://pidtuner.com/#/HMdV8HKvNM
-    """
-    # PID GAINS DEFINITION
-    Kp = 5
-    Kd = 30
-    Ki = 0.1
 
+    # Read PID gains from file
+    script_dir = os.path.dirname(__file__)
+    file_path = script_dir + "/GAINS.yaml"
+
+    with open(file_path) as f:
+        gains = yaml.full_load(f)
+        f.close()
+    
+    kp = gains['kp']
+    kd = gains['kd']
+    ki = gains['ki']
+
+    # ------------- DEFINE YOUR PID FUNCTION BELOW ---------
     # PID errors computation
     e = y_ref-y_hat
 
     e_y_der = (e-prev_e_y)/delta_t
 
     e_y_int = e*delta_t + prev_int_y
-    e_int = max(min(e_y_int,1),-1)
+    # e_int = max(min(e_y_int,1),-1)
+    e_int = e_y_int
 
     # control action computation
-    omega = Kp*e + Kd*e_y_der + Ki*e_int
+    omega = kp*e + kd*e_y_der + ki*e_int
+
+    # Hint: print for debugging
+    #print(f"\n\nDelta time : {delta_t} \nE : {e} \nE int : {e_int} \nPrev e : {prev_e_y} \nPrev e_int : {prev_int_y} \nY hat : {y_hat} \nY ref : {y_ref} \nomega : {omega} \n")
 
     # ---
     
