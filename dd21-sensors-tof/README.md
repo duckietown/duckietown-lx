@@ -73,13 +73,22 @@ All exercises have to be run inside the container with the software of the drone
     screen -c pi.screenrc
     ```
 
+1. Then, clone the repository inside the container on the drone by changing to `~/catkin_ws/src`, and then running:
+
+    ```bash
+    git clone https://github.com/h2r/project-sensors-implementation-<yourGithubUsername>
+    ```
+
+    **note**: You should create a GitHub personal access token for your drone to make this possible. It only needs permissions to read and write to repositories.
+
 ### 2. Working on the exercise
 
 When you need to modify the code of an exercise and test it on the drone, do so by working on your base station, committing the modified file and then pushing it to the remote repo with `git push`.
 
-Pull the update on the drone inside the container, by running
+Each time you make a change in the file on your base station, make sure to pull the update on the drone inside the container, by running:
 
 ```bash
+cd ~/catkin_ws/src/project-sensors-implementation-<yourGithubUsername>
 git pull
 ```
 
