@@ -32,7 +32,7 @@ def plot_track(x_coord_ref: np.array, y_coord_ref: np.array,
     plt.subplot(2, 2, 2)
     plt.plot(t, y_coord_ref)
     if y_ctr is not None:
-        plt.plot(t_curvy, y_ctr, 'r')
+        plt.plot(t, y_ctr, 'r')
         plt.legend(['reference', 'controller'])
     else:
         plt.legend(['reference'])
@@ -42,7 +42,7 @@ def plot_track(x_coord_ref: np.array, y_coord_ref: np.array,
     plt.subplot(2, 2, 4)
     plt.plot(t, w_curvy)
     if w_ctr is not None:
-        plt.plot(t_curvy, w_ctr, 'r')
+        plt.plot(t, w_ctr, 'r')
         plt.legend(['reference', 'controller'])
     else:
         plt.legend(['reference'])
