@@ -1,102 +1,30 @@
-<p align="center">
-<img src="./state-feedback-lx/assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
-</p>
+# **Learning Experience (LX): State Feedback**
 
-# **Duckietown Learning Experiences (LX) - ETH Demo LX**
+# About these activities
 
-# About this repository
+This is a demo learning experience following the notebook CS2-2023-unicycle-state-feedback.
 
-This is a Duckietown learning experiences repository containing activities compatible with the Duckietown infrastructure. Visit us at the 
+This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to these LX, see the [Self Driving Cars with 
-Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
+For guided setup instructions, lecture content, and more related to this LX, see **TODO: Add course link here**.
 
-# Setup
+## Grading challenge
 
-To use these learning experiences do the following:
-
-## Step 0 - Requirements
-
-We assume here that you have already set up your Duckietown development environment following the steps in [Unit C-1 
-and C-2](https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html) of the Duckietown operation manual.
-
-Add your `docker.io` credentials to `dts` by running the following command,
-
-```
-dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
-```
-
-**NOTE:** these are the `<USERNAME>` and `<PASSWORD>` you use to login on DockerHub (hub.docker.io).
-
-
-## Step 1 - Installation
-
-Start by installing a new dependency,
-
-    sudo apt install libnss3-tools
-
-Then update your Duckietown shell and shell commands,
-
-    pip3 install -U duckietown-shell
-
-    dts update
-
-## Step 2 - SSL certificate
-
-Next, set up your local SSL certificate needed to run the learning experience editor,
-
-    dts setup mkcert
-
-## Step 3 - Fork this repository
-
-To store your own code, while also keeping the ability to pull updates from our version of this repo, create your own fork.
-
-Start by pressing "Fork" in the top right corner of this repository page on GitHub. You will be able to create a new 
-fork: `<your_username>/duckietown-lx`
-
-Then clone your new repository, replacing your GitHub username in the command below,
-
-    git clone -b eth-demo git@github.com:<your_username>/duckietown-lx
-
-## Step 4 - Set up the remote
-
-Now we will configure the Duckietown version of this repository as the upstream repository to sync with your fork.
-
-List the current remote repository for your fork,
-
-    git remote -v
-
-Specify a new remote upstream repository,
-
-    git remote add upstream https://github.com/duckietown/duckietown-lx
-
-Confirm that the new upstream repository was added to the list,
-
-    git remote -v
-
-You can now push your work to your own repository using the standard GitHub workflow, and the beginning of every 
-exercise will prompt you to pull from the upstream repository - updating your exercises to the latest Duckietown 
-version,
-
-    git pull upstream eth-demo
-
-## What next?
-
-You will find the following set of instructions in every individual directory in this repository. This 
-workflow will allow you to build and test your code, run solutions in simulation and on the [Duckiebot](https://get.duckietown.com/collections/dt-robots/products/duckiebot-db21?variant=41543707099311), and submit your 
-work to the [challenges server](https://challenges.duckietown.org/) to evaluate it.
+**TODO: Add optional challenge link or remove the `Grading challenge` section**
 
 # Instructions
 
-**NOTE:** All commands below are intended to be executed from the root directory of a single exercise (e.g., the 
-`braitenberg` directory).
+**NOTE:** All commands below are intended to be executed from the root directory of this learning experience (i.e., the directory containing this README).
 
-## 1. Make sure your folder is up-to-date
 
-Update your folder definition and instructions,
+## 1. Make sure your exercise is up-to-date
+
+Update your exercise definition and instructions,
 
     git pull upstream eth-demo
+
+**NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
 
 
 ## 2. Make sure your system is up-to-date
@@ -139,7 +67,7 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 
 To test in simulation, use the command
 
-    dts code workbench --sim
+    $ dts code workbench --sim
 
 There will be two URLs popping up to open in your browser: one is the direct view of the
 simulated environment. The other is VNC and only useful for some exercises, follow the instructions
@@ -174,7 +102,7 @@ You can do so by running the following command,
 This should take a few minutes.
 This is not supposed to be an interactive process: just let it run, and when you return,
 you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the [challenges website](https://challenges.duckietown.org/).
+you would usually find on the website.
 
 
 ### 📬 Submit your solution
