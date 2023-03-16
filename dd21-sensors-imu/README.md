@@ -4,7 +4,7 @@
 
 In this learning experience you will learn how the sensors on your Duckiedrone work.
 
-This learning experience is provided by the Duckietown team and can be run on Duckiedrones. Visit us at the 
+This learning experience is provided by the Duckietown team and can be run on Duckiedrones. Visit us at the
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
 For lecture content, see:
@@ -12,6 +12,20 @@ For lecture content, see:
 * [Sensors](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@3bde0261d3b04ccfa06f77eec394f97a)
 * [Transforms](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@3dd0e7c824e94017a36abda94cf18888)
 * [Measuring Velocity and Position](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@ccd9eede2624475b91ce4b55ee51ce87)
+
+### Your Robot's Sensors
+
+Your drone is equipped with three sensors:
+
+1. An inertial measurement unit (IMU)
+1. A time-of-flight (ToF) sensor
+1. A downward facing camera.
+
+Thanks to these sensors, the drone is equipped with enough understanding of its environment to control its flight and fly autonomously. Each sensor is described below. By interfacing with each of these sensors, you will gain exposure to core robotics concepts including frame conversions, interpreting digital signals, and computer vision.
+
+### How this project fits into software stack
+
+Take a look at the [software architecture diagram](https://docs.duckietown.org/daffy/opmanual_sky/out/software_architecture_intro.html) and notice the hardware components: `Flight Controller`, `Time of Flight Sensor`, and `Camera`. This is the hardware you'll be interfacing with in this project. Also notice the corresponding ROS nodes in the diagram. These are the ROS nodes you'll be creating to extract and publish sensor values.
 
 ## Instructions
 
@@ -36,7 +50,7 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
-This assignment comprises several parts: 
+This assignment comprises several parts:
 
 1. ToF Theory
 1. Affine Transforms
@@ -92,12 +106,33 @@ cd ~/catkin_ws/src/project-sensors-implementation-<yourGithubUsername>
 git pull
 ```
 
-## Handin
+## Hand in - Theory questions
 
-Use [this link](https://classroom.github.com/a/QKoUdfRa) to access the assignment on GitHub classroom. Commit the
-files to hand in, as you did in the Introduction assignment.
+Use [this link](https://classroom.github.com/a/QKoUdfRa) to access the assignment on GitHub classroom. Commit the files to hand in.
 
 Your handin should contain the following files:
 
 * `solutions.tex`
 * `solutions.pdf`
+
+## Hand in - Activities
+
+Use [this link](https://classroom.github.com/a/hjzlRyNm) to generate a GitHub repo for this project. Clone the directory to your computer with `git clone https://github.com/h2r/project-sensors-implementation-yourGithubName.git`. This will create a new folder.
+
+When you submit your assignment, your folder should contain modified versions of the following files in addition to the other files that came with your repo:
+
+* `student_infrared_pub.py`
+* `student_analyze_flow.py`
+* `student_analyze_phase.py`
+* `student_flight_controller_node.py`
+
+Commit and push your changes before the assignment is due. This will allow us to access the files you pushed to GitHub and grade them accordingly. If you commit and push after the assignment deadline, we will use your latest commit as your final submission, and you will be marked late.
+
+```bash
+cd project-sensors-implementation-<yourGithubName>
+git add -A
+git commit -a -m 'some commit message. maybe hand-in, maybe update'
+git push
+```
+
+Note that assignments will be graded anonymously, so please don't put your name or any other identifying information on the files you hand in.
