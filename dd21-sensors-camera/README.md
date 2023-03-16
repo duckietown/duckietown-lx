@@ -1,6 +1,6 @@
 # **Learning Experience (LX): DD21 Sensors**
 
-# About these activities
+## About these activities
 
 In this learning experience you will learn how the sensors on your Duckiedrone work.
 
@@ -13,36 +13,13 @@ For lecture content, see:
 * [Transforms](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@3dd0e7c824e94017a36abda94cf18888)
 * [Measuring Velocity and Position](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@ccd9eede2624475b91ce4b55ee51ce87)
 
-# Instructions
-
-**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
-
-
-## 1. Make sure your exercise is up-to-date
-
-Update your exercise definition and instructions,
-
-    git pull upstream <your upstream branch>
-
-**NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
-
-
-## 2. Make sure your system is up-to-date
-
-- 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
-
-- 💻 Update the shell commands: `dts update`
-
-- 💻 Update your laptop/desktop: `dts desktop update`
-
-
-## 3. Work on the exercise
+## Instructions
 
 ### Launch the code editor
 
 Open the code editor by running the following command,
 
-```
+```bash
 dts code editor
 ```
 
@@ -50,8 +27,7 @@ Wait for a URL to appear on the terminal, then click on it or copy-paste it in t
 of your browser to access the code editor. The first thing you will see in the code editor is
 this same document, you can continue there.
 
-
-### Walkthrough of notebooks 
+### Walkthrough of notebooks
 
 **NOTE**: You should be reading this from inside the code editor in your browser.
 
@@ -69,6 +45,53 @@ This assignment comprises several parts:
 
 Please complete all parts of this assignment.
 
+### 1. Make sure you run the exercises in the container
+
+All exercises have to be run inside the container with the software of the drone. Make sure you have started it by:
+
+1. Connecting to your drone via ssh from your base station (where `<hostname>` is the hostname of your drone):
+
+    ```bash
+    ssh duckie@<hostname>
+    ```
+
+1. Going in the `~/catkin_ws/src/pidrone_pkg`:
+
+    ```bash
+    cd ~/catkin_ws/src/pidrone_pkg
+    ```
+
+1. Starting the container:
+
+    ```bash
+    rake start
+    ```
+
+1. Starting the `screen` session:
+
+    ```bash
+    screen -c pi.screenrc
+    ```
+
+1. Then, clone the repository inside the container on the drone by changing to `~/catkin_ws/src`, and then running:
+
+    ```bash
+    git clone https://github.com/h2r/project-sensors-implementation-<yourGithubUsername>
+    ```
+
+    **note**: You should create a GitHub personal access token for your drone to make this possible. It only needs permissions to read and write to repositories.
+
+### 2. Working on the exercise
+
+When you need to modify the code of an exercise and test it on the drone, do so by working on your base station, committing the modified file and then pushing it to the remote repo with `git push`.
+
+Each time you make a change in the file on your base station, make sure to pull the update on the drone inside the container, by running:
+
+```bash
+cd ~/catkin_ws/src/project-sensors-implementation-<yourGithubUsername>
+git pull
+```
+
 ## Handin
 
 Use [this link](https://classroom.github.com/a/QKoUdfRa) to access the assignment on GitHub classroom. Commit the
@@ -76,5 +99,5 @@ files to hand in, as you did in the Introduction assignment.
 
 Your handin should contain the following files:
 
-- `solutions.tex` 
-- `solutions.pdf`
+* `solutions.tex`
+* `solutions.pdf`
