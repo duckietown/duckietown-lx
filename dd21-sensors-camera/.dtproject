@@ -3,14 +3,15 @@ TYPE=template-exercise
 TYPE_VERSION=3
 
 # name of the exercise
-NAME=dd21-sensors
+NAME=dd21-sensors-camera
 
 # recipe repository and location
 # - fully qualified name of the recipe repository, e.g., 'duckietown/duckietown-lx-recipes'
-RECIPE_REPOSITORY=<RECIPE_REPOSITORY_HERE>
+RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH=<RECIPE_BRANCH_HERE>
+RECIPE_BRANCH=DTSW-2850-lx-camera-optical-flow
+
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
-RECIPE_LOCATION=<RECIPE_LOCATION_HERE>
+RECIPE_LOCATION=dd21-sensors-camera
