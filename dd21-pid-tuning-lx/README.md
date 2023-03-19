@@ -90,21 +90,19 @@ When you need to modify the code of an exercise and test it on the drone, do so 
 
 To clone your repository follow these steps:
 
-1.  Open a new terminal in the workspace of vscode by pressing <kbd>F1</kbd> and selecting `Terminal: Create New Terminal in Editor Area`.
-
-1.  In the terminal that opens up go in the appropriate directory:
+1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-pid-tuning`) and move in the directory `packages`:
 
     ```bash
-    cd /code/dd21-pid-tuning-lx/packages/
+    cd dd21-pid-tuning/packages/
     ```
 
-1.  Clone your repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
+1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
     ```bash
     git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
     ```
 
-1.  You can now access your project in the sidebar by going in the folder `packages/
+1. You can now access your project in the sidebar by going in the folder `packages`
 
 ## How to get your changes on the Duckiedrone
 
