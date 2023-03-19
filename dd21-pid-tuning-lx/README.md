@@ -104,7 +104,14 @@ To clone your repository follow these steps:
 
 1. You can now access your project in the sidebar by going in the folder `packages`
 
-Make sure to commit the changes and push them to GitHub each time you modify files.
+Make sure to commit the changes and push them to GitHub each time you modify some file.
+
+```bash
+cd project-pid-implementation-<yourGithubName>
+git add -A
+git commit -a -m 'some commit message. maybe hand-in, maybe update'
+git push
+```
 
 ## How to get your changes on the Duckiedrone
 
