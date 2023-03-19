@@ -1,61 +1,33 @@
 # **Learning Experience (LX): Duckiedrone PID tuning**
 
-# About these activities
+## About this learning experience
 
-In this learning experience you will learn how to tune the PID on your Duckiedrone.
+In this learning experience you will learn how to tune the PID controlling the altitude of your Duckiedrone.
 
-In this learning experience, you will ... **TODO: Describe the LX activities and outcome here**
-
-This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
+This learning experience is provided by the Duckietown team and can be run on Duckiedrones. Visit us at the
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to this LX, see **TODO: Add course link here**.
+For lecture videos, see:
 
-## Grading challenge
+* [PID Control](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@b06e33f7340740779e16d9c2b1fadab6)
 
-**TODO: Add optional challenge link or remove the `Grading challenge` section**
+* [Implementing PID](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@b06e33f7340740779e16d9c2b1fadab6)
 
-# Instructions
+## Instructions
 
-**TODO: Update Step 1. to match your learner setup**
-
-**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
-
-
-## 1. Make sure your exercise is up-to-date
-
-Update your exercise definition and instructions,
-
-    git pull upstream <your upstream branch>
-
-**NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
-
-
-## 2. Make sure your system is up-to-date
-
-- 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
-
-- 💻 Update the shell commands: `dts update`
-
-- 💻 Update your laptop/desktop: `dts desktop update`
-
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
-
-
-## 3. Work on the exercise
+Follow these instructions to proceed with the learning experience.
 
 ### Launch the code editor
 
 Open the code editor by running the following command,
 
-```
+```bash
 dts code editor
 ```
 
 Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar
 of your browser to access the code editor. The first thing you will see in the code editor is
 this same document, you can continue there.
-
 
 ### Walkthrough of notebooks
 
@@ -66,88 +38,106 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
+This assignment comprises several parts:
 
-### 💻 Testing in simulation
+1. General overview of PID controllers
+1. PID controllers application to drones
+1. Tuning of the PID controller in simulation
 
-To test in simulation, use the command
+Please complete all parts of this assignment.
 
-    $ dts code workbench --sim
+### Setting up the activities
 
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
+Click [**this link**](https://classroom.github.com/a/ruiWJMsA) to generate a Github repo for this project.
 
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
-metric of performance, continue reading to the `Perform local evaluation` section below.
+All activities have to be run inside the container with the software of the drone. Make sure you have started it by:
 
+1. Connecting to your drone via ssh from your base station (where `<hostname>` is the hostname of your drone):
 
-### 🚙 Testing on a physical robot
+    ```bash
+    ssh duckie@<hostname>
+    ```
 
-You can test your agent on the robot using the command,
+1. Going in the `~/catkin_ws/src/pidrone_pkg`:
 
-    dts code workbench --duckiebot YOUR_DUCKIEBOT
+    ```bash
+    cd ~/catkin_ws/src/pidrone_pkg
+    ```
 
-This is the modality "everything runs on the robot".
+1. Starting the container:
 
-You can also test using
+    ```bash
+    rake start
+    ```
 
-    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
+1. Starting the `screen` session:
 
-This is the modality "drivers running on the robot, agent runs on the laptop."
+    ```bash
+    screen -c pi.screenrc
+    ```
 
+1. Then, clone the repository inside the container on the drone by changing to `~/catkin_ws/src`, and then running:
 
-### 📽 Perform local evaluation
+    ```bash
+    git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
+    ```
 
-We suggest you evaluate your work locally before submitting your solution.
-You can do so by running the following command,
+    **note**: You should [create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your drone to make this possible. It only needs permissions to read and write to repositories. 
 
-    dts code evaluate
+### Working on the exercise
 
-This should take a few minutes.
-This is not supposed to be an interactive process: just let it run, and when you return,
-you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the website.
+When you need to modify the code of an exercise and test it on the drone, do so by working on your base station inside this editor, committing the modified file and then pushing it to the remote repo with `git push`.
 
+To clone your repository follow these steps:
 
-### 📬 Submit your solution
+1.  Open a new terminal in the workspace of vscode by pressing <kbd>F1</kbd> and selecting `Terminal: Create New Terminal in Editor Area`.
 
-When you are ready to submit your homework, use the following command,
+1.  In the terminal that opens up go in the appropriate directory:
 
-    dts code submit
+    ```bash
+    cd /code/dd21-pid-tuning-lx/packages/
+    ```
 
-This will package all your code and send it to the Duckietown servers for evaluation.
+1.  Clone your repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
+    ```bash
+    git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
+    ```
 
-## Troubleshooting
+1.  You can now access your project in the sidebar by going in the folder `packages/
 
+## How to get your changes on the Duckiedrone
 
-If an error of this form occurs
+Each time you make a change in the file on your base station, you will see the `Source Control` icon with a little blue dot showin the number of files that have been changed.
+
+![](./assets/_images/vscode_source_control.png)
+
+Make sure to commit the changes and push them to GitHub, you can learn how to do so [here](https://code.visualstudio.com/docs/sourcecontrol/overview#_commit).
+
+To get the changes from your repo to the Duckiedrone, pull the updates on the drone from inside the container, by running:
 
 ```bash
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
-    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
-    f(rest, environment)
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
-    br = submission_build(
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
-    raise ZException(msg, available=list(credentials))
-zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
-available:
+cd ~/catkin_ws/src/project-pid-implementation-<yourGithubUsername>
+git pull
 ```
 
-you need to log into docker using `dts`. Use this command:
+## Hand in - Theory questions
 
-```
-dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
-```
+Use [this link](https://classroom.github.com/a/QKoUdfRa) to access the assignment on GitHub classroom. Commit the files to hand in.
 
+Your handin should contain the following files:
 
-## Retire obsolete submissions
+* `solutions.tex`
+* `solutions.pdf`
 
-Note that you can "retire" submissions that you know are wrong.
-You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
+## Hand in - Activities
 
-To do so, login using your token, then find the submission you want to retire from the list of submission
-in your user profile page. Use the button "retire" to the right of the submission record line.
+When you submit your assignment, your folder should contain the following files (that you modified) in addition to all of the other files that came with your repo:
+
+* `_answers_pid.md_`
+* `_student_pid_class.py_`
+* `_z_pid.yaml_`
+
+Commit and push your changes before the assignment is due. This will allow us to access the files you pushed to GitHub and grade them accordingly. If you commit and push after the assignment deadline, we will use your latest commit as your final submission, and you will be marked late.
+
+Note that assignments will be graded anonymously, so please don't put your name or any other identifying information on the files you hand in.
