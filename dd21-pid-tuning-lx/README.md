@@ -104,13 +104,9 @@ To clone your repository follow these steps:
 
 1. You can now access your project in the sidebar by going in the folder `packages`
 
+Make sure to commit the changes and push them to GitHub each time you modify files.
+
 ## How to get your changes on the Duckiedrone
-
-Each time you make a change in the file on your base station, you will see the `Source Control` icon with a little blue dot showin the number of files that have been changed.
-
-![](./assets/_images/vscode_source_control.png)
-
-Make sure to commit the changes and push them to GitHub, you can learn how to do so [here](https://code.visualstudio.com/docs/sourcecontrol/overview#_commit).
 
 To get the changes from your repo to the Duckiedrone, pull the updates on the drone from inside the container, by running:
 
