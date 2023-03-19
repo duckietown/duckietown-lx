@@ -1,0 +1,60 @@
+docs_config_version: v1
+
+# CONFIGURE THESE TO MATCH YOUR PROJECT:
+
+# TODO: these should be provided by `dts devel docs build ...`
+#project: "EXERCISE_NAME_HERE"
+#author: "YOUR_NAME_HERE"
+#version: "-"
+
+copyright: "Duckietown"
+custom_sections: [
+    "Configuration",
+    "Subscribers",
+    "Subscriber",
+    "Publishers",
+    "Publisher",
+    "Services",
+    "Service",
+    "Fields",
+    "Attribute",
+    "Attributes",
+    "inputs",
+    "input",
+    "outputs",
+    "output"
+]
+
+# REFRAIN FROM CHANGING THESE SPHINX-SPECIFIC CONFIGURATION SETTINGS:
+autodoc_default_flags:
+  members: True
+  member-order: alphabetical
+  undoc-members: True
+  inherited-members: True
+  show-inheritance: True
+
+add_module_names: False
+
+# settings for napoleon
+napoleon_google_docstring: True
+napoleon_numpy_docstring: False
+napoleon_include_init_with_doc: False
+napoleon_include_private_with_doc: False
+napoleon_include_special_with_doc: False
+napoleon_use_admonition_for_examples: True
+napoleon_use_admonition_for_notes: True
+napoleon_use_admonition_for_references: True
+napoleon_use_ivar: False
+napoleon_use_param: False
+napoleon_use_rtype: True
+napoleon_use_keyword: True
+
+# options for the sphinx_rtd_theme
+html_theme_options:
+  prev_next_buttons_location: 'bottom'
+  style_nav_header_background: '#fbc10b'
+  collapse_navigation: False
+  sticky_navigation: True
+  navigation_depth: 4
+  includehidden: False
+  titles_only: False
