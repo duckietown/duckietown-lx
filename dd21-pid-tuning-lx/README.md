@@ -117,7 +117,7 @@ git pull
 
 ## Hand in - Theory questions
 
-Use [this link](https://classroom.github.com/a/QKoUdfRa) to access the assignment on GitHub classroom. Commit the files to hand in.
+Use [this link](https://classroom.github.com/a/AQdgEuGT) to access the assignment on GitHub classroom. Commit the files to hand in.
 
 Your handin should contain the following files:
 
