@@ -82,7 +82,7 @@ All activities have to be run inside the container with the software of the dron
     git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
     ```
 
-    **note**: You should [create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your drone to make this possible. It only needs permissions to read and write to repositories. 
+    **note**: You should [create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your drone to make this possible. It only needs permissions to read and write to repositories.
 
 ### Working on the exercise
 
