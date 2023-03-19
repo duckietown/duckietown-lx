@@ -7,10 +7,10 @@ NAME=dd21-sensors
 
 # recipe repository and location
 # - fully qualified name of the recipe repository, e.g., 'duckietown/duckietown-lx-recipes'
-RECIPE_REPOSITORY="duckietown/duckietown-lx-recipes"
+RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH="DTSW-2848-LX-IMU"
+RECIPE_BRANCH=DTSW-2848-LX-IMU
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
-RECIPE_LOCATION="dd21-sensors"
+RECIPE_LOCATION=dd21-sensors-imu
