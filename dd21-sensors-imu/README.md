@@ -59,9 +59,11 @@ This assignment comprises several parts:
 
 Please complete all parts of this assignment.
 
-### 1. Make sure you run the exercises in the container
+### Setting up the activities
 
-All exercises have to be run inside the container with the software of the drone. Make sure you have started it by:
+Click [**this link**](https://classroom.github.com/a/QKoUdfRa) to generate a Github repo for this project.
+
+All activities have to be run inside the container with the software of the drone. Make sure you have started it by:
 
 1. Connecting to your drone via ssh from your base station (where `<hostname>` is the hostname of your drone):
 
@@ -93,13 +95,40 @@ All exercises have to be run inside the container with the software of the drone
     git clone https://github.com/h2r/project-sensors-implementation-<yourGithubUsername>
     ```
 
-    **note**: You should create a GitHub personal access token for your drone to make this possible. It only needs permissions to read and write to repositories.
+    **note**: You should [create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your drone to make this possible. It only needs permissions to read and write to repositories. 
 
-### 2. Working on the exercise
+### Working on the exercise
 
-When you need to modify the code of an exercise and test it on the drone, do so by working on your base station, committing the modified file and then pushing it to the remote repo with `git push`.
+When you need to modify the code of an exercise and test it on the drone, do so by working on your base station inside this editor, committing the modified file and then pushing it to the remote repo with `git push`.
 
-Each time you make a change in the file on your base station, make sure to pull the update on the drone inside the container, by running:
+To clone your repository follow these steps:
+
+1.  *From the terminal* of your base station go inside the directory of this learning experience (`dd21-sensors-imu`) and move in the directory `packages`:
+
+    ```bash
+    cd dd21-sensors-imu/packages/
+    ```
+
+1.  Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
+
+    ```bash
+    git clone https://github.com/h2r/project-sensors-implementation-<yourGithubUsername>
+    ```
+
+1.  You can now access your project in the sidebar by going in the folder `packages`
+
+Make sure to commit the changes and push them to GitHub each time you modify some file.
+
+```bash
+cd project-sensors-implementation-<yourGithubName>
+git add -A
+git commit -a -m 'some commit message. maybe hand-in, maybe update'
+git push
+```
+
+## How to get your changes on the Duckiedrone
+
+To get the changes from your repo to the Duckiedrone, pull the updates on the drone from inside the container, by running:
 
 ```bash
 cd ~/catkin_ws/src/project-sensors-implementation-<yourGithubUsername>
@@ -117,8 +146,6 @@ Your handin should contain the following files:
 
 ## Hand in - Activities
 
-Use [this link](https://classroom.github.com/a/hjzlRyNm) to generate a GitHub repo for this project. Clone the directory to your computer with `git clone https://github.com/h2r/project-sensors-implementation-yourGithubName.git`. This will create a new folder.
-
 When you submit your assignment, your folder should contain modified versions of the following files in addition to the other files that came with your repo:
 
 * `student_infrared_pub.py`
@@ -127,12 +154,5 @@ When you submit your assignment, your folder should contain modified versions of
 * `student_flight_controller_node.py`
 
 Commit and push your changes before the assignment is due. This will allow us to access the files you pushed to GitHub and grade them accordingly. If you commit and push after the assignment deadline, we will use your latest commit as your final submission, and you will be marked late.
-
-```bash
-cd project-sensors-implementation-<yourGithubName>
-git add -A
-git commit -a -m 'some commit message. maybe hand-in, maybe update'
-git push
-```
 
 Note that assignments will be graded anonymously, so please don't put your name or any other identifying information on the files you hand in.
