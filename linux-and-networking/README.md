@@ -2,10 +2,10 @@
 
 # About these activities
 
-In this lx you will learn the basics of Linux, the operating system running on Duckiebots and Duckiedrones, and get an introduction to networking.
+In this learning experience you will learn the basics of Linux, the operating system running on Duckiebots and Duckiedrones, and get an introduction to networking.
 
 
-It os comprised of two parts: 
+It is comprised of two parts: 
 
 1. Introduction to Linux
 
@@ -53,8 +53,6 @@ Repo should include the following files that you will create during the activity
 
 # Instructions
 
-**TODO: Update Step 1. to match your learner setup**
-
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
 
@@ -62,7 +60,7 @@ Repo should include the following files that you will create during the activity
 
 Update your exercise definition and instructions,
 
-    git pull upstream <your upstream branch>
+    git pull upstream duckiedrone
 
 **NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
 
