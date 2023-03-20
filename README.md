@@ -54,7 +54,7 @@ fork: `<your_username>/duckietown-lx`
 
 Then clone your new repository, replacing your GitHub username in the command below,
 
-    git clone -b DTSW-2343-LX-DD21-5-Sensors git@github.com:<your_username>/duckietown-lx
+    git clone -b duckiedrone-lxs git@github.com:<your_username>/duckietown-lx
 
 ## Step 4 - Set up the remote
 
@@ -76,7 +76,7 @@ You can now push your work to your own repository using the standard GitHub work
 exercise will prompt you to pull from the upstream repository - updating your exercises to the latest Duckietown 
 version,
 
-    git pull upstream DTSW-2343-LX-DD21-5-Sensors
+    git pull upstream duckiedrone-lxs
 
 ## What next?
 
@@ -93,7 +93,7 @@ work to the [challenges server](https://challenges.duckietown.org/) to evaluate 
 
 Update your folder definition and instructions,
 
-    git pull upstream DTSW-2343-LX-DD21-5-Sensors
+    git pull upstream duckiedrone-lxs
 
 
 ## 2. Make sure your system is up-to-date
