@@ -2,15 +2,12 @@
 <img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Duckietown Learning Experiences (LX) - MOOC Exercises**
+# **Duckietown Learning Experiences (LX)**
 
 # About this repository
 
 This is a Duckietown learning experiences repository containing activites compatible with the Duckietown infrastructure. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
-
-For guided setup instructions, lecture content, and more related to these LX, see the [Self Driving Cars with 
-Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
 
 # Setup
 
@@ -57,7 +54,7 @@ fork: `<your_username>/duckietown-lx`
 
 Then clone your new repository, replacing your GitHub username in the command below,
 
-    git clone -b mooc2022 git@github.com:<your_username>/duckietown-lx
+    git clone -b DTSW-2343-LX-DD21-5-Sensors git@github.com:<your_username>/duckietown-lx
 
 ## Step 4 - Set up the remote
 
@@ -79,7 +76,7 @@ You can now push your work to your own repository using the standard GitHub work
 exercise will prompt you to pull from the upstream repository - updating your exercises to the latest Duckietown 
 version,
 
-    git pull upstream mooc2022
+    git pull upstream DTSW-2343-LX-DD21-5-Sensors
 
 ## What next?
 
@@ -96,7 +93,7 @@ work to the [challenges server](https://challenges.duckietown.org/) to evaluate 
 
 Update your folder definition and instructions,
 
-    git pull upstream mooc2022
+    git pull upstream DTSW-2343-LX-DD21-5-Sensors
 
 
 ## 2. Make sure your system is up-to-date
@@ -137,6 +134,8 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 
 ### 💻 Testing in simulation
 
+**note:** this is not yet available in the Duckiedrone exercises.
+
 To test in simulation, use the command
 
     dts code workbench --sim
@@ -150,6 +149,8 @@ metric of performance, continue reading to the `Perform local evaluation` sectio
 
 
 ### 🚙 Testing on a physical robot
+
+**note:** in the Duckiedrone exercises you will have different instructions to follow.
 
 You can test your agent on the robot using the command,
 
