@@ -100,6 +100,7 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
+**NOTE**: the instructions below *do not* apply for these learning experience.
 
 ### 💻 Testing in simulation
 
