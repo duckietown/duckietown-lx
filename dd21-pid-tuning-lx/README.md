@@ -1,5 +1,7 @@
 # **Learning Experience (LX): Duckiedrone PID tuning**
 
+![Duckietown logo](../dtlogo.png)
+
 ## About this learning experience
 
 In this learning experience you will learn how to tune the PID controlling the altitude of your Duckiedrone.
