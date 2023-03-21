@@ -6,3 +6,7 @@ html/*
 
 # otherwise CI thinks index not clean
 *.resolved
+
+# personal project repo
+packages/project-*
+
