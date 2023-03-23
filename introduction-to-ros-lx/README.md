@@ -7,15 +7,7 @@ In this learning experience you will learn what ROS is, why it is useful in robo
 This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to this LX, see **TODO: Add course link here**.
-
-## Grading challenge
-
-**TODO: Add optional challenge link or remove the `Grading challenge` section**
-
 # Instructions
-
-**TODO: Update Step 1. to match your learner setup**
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
@@ -24,7 +16,7 @@ For guided setup instructions, lecture content, and more related to this LX, see
 
 Update your exercise definition and instructions,
 
-    git pull upstream <your upstream branch>
+    git pull upstream duckiedrone-lxs
 
 **NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
 
@@ -36,8 +28,6 @@ Update your exercise definition and instructions,
 - 💻 Update the shell commands: `dts update`
 
 - 💻 Update your laptop/desktop: `dts desktop update`
-
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
 
 
 ## 3. Work on the exercise
@@ -77,44 +67,6 @@ in the notebooks to see if you need to access VNC.
 
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
-
-
-### 🚙 Testing on a physical robot
-
-You can test your agent on the robot using the command,
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT
-
-This is the modality "everything runs on the robot".
-
-You can also test using
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
-
-This is the modality "drivers running on the robot, agent runs on the laptop."
-
-
-### 📽 Perform local evaluation
-
-We suggest you evaluate your work locally before submitting your solution.
-You can do so by running the following command,
-
-    dts code evaluate
-
-This should take a few minutes.
-This is not supposed to be an interactive process: just let it run, and when you return,
-you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the website.
-
-
-### 📬 Submit your solution
-
-When you are ready to submit your homework, use the following command,
-
-    dts code submit
-
-This will package all your code and send it to the Duckietown servers for evaluation.
-
 
 ## Troubleshooting
 
