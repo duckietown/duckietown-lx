@@ -60,7 +60,7 @@ Repo should include the following files that you will create during the activity
 
 Update your exercise definition and instructions,
 
-    git pull upstream duckiedrone
+    git pull upstream duckiedrone-lxs
 
 **NOTE:** Example instructions to fork a repository and configure to pull from upstream can be found in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md).
 
@@ -100,7 +100,7 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
-**NOTE**: the instructions below *do not* apply for these learning experience.
+**NOTE**: the instructions below **do not apply** for these learning experience.
 
 ### 💻 Testing in simulation
 
