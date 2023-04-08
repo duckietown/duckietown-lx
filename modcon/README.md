@@ -41,17 +41,6 @@ To ensure priority evaluation services, please reach out to Duckietown at info@d
 [challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon
 [leaderboard]: https://challenges.duckietown.org/v4/humans/challenges/lx22-modcon/leaderboard
 
-## Supported hardware
-
-The activities of this module have been tested on the following hardware configurations:
-
-- Duckiebot: `DB21-M`, `DB21-J2`, `DB21-J4`, `DB-J` 
-
-Additional information on Duckietown robot configurations can be found on the [Duckietown Online Library][duckiedocs-robots]. Duckietown hardware is available on the Duckietown project [online store][get-hardware].
-
-[duckiedocs-robots]: https://docs.duckietown.org/daffy/opmanual_duckiebot/out/duckiebot_configurations.html
-[get-hardware]:https://get.duckietown.com/
-
 
 # Instructions
 
@@ -115,6 +104,21 @@ in the notebooks to see if you need to access VNC.
 
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
+
+
+### ℹ️️ Check Robot Compatibility
+
+While we try our best to support running these exercises on all versions of the Duckiebot, some activities require special hardware and
+are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
+robot.
+
+The support matrix of this exercise is as follows:
+
+| Duckiebot Type   	                                                                                | Configuration 	 | Support Level   	    |
+|---------------------------------------------------------------------------------------------------|-----------------|----------------------|
+| [DB21-J4](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21-J2](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ✔️ Full Support 	    |
+
 
 
 ### 🚙 Testing on a physical robot

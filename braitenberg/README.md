@@ -89,6 +89,19 @@ in the notebooks to see if you need to access VNC.
 This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
 
+### ℹ️️ Check Robot Compatibility
+
+While we try our best to support running these exercises on all versions of the Duckiebot, some activities require special hardware and
+are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
+robot.
+
+The support matrix of this exercise is as follows:
+
+| Duckiebot Type   	                                                                                | Configuration 	 | Support Level   	    |
+|---------------------------------------------------------------------------------------------------|-----------------|----------------------|
+| [DB21-J4](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
+| [DB21-J2](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ✔️ Full Support 	    |
+
 
 ### 🚙 Testing on a physical robot
 
