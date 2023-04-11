@@ -1,13 +1,19 @@
 # **Learning Experience (LX): DD21 UKF**
 
-# About these activities
+## About this learning experience
 
 In this learning experience you will learn how to filter the raw measurements you get from the Duckiedrone's sensors.
 
-This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
-[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
+This learning experience is provided by the Duckietown team and can be run on Duckiedrones. 
+Visit us at the [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to this LX, see **TODO: Add course link here**.
+For guided setup instructions, lecture content, and more related to this LX, see:
+
+* [Uncertainty](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@913fb01c10d9427a9e2af5e77e3d5864)
+* [Bayes Filtering](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@b339ffd703ac4b6cb448cadd51f75ca2)
+* [Kalman Filter](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@d1ee1ec599b8432aa562cfe6553ee4d8)
+* [Unscented Kalman Filter and Extended Kalman Filter](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@13c3cf0366b147538101b3e6bbc3618b)
+* [7D UKF](https://learning.edge.edx.org/course/course-v1:BrownX+CS195R+2018_T1/block-v1:BrownX+CS195R+2018_T1+type@sequential+block@557295ecca704f6eb7026d70fee66c19)
 
 # Activity theory part
 
@@ -20,7 +26,6 @@ Before you start working through this activity, you should read through the foll
 # Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
-
 
 ## 1. Make sure your exercise is up-to-date
 
@@ -42,11 +47,40 @@ Update your exercise definition and instructions,
 
 ## 3. Work on the exercise
 
+Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a Github repo for this project. Clone the directory to your computer `git clone https://github.com/h2r/project-ukf-2020-yourGithubName.git`.
+
+### Working on the drone
+
+When you need to modify the code of an exercise and test it on the drone, do so by working on your base station inside this editor, committing the modified file and then pushing it to the remote repo with `git push`.
+
+To clone your repository follow these steps:
+
+1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-ukf-lx`) and move in the directory `packages`.
+
+1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
+
+    ```bash
+    git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
+    ```
+
+1. You can now access your project in the sidebar by going in the folder `packages`
+
+Make sure to commit the changes and push them to GitHub each time you modify some file.
+
+```bash
+cd project-ukf-2020-implementation-<yourGithubName>
+git add -A
+git commit -a -m 'some commit message. maybe hand-in, maybe update'
+git push
+```
+
 ### Launch the code editor
 
 Open the code editor by running the following command,
 
-    dts code editor
+```bash
+dts code editor
+```
 
 Wait for a URL to appear on the terminal, then click on it or copy-paste it in the address bar
 of your browser to access the code editor. The first thing you will see in the code editor is
@@ -67,15 +101,9 @@ To test in simulation, use the command
 
     dts code workbench --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
-
-This simulation test is just that, a test. Don't trust it fully.
+There will be a URL popping up to open in your browser: it is a VNC environment which you can access from your browser.
 
 ## Hand-in
-
-Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a Github repo for this project. Clone the directory to your computer `git clone https://github.com/h2r/project-ukf-2020-yourGithubName.git`.
 
 Commit and push your changes before the assignment is due. This will allow us to access the files you pushed to Github and grade them accordingly. If you commit and push after the assignment deadline, we will use your latest commit as your final submission, and you will be marked late.
 
