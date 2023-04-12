@@ -103,6 +103,18 @@ To test in simulation, use the command
 
 There will be a URL popping up to open in your browser: it is a VNC environment which you can access from your browser.
 
+## Deliverables
+This part of the project has **two deliverables** in your repository, which are to be accessed and submitted via GitHub Classroom:
+
+1. A $\LaTeX$ PDF document `ukf2d_written_solutions.pdf`, generated from `ukf2d_written_solutions.tex`, with the answers to the UKF design and implementation questions.
+2. Your implementation of the UKF written in the `state_estimators/student_state_estimator_ukf_2d.py` stencil code. In this stencil code file, we have placed `TODO` tags describing where you should write your solution code to the relevant problems.
+
+In addition to implementing the UKF in code, we want you to learn about the design process, much of which occurs outside of the code that will run the UKF. Plus, we have some questions we want you to answer in writing to demonstrate your understanding of the UKF. Hence, you will be writing up some of your solutions in $\LaTeX$. We are having you write solutions in $\LaTeX$ because it will in particular enable you to write out some of the UKF math in a clear (and visually appealing!) format. In these documents, please try to follow our math notation wherever applicable.
+
+When you need to edit $\LaTeX$ files from your repository, open up the `ukf2d_written_solutions.tex` file in your favorite $\LaTeX$ editor. This could be in Overleaf, your Brown CS department account, or locally on your own computer. 
+
+**Important**:*Before submitting your document, please make sure it is compiled into a PDF. If you are having trouble with $\LaTeX$, please seek out the help of a TA.*
+
 ## Hand-in
 
 Commit and push your changes before the assignment is due. This will allow us to access the files you pushed to Github and grade them accordingly. If you commit and push after the assignment deadline, we will use your latest commit as your final submission, and you will be marked late.
