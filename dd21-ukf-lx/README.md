@@ -23,6 +23,8 @@ Before you start working through this activity, you should read through the foll
 - [The Unscented Kalman Filter](./notebooks/00-theory/01-UKF-theory.md)
 - [Design and implementation steps](./notebooks/00-theory/02-UKF-implementation.md)
 
+**Important:** when you first open these documents a security pop-up will appear in the top right corner; click on it and select `Disable` in the menu that appears. This will allow you to visualize the theory content.
+
 # Instructions
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
