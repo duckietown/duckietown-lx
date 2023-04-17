@@ -1,0 +1,8 @@
+docs/build
+*pyc
+
+# documentation artifacts
+html/*
+
+# otherwise CI thinks index not clean
+*.resolved

@@ -1,0 +1,25 @@
+{
+    "workbench.colorTheme": "Default Light+",
+    "python.testing.unittestArgs": [
+        "-v",
+        "-s",
+        "./tests",
+        "-p",
+        "test_*.py"
+    ],
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    "python.testing.pytestArgs": [
+        "tests"
+    ],
+    "files.exclude": {
+        ".gitignore": true,
+        ".pytest_cache": true,
+        ".dtproject": true
+    },
+    "workbench.tree.indent": 24,
+    "workbench.editorAssociations": {
+        "*.md": "vscode.markdown.preview.editor"
+    },
+    "editor.scrollBeyondLastLine": false
+}
