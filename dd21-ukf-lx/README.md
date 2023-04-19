@@ -49,11 +49,8 @@ Update your exercise definition and instructions,
 
 ## 3. Work on the exercise
 
-Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a Github repo for this project. Clone the directory to your computer `git clone https://github.com/h2r/project-ukf-2020-yourGithubName.git`.
+Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a Github repo for this project.
 
-### Setting up version control
-
-To be able to pull and push the changes to your exercises you need to clone the repository and setup Git.
 To clone your repository follow these steps:
 
 1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-pid-tuning`) and move in the directory `packages`:
@@ -62,19 +59,13 @@ To clone your repository follow these steps:
     cd dd21-pid-tuning/packages/
     ```
 
-1. [Create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your editor. It only needs permissions to read and write to repositories.
-
 1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
     ```bash
     git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
     ```
 
-1. Open the file `GITHUB_CREDENTIALS.sh` and change the variables `GITHUB_USERNAME` and `GITHUB_TOKEN`.
-
 You can now access your project in the sidebar by going in the folder `packages`.
-
-### Working on the exercise
 
 When you need to modify the code of an exercise and test it on the drone, do so by working on your base station inside this editor, committing the modified file and then pushing it to the remote repo.
 
@@ -83,7 +74,6 @@ Make sure to commit the changes and push them to GitHub each time you modify som
 You can do so by using the Version Control tab in VSCode:
 
 ![VSCode version control](./assets/_images/vscode_source_control.png)
-
 
 ### Launch the code editor
 

@@ -21,24 +21,17 @@ Follow these instructions to proceed with the learning experience.
 
 ### Setting up version control
 
-To be able to pull and push the changes to your exercises you need to clone the repository and setup Git.
+Click [**this link**](https://classroom.github.com/a/ruiWJMsA) to generate a Github repo for this project.
+
 To clone your repository follow these steps:
 
 1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-pid-tuning`) and move in the directory `packages`:
 
-    ```bash
     cd dd21-pid-tuning/packages/
-    ```
-
-1. [Create a GitHub personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-fine-grained-personal-access-token) for your editor. It only needs permissions to read and write to repositories.
 
 1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
-    ```bash
     git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
-    ```
-
-1. Open the file `GITHUB_CREDENTIALS.sh` and change the variables `GITHUB_USERNAME` and `GITHUB_TOKEN`.
 
 You can now access your project in the sidebar by going in the folder `packages`
 
@@ -72,8 +65,6 @@ This assignment comprises several parts:
 Please complete all parts of this assignment.
 
 ### Setting up the activities
-
-Click [**this link**](https://classroom.github.com/a/ruiWJMsA) to generate a Github repo for this project.
 
 All activities have to be run inside the container with the software of the drone. Make sure you have started it by:
 
