@@ -18,8 +18,14 @@ To use these learning experiences do the following:
 
 ## Step 0 - Requirements
 
-We assume here that you have already set up your Duckietown development environment following the steps in [Unit C-1 
-and C-2](https://docs.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html) of the Duckietown operation manual.
+We assume here that you have already set up your Duckietown development environment 
+following the steps in 
+[Unit C-1 and C-2](https://docs-old.duckietown.org/daffy/opmanual_duckiebot/out/laptop_setup.html) 
+of the Duckietown operation manual.
+
+```{todo}
+absolute URL and hard-coded Unit numbers above
+```
 
 Add your `docker.io` credentials to `dts` by running the following command,
 
