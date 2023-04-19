@@ -1,6 +1,6 @@
 # **Learning Experience (LX): Duckiedrone PID tuning**
 
-![Duckietown logo](../dtlogo.png)
+![Duckietown logo](./assets/_images/dtlogo.png)
 
 ## About this learning experience
 

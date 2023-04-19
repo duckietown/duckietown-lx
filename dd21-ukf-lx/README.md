@@ -1,5 +1,5 @@
 # **Learning Experience (LX): DD21 UKF**
-
+![Duckietown logo](./assets/_images/dtlogo.png)
 ## About this learning experience
 
 In this learning experience you will learn how to filter the raw measurements you get from the Duckiedrone's sensors.
