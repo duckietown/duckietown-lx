@@ -45,25 +45,19 @@ Update your exercise definition and instructions,
 
 - 💻 Update your laptop/desktop: `dts desktop update`
 
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
-
 ## 3. Work on the exercise
 
-Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a Github repo for this project.
+Use this [link](https://classroom.github.com/a/9CaMl5yD) to generate a GitHub repo for this project.
 
 To clone your repository follow these steps:
 
-1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-pid-tuning`) and move in the directory `packages`:
+1. *From the terminal* of your base station go inside the directory of this learning experience (`dd21-lx-tuning`) and move in the directory `packages`:
 
-    ```bash
-    cd dd21-pid-tuning/packages/
-    ```
+    cd dd21-ukf-lx/packages/
 
 1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
-    ```bash
-    git clone https://github.com/h2r/project-pid-implementation-<yourGithubUsername>
-    ```
+    git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
 
 You can now access your project in the sidebar by going in the folder `packages`.
 
@@ -106,9 +100,8 @@ To clone your repository on your drone follow these steps:
 
 1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
 
-```bash
-git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
-```
+    git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
+
 
 ### How to get your changes on the Duckiedrone
 
