@@ -10,7 +10,7 @@ NAME=linux-and-networking
 RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH=linux-networking
+RECIPE_BRANCH=duckiedrone-lxs
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
 RECIPE_LOCATION=linux-and-networking-recipe
