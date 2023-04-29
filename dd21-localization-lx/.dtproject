@@ -10,7 +10,7 @@ NAME=dd21-localization
 RECIPE_REPOSITORY=duckietown/duckietown-lx-recipes
 
 # - branch of RECIPE_REPOSITORY containing the recipe
-RECIPE_BRANCH=DTSW-2346-Localization
+RECIPE_BRANCH=DTSW-2346-LX-DD21-7-Localization
 
 # - location of the recipe inside the RECIPE_REPOSITORY/RECIPE_BRANCH above
 RECIPE_LOCATION=dd21-localization-recipe
