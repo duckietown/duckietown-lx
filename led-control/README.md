@@ -1,23 +1,21 @@
+<p align="center">
+<img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
+</p>
+
 # **Learning Experience (LX): LED Control**
 
 # About these activities
 
 In this learning experience, you will practice instructing the LEDs on your Duckiebot - changing their color, blinking them at different frequencies, and displaying your own patterns.
 
-In this learning experience, you will ... **TODO: Describe the LX activities and outcome here**
+<p align="center">
+<img src="./assets/images/green_red.jpg" alt="Duckiebot with Red and Green LEDs" width="20%">
+</p>
 
 This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to this LX, see **TODO: Add course link here**.
-
-## Grading challenge
-
-**TODO: Add optional challenge link or remove the `Grading challenge` section**
-
 # Instructions
-
-**TODO: Update Step 1. to match your learner setup**
 
 **NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
 
