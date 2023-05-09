@@ -23,9 +23,11 @@ following the steps in the
 [Laptop setup](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) and [Accounts setup](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_account/index.html)
 sections of the of the Duckietown operation manual.
 
+<!--
 ```{todo}
 absolute URL
 ```
+-->
 
 Add your `docker.io` credentials to `dts` by running the following command,
 
