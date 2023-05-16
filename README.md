@@ -45,7 +45,7 @@ Next, set up your local SSL certificate needed to run the learning experience ed
 
     dts setup mkcert
 
-**Note**: if you are trying to run the lx with the experimental setup on WSL you need to install `mkcert` on Windows. Follow these steps by running the commands in an _administrative PowerShell_:
+**Note**: if you are trying to run the lx with the experimental setup on WSL you need to install `mkcert` on Windows before running the `dts setup mkcert` command. Follow these steps by running the commands in an _administrative PowerShell_:
 
 1. Install Chocolately: ```Set-ExecutionPolicy Bypass -Scope Process -Force;  [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
 iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` ```
