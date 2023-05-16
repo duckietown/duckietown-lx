@@ -45,6 +45,14 @@ Next, set up your local SSL certificate needed to run the learning experience ed
 
     dts setup mkcert
 
+**Note**: if you are trying to run the lx with the experimental setup on WSL you need to install `mkcert` on Windows. Follow these steps by running the commands in an _administrative PowerShell_:
+
+1. Install Chocolately: ```Set-ExecutionPolicy Bypass -Scope Process -Force;  [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072;
+iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))` ```
+2. Install `mkcert`: ```choco install -y mkcert```
+3. Set WSL to use the Windows Certificate Authority of `mkcert`: ```$env:CAROOT="$(mkcert -CAROOT)"; setx CAROOT $env:CAROOT; If ($Env:WSLENV -notlike "*CAROOT/up:*") { $env:WSLENV="CAROOT/up:$env:WSLENV"; setx WSLENV $Env:WSLENV }```
+4. Reboot your Windows machine.
+
 ## Step 3 - Fork this repository
 
 To store your own code, while also keeping the ability to pull updates from our version of this repo, create your own fork.
