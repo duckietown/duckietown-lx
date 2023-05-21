@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./braitenberg/assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
+<img src="./lx/assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
 # **Duckietown Learning Experiences (LX) - MOOC Exercises**
