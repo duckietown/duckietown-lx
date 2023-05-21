@@ -3,11 +3,10 @@ from typing import Dict, List
 from duckietown_msgs.msg import LEDPattern
 from std_msgs.msg import ColorRGBA
 
-
 color_map: Dict = {"red": [1.0, 0.0, 0.0],
-                   "green": [],
-                   "blue": [],
-                   "white": []}
+                   "green": [0.0, 1.0, 0.0],
+                   "blue": [0.0, 0.0, 1.0],
+                   "white": [1.0, 1.0, 1.0]}
 
 
 def construct_led_message() -> LEDPattern:
@@ -48,10 +47,17 @@ def set_leds_color(color: str, intensity: float) -> LEDPattern:
         led_pattern: An LEDPattern message. This message is defined here:
         https://github.com/duckietown/dt-ros-commons/blob/daffy/packages/duckietown_msgs/msg/LEDPattern.msg
     """
+    # Init the message
+    led_pattern: LEDPattern = LEDPattern()
+    color_list: List[ColorRGBA] = [ColorRGBA()] * 5
 
-    # TODO: Fill in the last three components of the color map at the top of this file,
+    # Update each LED to the input color
+    for rgba in color_list:
+        rgba.r = color_map[color][0]
+        rgba.g = color_map[color][1]
+        rgba.b = color_map[color][2]
+        rgba.a = intensity
 
-    # TODO: Then use the map to create an LEDMessage that updates all LEDs to the given color and intensity parameters
-    # Place your code here
+    led_pattern.rgb_vals = color_list
 
-    return None
+    return led_pattern
