@@ -28,21 +28,30 @@ LP removing for now
 	    <arg name="line_detector_param_file_name" value="default" />
 	    <arg name="/lane_following/ground_projection" value="true"/>
 	    <arg name="/lane_following/lane_filter" value="false"/>
-	    <arg name="/lane_following/lane_controller" value="true"/>
+	    <arg name="/lane_following/lane_controller" value="false"/>
 	    <arg name="LED" value="true"/>
 	    <arg name="/LED/emitter" value="true"/>
 
   	</include>
 
-  	<remap from="lane_filter_node/segment_list" to="ground_projection_node/lineseglist_out"/>
-  	<remap from="lane_filter_node/car_cmd" to="car_cmd_switch_node/cmd"/>
-  	<remap from="lane_filter_node/fsm_mode" to="fsm_node/mode" />
-  	<remap from="lane_filter_node/left_wheel_encoder_node/tick" to="left_wheel_encoder_node/tick"/>
-  	<remap from="lane_filter_node/right_wheel_encoder_node/tick" to="right_wheel_encoder_node/tick"/>
+  	<remap from="histogram_lane_filter_node/segment_list" to="ground_projection_node/lineseglist_out"/>
+  	<remap from="histogram_lane_filter_node/car_cmd" to="car_cmd_switch_node/cmd"/>
+  	<remap from="histogram_lane_filter_node/fsm_mode" to="fsm_node/mode" />
+  	<remap from="histogram_lane_filter_node/left_wheel_encoder_node/tick" to="left_wheel_encoder_node/tick"/>
+  	<remap from="histogram_lane_filter_node/right_wheel_encoder_node/tick" to="right_wheel_encoder_node/tick"/>
   	<!--<remap from="lane_filter_node/seglist_filtered" to="lane_controller_node/seglist_filtered" />-->
   	<include file="$(find histogram_lane_filter)/launch/histogram_lane_filter_node.launch">
   	    <arg name="veh" value="$(arg veh)"/>
   	    <arg name="param_file_name" value="default"/>
   	</include>
 
+  	 <!-- Lane controller -->
+     <remap from="lane_controller_node/lane_pose" to="histogram_lane_filter_node/lane_pose"/>
+     <remap from="lane_controller_node/wheels_cmd" to="wheels_driver_node/wheels_cmd" />
+     <remap from="lane_controller_node/fsm_mode" to="fsm_node/mode" />
+     <remap from="wheels_driver_node/radius_limit" to="lane_controller_node/radius_limit" />
+     <include file="$(find lane_control)/launch/lane_controller_node.launch">
+          <arg name="veh" value="$(arg veh)"/>
+          <arg name="param_file_name" value="default"/>
+     </include>
 </launch>
