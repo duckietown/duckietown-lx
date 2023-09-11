@@ -1,5 +1,6 @@
 # start by importing some things we will need
 import numpy as np
+from math import floor, sqrt
 from scipy.ndimage.filters import gaussian_filter
 from scipy.stats import multivariate_normal
 
@@ -18,9 +19,8 @@ def histogram_prior(belief, grid_spec, mean_0, cov_0):
 # Now let's define the predict function
 
 
-def histogram_predict(belief, dt, left_encoder_ticks, right_encoder_ticks, grid_spec, robot_spec, cov_mask):
+def histogram_predict(belief, left_encoder_ticks, right_encoder_ticks, grid_spec, robot_spec, cov_mask):
     belief_in = belief
-    delta_t = dt
 
     # TODO calculate v and w from ticks using kinematics. You will need  some parameters in the `robot_spec` defined above
     v = 0.0  # replace this with a function that uses the encoder
