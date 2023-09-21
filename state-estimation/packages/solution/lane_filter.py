@@ -65,6 +65,9 @@ class LaneFilterHistogram:
             "lanewidth",
             "sigma_d_mask",
             "sigma_phi_mask",
+            "range_min",
+            "range_est",
+            "range_max",
             "encoder_resolution",
             "wheel_radius",
             "wheel_baseline",
@@ -86,6 +89,9 @@ class LaneFilterHistogram:
             "d_max": self.d_max,
             "phi_min": self.phi_min,
             "phi_max": self.phi_max,
+            "range_min": self.range_min,
+            "range_est": self.range_est,
+            "range_max": self.range_max,
         }
         self.road_spec = {
             "linewidth_white": self.linewidth_white,
