@@ -55,18 +55,10 @@ Inside the code editor, use the navigator sidebar on the left-hand side to navig
 Follow the instructions on the notebook and work through the notebooks in sequence.
 
 
-### 💻 Testing in simulation
+## Handin
 
-To test in simulation, use the command
-
-    $ dts code workbench --sim
-
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
-
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
-metric of performance, continue reading to the `Perform local evaluation` section below.
+Use this github classroom link to make a github repository for this assignment. Push the files that you need to hand in to this repository. https://classroom.github.com/a/K6YAGyXq
+You should hand in all the files you create including the ROS package.
 
 ## Troubleshooting
 
@@ -92,12 +84,3 @@ you need to log into docker using `dts`. Use this command:
 ```
 dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
 ```
-
-
-## Retire obsolete submissions
-
-Note that you can "retire" submissions that you know are wrong.
-You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
-
-To do so, login using your token, then find the submission you want to retire from the list of submission
-in your user profile page. Use the button "retire" to the right of the submission record line.
