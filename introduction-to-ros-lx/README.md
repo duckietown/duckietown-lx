@@ -58,14 +58,7 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 ## Handin
 
 Use this github classroom link to make a github repository for this assignment. Push the files that you need to hand in to this repository. https://classroom.github.com/a/K6YAGyXq
-You should hand in
-
-* my_echo.py
-* mean_and_variance.py
-* ros.txt
-* ros_assignment_pkg/
-
-
+You should hand in all the files you create including the ROS package.
 
 ## Troubleshooting
 
