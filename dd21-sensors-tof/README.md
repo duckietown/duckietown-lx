@@ -25,7 +25,7 @@ Thanks to these sensors, the drone is equipped with enough understanding of its 
 
 ### How this project fits into software stack
 
-Take a look at the [software architecture diagram](https://docs.duckietown.org/daffy/opmanual_sky/out/software_architecture_intro.html) and notice the hardware components: `Flight Controller`, `Time of Flight Sensor`, and `Camera`. This is the hardware you'll be interfacing with in this project. Also notice the corresponding ROS nodes in the diagram. These are the ROS nodes you'll be creating to extract and publish sensor values.
+Take a look at the [software architecture diagram](https://docs.duckietown.com/daffy/opmanual-duckiedrone/software-architecture/introduction.html) and notice the hardware components: `Flight Controller`, `Time of Flight Sensor`, and `Camera`. This is the hardware you'll be interfacing with in this project. Also notice the corresponding ROS nodes in the diagram. These are the ROS nodes you'll be creating to extract and publish sensor values.
 
 ## Instructions
 
