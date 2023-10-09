@@ -23,8 +23,8 @@ def PIDController(
     Returns:
         v_0:     linear velocity of the Duckiebot
         omega:   angular velocity of the Duckiebot
-        e:       current tracking error (automatically becomes prev_e_y at next iteration).
-        e_int:   current integral error (automatically becomes prev_int_y at next iteration).
+        e:       current tracking error (automatically becomes prev_e at next iteration).
+        e_int:   current integral error (automatically becomes prev_int at next iteration).
     """
 
     # TODO: these are random values, you have to implement your own PID controller in here
