@@ -26,7 +26,7 @@ We include `activities` and one `exercise`.
 
   - Exercises have associated "challenges", to which solutions (agents) are submitted for evaluation. Duckietown challenges are available on our [challenges server][challenges-server].
 
-[challenges-server]: https://challenges.duckietown.org/v4/humans/challenges/
+[challenges-server]: https://challenges.duckietown.org/v4/humans/challenges
 
 ## Evaluation
 
