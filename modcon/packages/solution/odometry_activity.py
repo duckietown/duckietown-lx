@@ -10,7 +10,7 @@ def delta_phi(ticks: int, prev_ticks: int, resolution: int) -> Tuple[float, floa
         prev_ticks: Previous tick count from the encoders.
         resolution: Number of ticks per full wheel rotation returned by the encoder.
     Return:
-        rotation_wheel: Rotation of the wheel in radians.
+        dphi: Rotation of the wheel in radians.
         ticks: current number of ticks.
     """
 
@@ -45,9 +45,9 @@ def pose_estimation(
         delta_phi_right:    right wheel rotation (rad)
 
     Return:
-        x:                  estimated x coordinate
-        y:                  estimated y coordinate
-        theta:              estimated heading
+        x_curr:                  estimated x coordinate
+        y_curr:                  estimated y coordinate
+        theta_curr:              estimated heading
     """
 
     # These are random values, replace with your own
