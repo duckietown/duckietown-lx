@@ -33,8 +33,7 @@ class TestPIDOutput():
         )
 
         sim = VerticalDrone(
-                        pid=my_pid_instance,
-                        step_size=10,
+                        pid_controller=my_pid_instance,
                         drag_coeff=drag_coeff,
                         latency=latency,
                         sensor_noise=noise,
