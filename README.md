@@ -92,9 +92,9 @@ To upload code to your GitHub account from inside the LX you will need to setup 
 1. You can generate a token following [these instructions](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token#creating-a-personal-access-token-classic).
 
 1. Once you have generated your token you can add it to the _dts credentials manager_ by running:
-
+```
     dts config github credentials set --username YOUR_GITHUB_USERNAME --token YOUR_GITHUB_TOKEN
-
+```
 Now you will be able to push and pull to your repo from inside the editor.
 
 ## What next?
