@@ -98,9 +98,9 @@ To clone your repository on your drone follow these steps:
 
 1. *From the terminal* of your base station connect through `ssh` to your drone and, inside screen, go inside the directory `~/catkin_ws/src/`.
 
-1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
+1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `yourGithubUsername`):
 
-    git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
+    git clone https://github.com/h2r/project-ukf-2020-implementation-yourGithubUsername
 
 
 ### How to get your changes on the Duckiedrone
