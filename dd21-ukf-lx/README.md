@@ -55,9 +55,9 @@ To clone your repository follow these steps:
 
     cd dd21-ukf-lx/packages/
 
-1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `<yourGithubUsername>`):
+1. Clone your assignment's repository by running the following command and following the instructions that pop up (remember to change `yourGithubUsername`):
 
-    git clone https://github.com/h2r/project-ukf-2020-implementation-<yourGithubUsername>
+    git clone https://github.com/h2r/project-ukf-2020-implementation-yourGithubUsername
 
 You can now access your project in the sidebar by going in the folder `packages`.
 
