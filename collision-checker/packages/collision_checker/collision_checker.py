@@ -38,14 +38,14 @@ def check_collision(
 ) -> bool:
     # This is just some code to get you started, but you don't have to follow it exactly
 
-    # You can start by rototranslating the robot_body by the robot_pose
+    # TODO you can start by rototranslating the robot_body by the robot_pose
     rototranslated_robot: List[PlacedPrimitive] = []
-    # == WRITE ME ==
 
     # Then, call check_collision_list to see if the robot collides with the environment
     collided = check_collision_list(rototranslated_robot, environment)
 
-    # return a random choice
+    # TODO return the status of the collision
+    # for now let's return a random guess
     return random.uniform(0, 1) > 0.5
 
 
@@ -63,17 +63,15 @@ def check_collision_list(
 def check_collision_shape(a: PlacedPrimitive, b: PlacedPrimitive) -> bool:
     # This is just some code to get you started, but you don't have to follow it exactly
 
-    # This is just some code to get you started, but you don't have to follow it exactly
+    # TODO check if the two primitives are colliding
     if isinstance(a.primitive, Circle) and isinstance(b.primitive, Circle):
         ...
-        # == WRITE ME ==
     if isinstance(a.primitive, Rectangle) and isinstance(b.primitive, Circle):
         ...
-        # == WRITE ME ==
     if isinstance(a.primitive, Rectangle) and isinstance(b.primitive, Rectangle):
         ...
-        # == WRITE ME ==
     ...
-    # for now let's return a random guess
 
-    return ...
+    # TODO return the status of the collision
+    # for now let's return a random guess
+    return random.uniform(0, 1) > 0.5
