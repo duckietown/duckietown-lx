@@ -12,7 +12,7 @@ exercise already because you will be reusing your collision checker.
 You will have to move manually the code in the `collision-checker` exercise to this one.
 You likely will have to copy the module in the directory `packages/` of that exercises to the directory `packages/` of this exercise.  
 
-Note: This is a code-only exercise: you don't need the Duckiebot.
+**Note: This is a code-only exercise: you don't need the Duckiebot**.
 
 This learning experience is provided by the Duckietown team. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
@@ -84,7 +84,9 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 We suggest you evaluate your work locally before submitting your solution.
 You can do so by running the following command,
 
-    dts code evaluate
+    dts code evaluate --challenge CHALLENGE_NAME
+
+where CHALLENGE_NAME is one among `lx22-planning-dd-empty-vali`, `lx22-planning-cc-empty-vali`, `lx22-planning-dd-static-vali`,	`lx22-planning-cc-static-vali`, `lx22-planning-dd-dynamic-vali`, or `lx22-planning-cc-dynamic-vali`.
 
 This should take a few minutes.
 This is not supposed to be an interactive process: just let it run, and when you return,

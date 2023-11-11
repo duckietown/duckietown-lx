@@ -7,7 +7,10 @@ from dt_protocols import (
     PlanningResult,
     PlanningSetup,
     PlanStep,
+    Circle,
     Rectangle,
+    SimulationResult,
+    simulate,
 )
 
 __all__ = ["Planner"]
@@ -69,7 +72,7 @@ class Planner:
 
         # A plan step consists in a duration, a linear and angular velocity.
 
-        # Let's trace a square of side L at maximum velocity.
+        # For now let's just trace a square of side L at maximum velocity.
         L = 1.0
         duration_straight_m_s = L / self.params.max_linear_velocity_m_s
         duration_turn_deg_s = 90.0 / self.params.max_angular_velocity_deg_s
