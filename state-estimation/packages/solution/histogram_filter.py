@@ -115,15 +115,17 @@ def generate_vote(segment, road_spec):
             d_i -= road_spec["linewidth_white"]
             d_i = road_spec["lanewidth"] * 2 + road_spec["linewidth_yellow"] - d_i
             phi_i = -phi_i
+        d_i -= road_spec["lanewidth"]/2
 
     elif segment.color == segment.YELLOW:  # left lane is yellow
         if p2[0] > p1[0]:  # left edge of yellow lane
             d_i -= road_spec["linewidth_yellow"]
-            d_i = road_spec["lanewidth"] / 2 - d_i
+            d_i = road_spec["lanewidth"]/2 - d_i
             phi_i = -phi_i
         else:  # right edge of yellow lane
-            d_i += road_spec["linewidth_yellow"] * np.random.choice([0, 1])
-            d_i -= road_spec["lanewidth"] / 2
+            d_i += road_spec["linewidth_yellow"]
+            d_i -= road_spec["lanewidth"]/2
+
     return d_i, phi_i
 
 
