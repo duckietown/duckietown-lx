@@ -122,8 +122,11 @@ There will be a URL popping up to open in your browser: it is a VNC environment 
 ## Deliverables
 This part of the project has **two deliverables** in your repository, which are to be accessed and submitted via GitHub Classroom:
 
-1. A $\LaTeX$ PDF document `ukf2d_written_solutions.pdf`, generated from `ukf2d_written_solutions.tex`, with the answers to the UKF design and implementation questions.
-2. Your implementation of the UKF written in the `state_estimators/student_state_estimator_ukf_2d.py` stencil code. In this stencil code file, we have placed `TODO` tags describing where you should write your solution code to the relevant problems.
+1. A $\LaTeX$ PDF document `ukf2d_written_solutions.pdf`, generated from `ukf2d_written_solutions.tex`, with the answers to the 2d UKF design and implementation questions.
+2. Your implementation of the 2d UKF written in the `state_estimators/student_state_estimator_ukf_2d.py` stencil code. In this stencil code file, we have placed `TODO` tags describing where you should write your solution code to the relevant problems.
+3. A $\LaTeX$ PDF document `ukf7d_written_solutions.pdf`, generated from `ukf7d_written_solutions.tex`, with the answers to the 7d UKF design and implementation questions.
+4. Your implementation of the 7d UKF written in the `state_estimators/student_state_estimator_ukf_7d.py` stencil code. In this stencil code file, we have placed `TODO` tags describing where you should write your solution code to the relevant problems.
+
 
 In addition to implementing the UKF in code, we want you to learn about the design process, much of which occurs outside of the code that will run the UKF. Plus, we have some questions we want you to answer in writing to demonstrate your understanding of the UKF. Hence, you will be writing up some of your solutions in $\LaTeX$. We are having you write solutions in $\LaTeX$ because it will in particular enable you to write out some of the UKF math in a clear (and visually appealing!) format. In these documents, please try to follow our math notation wherever applicable.
 
