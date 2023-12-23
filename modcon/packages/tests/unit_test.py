@@ -92,7 +92,8 @@ class UnitTestHeadingPID:
         self.v_0 = v_0  # constant robot linear speed
         self.PIDController = PIDController  # controller being used
         self.delta_t = 0.02  # unit test simulation time step
-        self.t1 = np.arange(0.0, 10.0, self.delta_t)  # time vector
+        self.test_horizon = 10.0
+        self.t1 = np.arange(0.0, self.test_horizon, self.delta_t)  # time vector
         self.theta_prev = 0  # theta initial condition of the Duckiebot
         self.theta_ref = theta_ref  # theta ref, the goal the Duckiebot has to reach
         # motor constants (scaled to simulate hardware setup)
@@ -172,7 +173,7 @@ class UnitTestHeadingPID:
         plt.xticks(np.arange(0, len(u_l) + 1, 1))
 
         # plot the control inputs
-        plt.axis([0, 10, np.min([np.min(u_r), np.min(u_l)]), np.max([np.max(u_r), np.max(u_l)])])
+        plt.axis([0, self.test_horizon, np.min([np.min(u_r), np.min(u_l)]), np.max([np.max(u_r), np.max(u_l)])])
 
         plt.plot(self.t1, (u_r), "r--", self.t1, (u_l), "b--")
 
@@ -198,7 +199,7 @@ class UnitTestHeadingPID:
         plt.axis(
             [
                 0,
-                10,
+                self.test_horizon,
                 np.min([np.min(theta_hat_deg), np.min(err_deg)]),
                 np.max([np.max(theta_hat_deg), np.max(err_deg)]),
             ]
@@ -318,8 +319,8 @@ class UnitTestPositionPID:
 
             self.v_0 = v_0
 
-        self.plot_pose(y_hat_, err_, "With noise", "Time steps (0.2 s)", "Y (m)")
-        self.plot_input(u_r_, u_l_, "Control inputs", "Time steps (0.2 s)", "PWM")
+        self.plot_pose(y_hat_, err_, "With noise", "Time (s)", "Y (m)")
+        self.plot_input(u_r_, u_l_, "Control inputs", "Time (s)", "PWM")
 
     def plot_input(self, u_r, u_l, title, x_label, y_label):
         import matplotlib.pyplot as plt
