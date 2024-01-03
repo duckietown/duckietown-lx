@@ -12,7 +12,9 @@ While this checker will only function in-simulation, it should give you a good i
 The boilerplate code contained in this folder is a fully functional (albeit wrong) solution. Currently, the solution submits random guesses as to whether the robot collides with the environment or not. 
 You can try to evaluate right away to see how it works.
 
-This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
+**Note: This is a code-only exercise: you don't need the Duckiebot**.
+
+This learning experience is provided by the Duckietown team. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
 For guided setup instructions, lecture content, and more related to this LX, see the [Self Driving Cars with 
@@ -84,7 +86,7 @@ Follow the instructions on the notebook and work through the notebooks in sequen
 We suggest you evaluate your work locally before submitting your solution.
 You can do so by running the following command,
 
-    dts code evaluate
+    dts code evaluate --challenge lx22-collision-check-vali
 
 This should take a few minutes.
 This is not supposed to be an interactive process: just let it run, and when you return,
