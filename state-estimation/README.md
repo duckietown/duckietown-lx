@@ -85,11 +85,37 @@ To test in simulation, use the command
 
     $ dts code workbench --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
+In this case you should use the link for the VNC environment. It should look something like 
 
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
+```commandline
+================================================================
+|                                                              |
+|    VNC running at http://127.0.0.1:32768                     |
+|                                                              |
+================================================================
+```
+
+Click on that link (note that the port number 32768 will probably be different but that's ok).
+
+You will see four icons on the desktop. Two are particularly useful at this point. One is the joystick (you can 
+double-click and open one of those). When the robot is in "NORMAL_JOYSTICK_MODE," you
+can drive it around by making the joystick window become active (you will see a blue circle
+with a white arrow when the window is active) and then using your keyboard arrow keys.
+**Important:** In order to test your code, you will need to put your robot into "LANE_FOLLOWING" mode, by pressing "A"
+on the joystick. You can return to "NORMAL_JOYSTICK_MODE" by pressing "S". 
+
+The other is RQT Image View, which is useful for debugging.
+For example, with RQT Image View you can see the robot camera feed. Do so by opening the tool by double-clicking
+the icon, and then once it opens use the drop-down bar in the top right to select `/agent/camera_node/image/compressed`.
+You may find some of the options interesting also. For example:
+
+ - `/agent/line_detector_node/debug/segments/compressed` shows you an image with all of the line detections,
+ - `/agent/ground_projection_node/debug/ground_projection_image/compressed` shows you a top down view of those line 
+detections projected onto the ground plane,
+ - `/agent/histogram_lane_filter_node/belief_img` is maybe the most informative as you shows you a matrix
+that represents the histogram filter that you are implementing.
+
+Also note that this simulation test is just that, a test. Don't trust it fully. If you want a more accurate
 metric of performance, continue reading to the `Perform local evaluation` section below.
 
 
