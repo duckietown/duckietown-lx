@@ -6,7 +6,7 @@
 
 # About this repository
 
-This is a Duckietown learning experiences repository containing activites compatible with the Duckietown infrastructure. Visit us at the 
+For Dharun kumar, Forked one. This is a Duckietown learning experiences repository containing activites compatible with the Duckietown infrastructure. Visit us at the 
 [Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
 For guided setup instructions, lecture content, and more related to these LX, see the [Self Driving Cars with 
