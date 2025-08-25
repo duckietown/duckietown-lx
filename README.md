@@ -21,7 +21,7 @@ To use these learning experiences do the following:
 We assume here that you have already set up your Duckietown development environment 
 following the steps in the 
 [Laptop setup](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_laptop/index.html) and [Accounts setup](https://docs.duckietown.com/daffy/opmanual-duckiebot/setup/setup_account/index.html)
-sections of the of the Duckietown operation manual.
+sections of the Duckietown operation manual (`daffy`).
 
 <!--
 ```{todo}
