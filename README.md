@@ -46,7 +46,7 @@ Start by installing a new dependency,
 
 Then update your Duckietown shell and shell commands,
 
-    pip3 install -U duckietown-shell
+    pipx upgrade duckietown-shell
 
     dts update
 
