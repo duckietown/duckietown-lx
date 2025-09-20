@@ -14,8 +14,9 @@ def get_steer_matrix_left_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
                             using the masked left lane markings (numpy.ndarray)
     """
 
-    # TODO: implement your own solution here
-    steer_matrix_left = np.random.rand(*shape)
+    #implement your own solution here
+    steer_matrix_left = np.zeros(shape=shape, dtype="float32")
+    steer_matrix_left[:, :shape[Tuple[1]]//2] = 1
     # ---
     return steer_matrix_left
 
@@ -30,8 +31,9 @@ def get_steer_matrix_right_lane_markings(shape: Tuple[int, int]) -> np.ndarray:
                              using the masked right lane markings (numpy.ndarray)
     """
 
-    # TODO: implement your own solution here
-    steer_matrix_right = np.random.rand(*shape)
+    #implement your own solution here
+    steer_matrix_right = np.zeros(shape=shape, dtype="float32")
+    steer_matrix_right[shape[Tuple[1]]//2:, : ] = 1
     # ---
     return steer_matrix_right
 

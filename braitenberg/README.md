@@ -2,58 +2,44 @@
 <img src="./assets/images/dtlogo.png" alt="Duckietown Logo" width="50%">
 </p>
 
-# **Learning Experience (LX): Braitenberg**
+# **Activity: Braitenberg**
 
 # About these activities
 
-In this learning experience, you will create your own Braitenberg agent for the task of avoiding duckies on the road. 
-You'll first develop computer vision techniques that manipulate and filter images to highlight specific objects, 
-then utilize the filtered images to guide your agent.
+This activity comprises of three notebooks; Image-Manipulation, Image-Filtering and Braitenberg, which i use to 
+develop computer vision techniques that manipulate and filter images to highlight specific objects; duckies on the road (duckietown) 
+then utilize the filtered images to guide the development of my own Braitenberg agent implimentation.
 
-We will guide you through the process step by step as you progress through the activities in each notebook, and when 
-you're satisfied with your results, you can submit your work to evaluate how your agent compares to solutions from other developers.
+The Braitenberg agent uses a mounted camera as a visual stimuli, using the connection.py file splits the observed image into two 
+matrices; get_motor_left_matrix and get_motor_right_matrix essentially to visualize the image and preprocessing.py to get the best hsv
+values to identify the duckies.
 
-This learning experience is provided by the Duckietown team and can be run on Duckiebots. Visit us at the 
-[Duckietown Website](https://www.duckietown.com) for more learning materials, documentation, and demos.
 
-For guided setup instructions, lecture content, and more related to this LX, see the [Self Driving Cars with 
-Duckietown course on EdX](https://learning.edx.org/course/course-v1:ETHx+DT-01x+3T2022/home).
+## challenges/observation of this activity
 
-## Grading challenge
+1. Knowledge of python has been helpful in performing this activity
+2. The main observation in this activity is the difference in simulation and implementation in the duckiebot; in order to achieve this
 
-Your submissions will be sent to the [`lx22-BV1`][challenge] challenge.
+   task i had to use an image of the real duckie enviroment, which required getting the real hsv values that identifies the duckie in the
+   duckiebot environment. Within the `/assets/samples/iotlab/` folder is a picture of the duckiebot environment used for this task `real001.png` 
 
-[challenge]: https://challenges.duckietown.org/v4/humans/challenges/lx22-BV1
 
 
 # Instructions
 
-**NOTE:** All commands below are intended to be executed from the root directory of this exercise (i.e., the directory containing this README).
+Provided instruction on step-by-step execution of the activity
 
 
-## 1. Make sure your exercise is up-to-date
-
-Update your exercise definition and instructions,
-
-    git pull upstream mooc2022
-
-**NOTE:** to pull from upstream, you need to have completed the instructions in the [duckietown-lx repository README](https://github.com/duckietown/duckietown-lx/blob/mooc2022/README.md) to *fork* this repository.
-
-
-## 2. Make sure your system is up-to-date
-
-- 💻 Always make sure your Duckietown Shell is updated to the latest version. See [installation instructions](https://github.com/duckietown/duckietown-shell)
+## 1. System update
 
 - 💻 Update the shell commands: `dts update`
 
 - 💻 Update your laptop/desktop: `dts desktop update`
 
-- 🚙 Update your Duckiebot: `dts duckiebot update ROBOTNAME` (where `ROBOTNAME` is the name of your Duckiebot chosen during the initialization procedure.)
+- 🚙 Update your Duckiebot: `dts duckiebot update duckiebot005`
 
 
-## 3. Work on the exercise
-
-### Launch the code editor
+## 2. Launch the code editor
 
 Open the code editor by running the following command,
 
@@ -66,110 +52,17 @@ of your browser to access the code editor. The first thing you will see in the c
 this same document, you can continue there.
 
 
-### Walkthrough of notebooks
-
-**NOTE**: You should be reading this from inside the code editor in your browser.
-
-Inside the code editor, use the navigator sidebar on the left-hand side to navigate to the
-`notebooks` directory and open the first notebook.
-
-Follow the instructions on the notebook and work through the notebooks in sequence.
-
-
-### 💻 Testing in simulation
+## 3. 💻 Testing in simulation
 
 To test in simulation, use the command
 
     $ dts code workbench --sim
 
-There will be two URLs popping up to open in your browser: one is the direct view of the
-simulated environment. The other is VNC and only useful for some exercises, follow the instructions
-in the notebooks to see if you need to access VNC.
-
-This simulation test is just that, a test. Don't trust it fully. If you want a more accurate
-metric of performance, continue reading to the `Perform local evaluation` section below.
-
-### ℹ️️ Check Robot Compatibility
-
-While we try our best to support running these exercises on all versions of the Duckiebot, some activities require special hardware and
-are only supported on specific robots. Please use this section to ensure the compatibility of the exercise and your
-robot.
-
-The support matrix of this exercise is as follows:
-
-| Duckiebot Type   	                                                                                | Configuration 	 | Support Level   	    |
-|---------------------------------------------------------------------------------------------------|-----------------|----------------------|
-| [DB21-J4](https://get.duckietown.com/products/duckiebot-db21?variant=41543707099311)            	 | Jetson 4GB    	 | ✔️ Full Support    	 |
-| [DB21-J2](https://get.duckietown.com/products/duckiebot-db21?variant=40700056830127)            	 | Jetson 2GB    	 | ✔️ Full Support 	    |
-
-
-### 🚙 Testing on a physical robot
+## 4. 🚙 Testing on a physical robot
 
 You can test your agent on the robot using the command,
 
-    dts code workbench --duckiebot YOUR_DUCKIEBOT
+    $ dts code workbench --duckiebot duckiebot005
 
-This is the modality "everything runs on the robot".
+The duckiebot should now execute the braitenberg agent
 
-You can also test using
-
-    dts code workbench --duckiebot YOUR_DUCKIEBOT --local 
-
-This is the modality "drivers running on the robot, agent runs on the laptop."
-
-
-### 📽 Perform local evaluation
-
-We suggest you evaluate your work locally before submitting your solution.
-You can do so by running the following command,
-
-    dts code evaluate
-
-This should take a few minutes.
-This is not supposed to be an interactive process: just let it run, and when you return,
-you will find the output in a folder, including videos, and trajectories, and all the statistics
-you would usually find on the website.
-
-
-### 📬 Submit your solution
-
-When you are ready to submit your homework, use the following command,
-
-    dts code submit
-
-This will package all your code and send it to the Duckietown servers for evaluation.
-
-
-## Troubleshooting
-
-
-If an error of this form occurs
-
-```bash
-Traceback (most recent call last):
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 76, in dt_challenges_cli_main
-    dt_challenges_cli_main_(args=args, sections=sections, main_cmd="challenges")
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli.py", line 203, in dt_challenges_cli_main_
-    f(rest, environment)
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cli_submit.py", line 165, in dt_challenges_cli_submit
-    br = submission_build(
-  File "/usr/local/lib/python3.8/dist-packages/duckietown_challenges_cli/cmd_submit_build.py", line 41, in submission_build
-    raise ZException(msg, available=list(credentials))
-zuper_commons.types.exceptions.ZException: Credentials for registry docker.io not available
-available:
-```
-
-you need to log into docker using `dts`. Use this command:
-
-```
-dts challenges config --docker-username <USERNAME> --docker-password <PASSWORD>
-```
-
-
-## Retire obsolete submissions
-
-Note that you can "retire" submissions that you know are wrong.
-You can do this through [the Duckietown Challenges website](https://challenges.duckietown.org/).
-
-To do so, login using your token, then find the submission you want to retire from the list of submission
-in your user profile page. Use the button "retire" to the right of the submission record line.
